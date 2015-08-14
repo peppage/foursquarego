@@ -30,7 +30,7 @@ func Test_FoursquareApi_Venue(t *testing.T) {
 	}
 }
 
-func Test_FoursquareApi_VenuPhotos(t *testing.T) {
+func Test_FoursquareApi_VenuePhotos(t *testing.T) {
 	const venueId = "40a55d80f964a52020f31ee3"
 	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
 	p, err := api.VenuePhotos(venueId, nil)
