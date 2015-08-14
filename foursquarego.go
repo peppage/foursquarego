@@ -40,15 +40,16 @@ type Meta struct {
 }
 
 type foursquareResponse struct {
-	Venue      Venue      `json:"venue,omitempty"`
-	Categories []Category `json:"categories,omitempty"`
+	Venue      Venue          `json:"venue,omitempty"`
+	Categories []Category     `json:"categories,omitempty"`
+	Photos     PhotosResponse `json:"photos,omitempty"`
 }
 
 type Omit struct{}
 
 const API_URL = "https://api.foursquare.com/v2/"
 const VERSION = "20150813"
-const MODE = "m=foursquare"
+const MODE = "foursquare"
 const _GET = iota
 const _POST = iota
 
@@ -98,6 +99,7 @@ func cleanValues(v url.Values) url.Values {
 
 func (a *FoursquareApi) execQuery(urlStr string, form url.Values, data *foursquareResponse, method int) error {
 	form.Set("v", VERSION)
+	form.Set("m", MODE)
 	form.Set("client_id", a.clientID)
 	form.Set("client_secret", a.clientSecret)
 	switch method {

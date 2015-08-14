@@ -108,6 +108,12 @@ type Photos struct {
 	Groups []PhotoGroup `json:"groups"`
 }
 
+type PhotosResponse struct {
+	Count        int     `json:"count"`
+	Items        []Photo `json:"items"`
+	DupesRemoved int     `json:"dupesRemoved"`
+}
+
 type PhotoGroup struct {
 	Type  string  `json:"type"`
 	Name  string  `json:"name"`
@@ -239,9 +245,9 @@ type ListItem struct {
 }
 
 type Phrase struct {
-	Phrase string
-	Sample Sample
-	Count  int
+	Phrase string `json:"phrase"`
+	Sample Sample `json:"sample"`
+	Count  int    `json:"count"`
 }
 
 type Sample struct {
