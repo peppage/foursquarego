@@ -29,22 +29,6 @@ type response struct {
 	err  error
 }
 
-type apiResponse struct {
-	Meta          Meta               `json:"meta"`
-	Notifications Omit               `json:"-"`
-	Response      foursquareResponse `json:"response"`
-}
-
-type Meta struct {
-	Code int `json:"code"`
-}
-
-type foursquareResponse struct {
-	Venue      Venue          `json:"venue,omitempty"`
-	Categories []Category     `json:"categories,omitempty"`
-	Photos     PhotosResponse `json:"photos,omitempty"`
-}
-
 type Omit struct{}
 
 const API_URL = "https://api.foursquare.com/v2/"
@@ -87,7 +71,7 @@ func decodeResponse(apiResp apiResponse, data *foursquareResponse) error {
 		return errors.New("crap") // THIS IS WRONG
 	}
 	*data = apiResp.Response
-	return nil //json.NewDecoder(resp.Body).Decode(data)
+	return nil
 }
 
 func cleanValues(v url.Values) url.Values {
