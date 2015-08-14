@@ -7,7 +7,9 @@ type apiResponse struct {
 }
 
 type Meta struct {
-	Code int `json:"code"`
+	Code        int    `json:"code"`
+	ErrorType   string `json:"errorType"`
+	ErrorDetail string `json:"errorDetail"`
 }
 
 type foursquareResponse struct {

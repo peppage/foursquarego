@@ -63,12 +63,8 @@ func (a *FoursquareApi) apiGet(urlStr string, form url.Values, data *foursquareR
 	contents, _ := ioutil.ReadAll(resp.Body)
 	var apiResp apiResponse
 	json.Unmarshal(contents, &apiResp)
-	return decodeResponse(apiResp, data)
-}
-
-func decodeResponse(apiResp apiResponse, data *foursquareResponse) error {
-	if apiResp.Meta.Code != 200 {
-		return errors.New("crap") // THIS IS WRONG
+	if resp.StatusCode != 200 || apiResp.Meta.Code != 200 {
+		return newApiError(resp, apiResp.Meta)
 	}
 	*data = apiResp.Response
 	return nil
