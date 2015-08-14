@@ -108,12 +108,6 @@ type Photos struct {
 	Groups []PhotoGroup `json:"groups"`
 }
 
-type PhotosResponse struct {
-	Count        int     `json:"count"`
-	Items        []Photo `json:"items"`
-	DupesRemoved int     `json:"dupesRemoved"`
-}
-
 type PhotoGroup struct {
 	Type  string  `json:"type"`
 	Name  string  `json:"name"`
@@ -294,4 +288,16 @@ type Attribute struct {
 	Summary string `json:"summary"`
 	Count   int    `json:"count"`
 	Items   []Omit `json:"-"`
+}
+
+type Event struct {
+	ID         string     `json:"id"`
+	Name       string     `json:"name"`
+	Categories []Category `json:"categories"`
+	HereNow    HereNow    `json:"hereNow"`
+	AllDay     bool       `json:"allDay"`
+	Date       int        `json:"date"`
+	TimeZone   string     `json:"timeZone"`
+	Stats      Stats      `json:"stats"`
+	Url        string     `json:"url"`
 }
