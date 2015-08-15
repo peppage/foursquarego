@@ -1,6 +1,7 @@
 package foursquarego_test
 
 import (
+	"fmt"
 	"os"
 	"testing"
 
@@ -64,4 +65,15 @@ func Test_FoursquareApi_Categories(t *testing.T) {
 	if len(c) == 0 {
 		t.Errorf("Get categories returned no categories")
 	}
+}
+
+func Test_FoursquareApi_VenueHereNow(t *testing.T) {
+	const venueId = "4e5c0c64183883e00c042670"
+	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
+	h, err := api.VenueHereNow(venueId, nil)
+	if err != nil {
+		t.Errorf("Getting venue here now returned error %s", err.Error())
+	}
+	// Not sure how to test this one
+	fmt.Println(h)
 }

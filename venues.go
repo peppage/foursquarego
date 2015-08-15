@@ -25,6 +25,16 @@ func (a FoursquareApi) VenueEvents(id string) (events []Event, err error) {
 	return data.Events.Items, (<-response_ch).err
 }
 
+// valid url.Values are: limit, offset
+// I'm not sure if this one is setup correctly. I get the count but the items don't seem
+// to be coming through
+func (a FoursquareApi) VenueHereNow(id string, uv url.Values) (hereNow HereNow, err error) {
+	response_ch := make(chan response)
+	var data foursquareResponse
+	a.queryQueue <- query{API_URL + "/venues/" + id + "/herenow", url.Values{}, &data, _GET, response_ch}
+	return data.HereNow, (<-response_ch).err
+}
+
 func (a FoursquareApi) Categories() (categories []Category, err error) {
 	response_ch := make(chan response)
 	var data foursquareResponse

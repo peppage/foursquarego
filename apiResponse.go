@@ -17,6 +17,7 @@ type foursquareResponse struct {
 	Categories []Category     `json:"categories,omitempty"`
 	Photos     PhotosResponse `json:"photos,omitempty"`
 	Events     EventsResponse `json:"events,omitempty"`
+	HereNow    HereNow        `json:"hereNow,omitempty"`
 }
 
 type PhotosResponse struct {

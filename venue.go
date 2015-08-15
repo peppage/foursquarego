@@ -133,11 +133,12 @@ type PhotoSource struct {
 }
 
 type User struct {
-	ID        string    `json:"id"`
-	FirstName string    `json:"firstName"`
-	LastName  string    `json:"lastName"`
-	Gender    string    `json:"gender"`
-	Photo     UserPhoto `json:"photo"`
+	ID           string    `json:"id"`
+	FirstName    string    `json:"firstName"`
+	LastName     string    `json:"lastName"`
+	Gender       string    `json:"gender"`
+	RelationShip string    `json:"relationship"`
+	Photo        UserPhoto `json:"photo"`
 }
 
 type UserPhoto struct {
@@ -146,9 +147,20 @@ type UserPhoto struct {
 }
 
 type HereNow struct {
-	Count   int    `json:"count"`
-	Summary string `json:"summary"`
-	Groups  Omit   `json:"groups"` //TODO: take care fo this later
+	Count   int           `json:"count"`
+	Summary string        `json:"summary"`
+	Groups  Omit          `json:"groups,omitempty"` //TODO: take care fo this later
+	Items   []HereNowItem `json:"items,omitempty"`  // I dunno sometimes it has groups or Items
+}
+
+type HereNowItem struct {
+	ID             string `json:"id"`
+	CreatedAt      int    `json:"createdAt"`
+	Type           string `json:"type"`
+	TimeZoneOffset int    `json:"timeZoneOffset"`
+	User           User   `json:"user"`
+	Likes          Likes  `json:"likes"`
+	Like           bool   `json:"like"`
 }
 
 type Reasons struct {
