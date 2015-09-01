@@ -12,6 +12,7 @@ import (
 type FoursquareApi struct {
 	clientID     string
 	clientSecret string
+	oauthToken   string
 	queryQueue   chan query
 	HttpClient   *http.Client
 }
@@ -31,11 +32,13 @@ type response struct {
 
 type Omit struct{}
 
-const API_URL = "https://api.foursquare.com/v2/"
-const VERSION = "20150813"
-const MODE = "foursquare"
-const _GET = iota
-const _POST = iota
+const (
+	API_URL = "https://api.foursquare.com/v2/"
+	VERSION = "20150813"
+	MODE    = "foursquare"
+	_GET    = iota
+	_POST   = iota
+)
 
 func NewFoursquareApi(clientID string, clientSecret string) *FoursquareApi {
 	queue := make(chan query)
@@ -47,6 +50,10 @@ func NewFoursquareApi(clientID string, clientSecret string) *FoursquareApi {
 	}
 	go a.throttledQuery()
 	return a
+}
+
+func (a *FoursquareApi) SetOauthToken(oauthToken string) {
+	a.oauthToken = oauthToken
 }
 
 func (a *FoursquareApi) apiGet(urlStr string, form url.Values, data *foursquareResponse) error {
@@ -80,8 +87,12 @@ func cleanValues(v url.Values) url.Values {
 func (a *FoursquareApi) execQuery(urlStr string, form url.Values, data *foursquareResponse, method int) error {
 	form.Set("v", VERSION)
 	form.Set("m", MODE)
-	form.Set("client_id", a.clientID)
-	form.Set("client_secret", a.clientSecret)
+	if a.oauthToken != "" {
+		form.Set("oauth_token", a.oauthToken)
+	} else {
+		form.Set("client_id", a.clientID)
+		form.Set("client_secret", a.clientSecret)
+	}
 	switch method {
 	case _GET:
 		return a.apiGet(urlStr, form, data)

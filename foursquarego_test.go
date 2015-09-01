@@ -10,6 +10,7 @@ import (
 
 var CLIENT_ID = os.Getenv("CLIENT_ID")
 var CLIENT_SECRET = os.Getenv("CLIENT_SECRET")
+var OAUTH_TOKEN = os.Getenv("OAUTH_TOKEN")
 
 var api *foursquarego.FoursquareApi
 
@@ -70,6 +71,7 @@ func Test_FoursquareApi_Categories(t *testing.T) {
 func Test_FoursquareApi_VenueHereNow(t *testing.T) {
 	const venueId = "4e5c0c64183883e00c042670"
 	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
+	api.SetOauthToken(OAUTH_TOKEN)
 	h, err := api.VenueHereNow(venueId, nil)
 	if err != nil {
 		t.Errorf("Getting venue here now returned error %s", err.Error())
