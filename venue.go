@@ -50,12 +50,14 @@ type Location struct {
 	CrossStreet      string  `json:"crossStreet"`
 	Lat              float64 `json:"lat"`
 	Lng              float64 `json:"lng"`
+	Distance         int     `json:"distance"`
 	PostalCode       string  `json:"postalCode"`
 	Cc               string  `json:"cc"`
 	City             string  `json:"city"`
 	State            string  `json:"state"`
 	Country          string  `json:"country"`
 	FormattedAddress string  `json:"formattedAddress"`
+	IsFuzzed         bool    `json:"isFuzzed"`
 }
 
 type Category struct {
