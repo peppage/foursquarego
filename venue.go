@@ -268,11 +268,13 @@ type Entitie struct {
 }
 
 type Hours struct {
-	Status     string      `json:"status"`
-	IsOpen     bool        `json:"isOpen"`
-	TimeFrames []TimeFrame `json:"timeFrames"`
+	Status     string      `json:"status,omitempty"`
+	IsOpen     bool        `json:"isOpen,ommitempty"`
+	TimeFrames []TimeFrame `json:"timeFrames,omitempty"`
+	Timeframes []Timeframe `json:"timeframes,omitempty"`
 }
 
+// This is used in the main Hours struct for the entire venu
 type TimeFrame struct {
 	Days          string `json:"days"`
 	IncludesToday bool   `json:"includesToday"`
@@ -280,7 +282,17 @@ type TimeFrame struct {
 	Segments      Omit   `json:"-"` //TODO:  take care fo this later
 }
 
+// This is used for the hours endpoint
+type Timeframe struct {
+	Days          []int  `json:"days"`
+	IncludesToday bool   `json:"includesToday"`
+	Open          []Open `json:"open"`
+	Segements     Omit   `json:"-"`
+}
+
 type Open struct {
+	Start        string `json:"start"`
+	End          string `json:"end"`
 	RenderedTime string `json:"renderedTime"`
 }
 

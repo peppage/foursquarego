@@ -79,3 +79,15 @@ func Test_FoursquareApi_VenueHereNow(t *testing.T) {
 	// Not sure how to test this one
 	fmt.Println(h)
 }
+
+func Test_FoursquareApi_VenueHours(t *testing.T) {
+	const venueId = "40a55d80f964a52020f31ee3"
+	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
+	h, err := api.GetVenueHours(venueId)
+	if err != nil {
+		t.Errorf("Getting venue hours returned error %s", err.Error())
+	}
+	if len(h.Hours.Timeframes) < 1 {
+		t.Errorf("Get hours returned no hours")
+	}
+}

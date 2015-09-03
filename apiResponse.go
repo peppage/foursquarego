@@ -18,6 +18,8 @@ type foursquareResponse struct {
 	Photos     PhotosResponse `json:"photos,omitempty"`
 	Events     EventsResponse `json:"events,omitempty"`
 	HereNow    HereNow        `json:"hereNow,omitempty"`
+	Hours      Hours          `json:"hours,omitempty"`
+	Popular    Hours          `json:"popular,omitempty"`
 }
 
 type PhotosResponse struct {
@@ -30,4 +32,9 @@ type EventsResponse struct {
 	Count   int     `json:"count"`
 	Summary string  `json:"summary"`
 	Items   []Event `json:"items"`
+}
+
+type HoursResponse struct {
+	Hours   Hours `json:"hours,omitempty"`
+	Popular Hours `json:"popular,omitempty"`
 }
