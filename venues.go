@@ -54,11 +54,20 @@ func (a FoursquareApi) GetVenueLikes(id string) (likes LikesResponse, err error)
 	return LikesResponse{data.Likes, data.Like}, (<-response_ch).err
 }
 
-func (a FoursquareApi) GetVenueLinks(id string) (links Links, err error) {
+func (a FoursquareApi) GetVenueLinks(id string) (links LinksResponse, err error) {
 	response_ch := make(chan response)
 	var data foursquareResponse
 	a.queryQueue <- query{API_URL + "venues/" + id + "/links", url.Values{}, &data, _GET, response_ch}
 	return data.Links, (<-response_ch).err
+}
+
+// valid url.Values are: group, limit, offset
+func (a FoursquareApi) GetVenueListed(id string, uv url.Values) (lists Listed, err error) {
+	uv = cleanValues(uv)
+	response_ch := make(chan response)
+	var data foursquareResponse
+	a.queryQueue <- query{API_URL + "venues/" + id + "/listed", uv, &data, _GET, response_ch}
+	return data.Lists, (<-response_ch).err
 }
 
 func (a FoursquareApi) GetCategories() (categories []Category, err error) {
