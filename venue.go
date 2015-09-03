@@ -42,6 +42,7 @@ type Venue struct {
 type Contact struct {
 	Phone          string `json:"phone"`
 	FormattedPhone string `json:"formattedPhone"`
+	Twitter        string `json:"twitter"`
 }
 
 type Location struct {
