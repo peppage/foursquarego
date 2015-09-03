@@ -87,6 +87,7 @@ type Price struct {
 type Likes struct {
 	Count   int    `json:"count"`
 	Groups  Omit   `json:"-"` //TODO: take care fo this later
+	Items   []User `json:"items"`
 	Summary string `json:"summary"`
 }
 

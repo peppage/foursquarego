@@ -20,6 +20,8 @@ type foursquareResponse struct {
 	HereNow    HereNow        `json:"hereNow,omitempty"`
 	Hours      Hours          `json:"hours,omitempty"`
 	Popular    Hours          `json:"popular,omitempty"`
+	Likes      Likes          `json:"likes,omitempty"`
+	Like       bool           `json:"like,omitempty"`
 }
 
 type PhotosResponse struct {
@@ -35,6 +37,11 @@ type EventsResponse struct {
 }
 
 type HoursResponse struct {
-	Hours   Hours `json:"hours,omitempty"`
-	Popular Hours `json:"popular,omitempty"`
+	Hours   Hours `json:"hours"`
+	Popular Hours `json:"popular"`
+}
+
+type LikesResponse struct {
+	Likes Likes `json:"likes"`
+	Like  bool  `json:"like"`
 }
