@@ -127,3 +127,15 @@ func Test_FoursquareApi_VenueListed(t *testing.T) {
 		t.Errorf("Get listed returned no lists")
 	}
 }
+
+func Test_FoursquareApi_VenueMenu(t *testing.T) {
+	const venueId = "47a1bddbf964a5207a4d1fe3"
+	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
+	m, err := api.GetVenueMenu(venueId)
+	if err != nil {
+		t.Errorf("Getting venue menu returned error %s", err.Error())
+	}
+	if len(m.Menus.Items[0].Entries.Items) < 1 {
+		t.Errorf("Get menu returned no menus")
+	}
+}

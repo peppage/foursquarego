@@ -23,7 +23,8 @@ type foursquareResponse struct {
 	Likes      Likes          `json:"likes,omitempty"`
 	Like       bool           `json:"like,omitempty"`
 	Links      LinksResponse  `json:"links,omitempty"`
-	Lists      Listed         `json:"lists,omitempoty"`
+	Lists      Listed         `json:"lists,omitempty"`
+	Menu       MenuResponse   `json:"menu,omitempty"`
 }
 
 type PhotosResponse struct {
@@ -51,4 +52,14 @@ type LikesResponse struct {
 type LinksResponse struct {
 	Count int    `json:"count"`
 	Items []Link `json:"items"`
+}
+
+type MenuResponse struct {
+	Provider Provider `json:"provider"`
+	Menus    Menus    `json:"menus"`
+}
+
+type Menus struct {
+	Count int    `json:"count"`
+	Items []Menu `json:"items"`
 }

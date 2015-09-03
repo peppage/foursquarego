@@ -19,7 +19,7 @@ type Venue struct {
 	Rating        float32    `json:"rating"`
 	RatingColor   string     `json:"ratingColor"`
 	RatingSignals int        `json:"ratingSignals"`
-	Menu          Menu       `json:"menu"`
+	Menu          ShortMenu  `json:"menu"`
 	Specials      Specials   `json:"specials"`
 	Photos        Photos     `json:"photos"`
 	Reasons       Reasons    `json:"reasons"`
@@ -94,12 +94,33 @@ type Likes struct {
 	Summary string `json:"summary"`
 }
 
-type Menu struct {
+type ShortMenu struct {
 	Type      string `json:"type"`
 	Label     string `json:"lablel"`
 	Anchor    string `json:"anchor"`
 	Url       string `json:"url"`
 	MobileUrl string `json:"mobileUrl"`
+}
+
+type Menu struct {
+	MenuID  string  `json:"menuId"`
+	Name    string  `json:"name"`
+	Entries Entries `json:"entries"`
+}
+
+type Entries struct {
+	Count int         `json:"count"`
+	Items []EntryItem `json:"items"`
+}
+
+type EntryItem struct {
+	EntryID     string   `json:"entryId"`
+	Name        string   `json:"name"`
+	Description string   `json:"description"`
+	Prices      []string `json:"prices"`
+	Price       string   `json:"price"`
+	Options     Omit     `json:"-"`
+	Additions   Omit     `json:"-"`
 }
 
 type Specials struct {
@@ -361,5 +382,9 @@ type Link struct {
 }
 
 type Provider struct {
-	ID string `json:"id"`
+	ID               string `json:"id"`
+	Name             string `json:"name"`
+	AttributionImage string `json:"attributionImage"`
+	AttributionLink  string `json:"attributionLink"`
+	AttributionText  string `json:"attributionText"`
 }

@@ -70,6 +70,13 @@ func (a FoursquareApi) GetVenueListed(id string, uv url.Values) (lists Listed, e
 	return data.Lists, (<-response_ch).err
 }
 
+func (a FoursquareApi) GetVenueMenu(id string) (menu MenuResponse, err error) {
+	response_ch := make(chan response)
+	var data foursquareResponse
+	a.queryQueue <- query{API_URL + "venues/" + id + "/menu", url.Values{}, &data, _GET, response_ch}
+	return data.Menu, (<-response_ch).err
+}
+
 func (a FoursquareApi) GetCategories() (categories []Category, err error) {
 	response_ch := make(chan response)
 	var data foursquareResponse
