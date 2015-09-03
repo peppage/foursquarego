@@ -326,3 +326,18 @@ type Event struct {
 	Stats      Stats      `json:"stats"`
 	Url        string     `json:"url"`
 }
+
+type Links struct {
+	Count int        `json:"count"`
+	Items []LinkItem `json:"items"`
+}
+
+type LinkItem struct {
+	Provider Provider `json:"provider"`
+	LinkedID string   `json:"linkedId"`
+	Url      string   `json:"url"`
+}
+
+type Provider struct {
+	ID string `json:"id"`
+}

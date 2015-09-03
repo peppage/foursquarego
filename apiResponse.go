@@ -22,6 +22,7 @@ type foursquareResponse struct {
 	Popular    Hours          `json:"popular,omitempty"`
 	Likes      Likes          `json:"likes,omitempty"`
 	Like       bool           `json:"like,omitempty"`
+	Links      Links          `json:"links,omitempty"`
 }
 
 type PhotosResponse struct {

@@ -103,3 +103,15 @@ func Test_FoursquareApi_VenueLikes(t *testing.T) {
 		t.Errorf("Get Likes returned no likes")
 	}
 }
+
+func Test_FoursquareApi_VenueLinks(t *testing.T) {
+	const venueId = "3fd66200f964a52074e31ee3"
+	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
+	l, err := api.GetVenueLinks(venueId)
+	if err != nil {
+		t.Errorf("Getting venue links returned error %s", err.Error())
+	}
+	if len(l.Items) < 1 {
+		t.Errorf("Get links returned no links")
+	}
+}

@@ -49,6 +49,13 @@ func (a FoursquareApi) GetVenueLikes(id string) (likes LikesResponse, err error)
 	return LikesResponse{data.Likes, data.Like}, (<-response_ch).err
 }
 
+func (a FoursquareApi) GetVenueLinks(id string) (links Links, err error) {
+	response_ch := make(chan response)
+	var data foursquareResponse
+	a.queryQueue <- query{API_URL + "venues/" + id + "/links", url.Values{}, &data, _GET, response_ch}
+	return data.Links, (<-response_ch).err
+}
+
 func (a FoursquareApi) GetCategories() (categories []Category, err error) {
 	response_ch := make(chan response)
 	var data foursquareResponse
