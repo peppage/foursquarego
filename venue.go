@@ -100,8 +100,32 @@ type Menu struct {
 }
 
 type Specials struct {
-	Count int  `json:"count"`
-	Items Omit `json:"-"` //TODO  take care fo this later
+	Count int           `json:"count"`
+	Items []SpecialItem `json:"items"`
+}
+
+type SpecialItem struct {
+	id                  string      `json:"id"`
+	Type                string      `json:"type"`
+	Message             string      `json:"message"`
+	Description         string      `json:"description"`
+	FinePrint           string      `json:"finePrint"`
+	Unlocked            bool        `json:"unlocked"`
+	Icon                string      `json:"icon"`
+	Title               string      `json:"title"`
+	State               string      `json:"state"`
+	Provider            string      `json:"provider"`
+	Redemption          string      `json:"redemption"`
+	Interaction         Interaction `json:"interaction"`
+	Progress            int         `json:"progress"`
+	ProgressDescription string      `json:"progressDescription"`
+	Detail              int         `json:"detail"`
+	Target              int         `json:"target"`
+	FriendsHere         []User      `json:"friendsHere"`
+}
+
+type Interaction struct {
+	EntryUrl string `json:"entryUrl"`
 }
 
 type Photos struct {
