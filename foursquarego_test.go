@@ -23,7 +23,7 @@ func Test_FoursquareApi_Venue(t *testing.T) {
 	const venueId = "40a55d80f964a52020f31ee3"
 	const venueName = "Clinton St. Baking Co. & Restaurant"
 	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
-	v, err := api.Venue(venueId)
+	v, err := api.GetVenue(venueId)
 	if err != nil {
 		t.Errorf("Getting a Venue returned error: %s", err.Error())
 	}
@@ -35,7 +35,7 @@ func Test_FoursquareApi_Venue(t *testing.T) {
 func Test_FoursquareApi_VenuePhotos(t *testing.T) {
 	const venueId = "40a55d80f964a52020f31ee3"
 	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
-	p, err := api.VenuePhotos(venueId, nil)
+	p, err := api.GetVenuePhotos(venueId, nil)
 	if err != nil {
 		t.Errorf("Getting venue photos returned error: %s", err.Error())
 	}
@@ -48,7 +48,7 @@ func Test_FoursquareApi_VenuePhotos(t *testing.T) {
 func Test_FoursquareApi_VenueEvents(t *testing.T) {
 	const venueId = "451d2920f964a5208d3a1fe3"
 	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
-	e, err := api.VenueEvents(venueId)
+	e, err := api.GetVenueEvents(venueId)
 	if err != nil {
 		t.Errorf("Getting venue events returned error: %s", err.Error())
 	}
@@ -59,7 +59,7 @@ func Test_FoursquareApi_VenueEvents(t *testing.T) {
 
 func Test_FoursquareApi_Categories(t *testing.T) {
 	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
-	c, err := api.Categories()
+	c, err := api.GetCategories()
 	if err != nil {
 		t.Errorf("Getting categories returned error: %s", err.Error())
 	}
@@ -72,7 +72,7 @@ func Test_FoursquareApi_VenueHereNow(t *testing.T) {
 	const venueId = "4e5c0c64183883e00c042670"
 	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
 	api.SetOauthToken(OAUTH_TOKEN)
-	h, err := api.VenueHereNow(venueId, nil)
+	h, err := api.GetVenueHereNow(venueId, nil)
 	if err != nil {
 		t.Errorf("Getting venue here now returned error %s", err.Error())
 	}
