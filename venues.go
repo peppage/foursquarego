@@ -1,6 +1,9 @@
 package foursquarego
 
-import "net/url"
+import (
+	"errors"
+	"net/url"
+)
 
 func (a FoursquareApi) GetVenue(id string) (venue Venue, err error) {
 	response_ch := make(chan response)
@@ -26,9 +29,11 @@ func (a FoursquareApi) GetVenueEvents(id string) (events []Event, err error) {
 }
 
 // valid url.Values are: limit, offset
-// I'm not sure if this one is setup correctly. I get the count but the items don't seem
-// to be coming through
+// This is reqlly a swarm endpoint
 func (a FoursquareApi) GetVenueHereNow(id string, uv url.Values) (hereNow HereNow, err error) {
+	if a.oauthToken == "" {
+		return HereNow{}, errors.New("Requires Acting User")
+	}
 	response_ch := make(chan response)
 	var data foursquareResponse
 	a.queryQueue <- query{API_URL + "venues/" + id + "/herenow", url.Values{}, &data, _GET, response_ch}
