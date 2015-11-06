@@ -13,18 +13,20 @@ type Meta struct {
 }
 
 type foursquareResponse struct {
-	Venue      Venue          `json:"venue,omitempty"`
-	Categories []Category     `json:"categories,omitempty"`
-	Photos     PhotosResponse `json:"photos,omitempty"`
-	Events     EventsResponse `json:"events,omitempty"`
-	HereNow    HereNow        `json:"hereNow,omitempty"`
-	Hours      Hours          `json:"hours,omitempty"`
-	Popular    Hours          `json:"popular,omitempty"`
-	Likes      Likes          `json:"likes,omitempty"`
-	Like       bool           `json:"like,omitempty"`
-	Links      LinksResponse  `json:"links,omitempty"`
-	Lists      Listed         `json:"lists,omitempty"`
-	Menu       MenuResponse   `json:"menu,omitempty"`
+	Venue         Venue                `json:"venue,omitempty"`
+	Categories    []Category           `json:"categories,omitempty"`
+	Photos        PhotosResponse       `json:"photos,omitempty"`
+	Events        EventsResponse       `json:"events,omitempty"`
+	HereNow       HereNow              `json:"hereNow,omitempty"`
+	Hours         Hours                `json:"hours,omitempty"`
+	Popular       Hours                `json:"popular,omitempty"`
+	Likes         Likes                `json:"likes,omitempty"`
+	Like          bool                 `json:"like,omitempty"`
+	Links         LinksResponse        `json:"links,omitempty"`
+	Lists         Listed               `json:"lists,omitempty"`
+	Menu          MenuResponse         `json:"menu,omitempty"`
+	SimilarVenues SimilarVenueResponse `json:"similarVenues"`
+	Venues        []Venue              `json:"venues"`
 }
 
 type PhotosResponse struct {
@@ -62,4 +64,9 @@ type MenuResponse struct {
 type Menus struct {
 	Count int    `json:"count"`
 	Items []Menu `json:"items"`
+}
+
+type SimilarVenueResponse struct {
+	Count int     `json:"count"`
+	Items []Venue `json:"items"`
 }

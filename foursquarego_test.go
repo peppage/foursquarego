@@ -2,6 +2,7 @@ package foursquarego_test
 
 import (
 	"fmt"
+	"net/url"
 	"os"
 	"testing"
 
@@ -137,5 +138,33 @@ func Test_FoursquareApi_VenueMenu(t *testing.T) {
 	}
 	if len(m.Menus.Items[0].Entries.Items) < 1 {
 		t.Errorf("Get menu returned no menus")
+	}
+}
+
+func Test_FoursquareApi_VenueSimilar(t *testing.T) {
+	const venueId = "40a55d80f964a52020f31ee3"
+	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
+	api.SetOauthToken(OAUTH_TOKEN)
+	s, err := api.GetVenueSimilar(venueId)
+	if err != nil {
+		t.Errorf("Getting similar venues returned error %s", err.Error())
+	}
+	if len(s.Items) < 1 {
+		t.Errorf("Get similar venues returned no venues")
+	}
+}
+
+func Test_FoursquareApi_VenueSearch(t *testing.T) {
+	uv := url.Values{}
+	uv.Set("ll", "40.7,-74.0")
+	uv.Set("categoryId", "50327c8591d4c4b30a586d5d")
+	uv.Set("intent", "browse")
+	uv.Set("radius", "100000")
+	venues, err := api.Search(uv)
+	if err != nil {
+		t.Errorf("Searching venues returned error %s", err.Error())
+	}
+	if len(venues) < 1 {
+		t.Errorf("Searching venues returned no venues")
 	}
 }

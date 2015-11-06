@@ -77,9 +77,30 @@ func (a FoursquareApi) GetVenueMenu(id string) (menu MenuResponse, err error) {
 	return data.Menu, (<-response_ch).err
 }
 
+func (a FoursquareApi) GetVenueSimilar(id string) (venues SimilarVenueResponse, err error) {
+	if a.oauthToken == "" {
+		return SimilarVenueResponse{}, errors.New("Requires Acting User")
+	}
+	response_ch := make(chan response)
+	var data foursquareResponse
+	a.queryQueue <- query{API_URL + "venues/" + id + "/similar", url.Values{}, &data, _GET, response_ch}
+	return data.SimilarVenues, (<-response_ch).err
+}
+
 func (a FoursquareApi) GetCategories() (categories []Category, err error) {
 	response_ch := make(chan response)
 	var data foursquareResponse
 	a.queryQueue <- query{API_URL + "venues/categories", url.Values{}, &data, _GET, response_ch}
 	return data.Categories, (<-response_ch).err
+}
+
+func (a FoursquareApi) Search(uv url.Values) (venues []Venue, err error) {
+	uv = cleanValues(uv)
+	if uv.Get("ll") == "" && uv.Get("near") == "" {
+		return []Venue{}, errors.New("ll or near values required")
+	}
+	response_ch := make(chan response)
+	var data foursquareResponse
+	a.queryQueue <- query{API_URL + "venues/search", uv, &data, _GET, response_ch}
+	return data.Venues, (<-response_ch).err
 }
