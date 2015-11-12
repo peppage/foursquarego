@@ -30,7 +30,7 @@ type Venue struct {
 	TimeZone      string     `json:"timeZone"`
 	Listed        Listed     `json:"listed"`
 	Phrases       []Phrase   `json:"phrases"`
-	Hours         Hours      `json:"hours"`
+	Hours         HoursVenue `json:"hours"`
 	Popular       Popular    `json:"popular"`
 	PageUpdates   Omit       `json:"-"`
 	Inbox         Omit       `json:"-"`
@@ -316,11 +316,16 @@ type Entitie struct {
 	Type     string `json:"type"`
 }
 
-type Hours struct {
+type HoursVenue struct {
 	Status     string      `json:"status,omitempty"`
 	IsOpen     bool        `json:"isOpen,ommitempty"`
-	TimeFrames []TimeFrame `json:"timeFrames,omitempty"`
-	Timeframes []Timeframe `json:"timeframes,omitempty"`
+	Timeframes []TimeFrame `json:"timeframes,omitempty"`
+}
+
+type Hours struct {
+	Status     string           `json:"status,omitempty"`
+	IsOpen     bool             `json:"isOpen,ommitempty"`
+	Timeframes []TimeFrameHours `json:"timeframes,omitempty"`
 }
 
 // This is used in the main Hours struct for the entire venu
@@ -332,7 +337,7 @@ type TimeFrame struct {
 }
 
 // This is used for the hours endpoint
-type Timeframe struct {
+type TimeFrameHours struct {
 	Days          []int  `json:"days"`
 	IncludesToday bool   `json:"includesToday"`
 	Open          []Open `json:"open"`
