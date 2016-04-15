@@ -173,7 +173,7 @@ type Photo struct {
 	Width      int         `json:"width"`
 	Height     int         `json:"height"`
 	User       User        `json:"user"`
-	Visibility bool        `json:"visibility"`
+	Visibility string      `json:"visibility"`
 }
 
 type PhotoSource struct {
