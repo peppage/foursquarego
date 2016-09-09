@@ -19,7 +19,6 @@ func init() {
 	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
 }
 
-// Test cna fetch venu & marshalling is OK
 func Test_FoursquareApi_Venue(t *testing.T) {
 	const venueId = "40a55d80f964a52020f31ee3"
 	const venueName = "Clinton St. Baking Co. & Restaurant"
