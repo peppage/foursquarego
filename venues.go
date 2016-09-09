@@ -96,7 +96,7 @@ func (a FoursquareApi) GetCategories() (categories []Category, err error) {
 
 func (a FoursquareApi) Search(uv url.Values) (venues []Venue, err error) {
 	uv = cleanValues(uv)
-	if uv.Get("ll") == "" && uv.Get("near") == "" {
+	if uv.Get("ll") == "" && uv.Get("near") == "" && uv.Get("intent") != "global" {
 		return []Venue{}, errors.New("ll or near values required")
 	}
 	response_ch := make(chan response)
