@@ -12,7 +12,6 @@ import (
 type FoursquareApi struct {
 	clientID     string
 	clientSecret string
-	oauthToken   string
 	queryQueue   chan query
 	HttpClient   *http.Client
 }
@@ -50,10 +49,6 @@ func NewFoursquareApi(clientID string, clientSecret string) *FoursquareApi {
 	}
 	go a.throttledQuery()
 	return a
-}
-
-func (a *FoursquareApi) SetOauthToken(oauthToken string) {
-	a.oauthToken = oauthToken
 }
 
 func (a *FoursquareApi) apiGet(urlStr string, form url.Values, data *foursquareResponse) error {
@@ -95,9 +90,7 @@ func cleanValues(v url.Values) url.Values {
 func (a *FoursquareApi) execQuery(urlStr string, form url.Values, data *foursquareResponse, method int) error {
 	form.Set("v", VERSION)
 	form.Set("m", MODE)
-	if a.oauthToken != "" {
-		form.Set("oauth_token", a.oauthToken)
-	} else {
+	if form.Get("oauth_token") == "" {
 		form.Set("client_id", a.clientID)
 		form.Set("client_secret", a.clientSecret)
 	}

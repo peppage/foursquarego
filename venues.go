@@ -31,7 +31,8 @@ func (a FoursquareApi) GetVenueEvents(id string) (events []Event, err error) {
 // valid url.Values are: limit, offset
 // This is reqlly a swarm endpoint
 func (a FoursquareApi) GetVenueHereNow(id string, uv url.Values) (hereNow HereNow, err error) {
-	if a.oauthToken == "" {
+	uv = cleanValues(uv)
+	if uv.Get("oauth_token") == "" {
 		return HereNow{}, errors.New("Requires Acting User")
 	}
 	response_ch := make(chan response)
@@ -77,8 +78,9 @@ func (a FoursquareApi) GetVenueMenu(id string) (menu MenuResponse, err error) {
 	return data.Menu, (<-response_ch).err
 }
 
-func (a FoursquareApi) GetVenueSimilar(id string) (venues SimilarVenueResponse, err error) {
-	if a.oauthToken == "" {
+func (a FoursquareApi) GetVenueSimilar(id string, uv url.Values) (venues SimilarVenueResponse, err error) {
+	uv = cleanValues(uv)
+	if uv.Get("oauth_token") == "" {
 		return SimilarVenueResponse{}, errors.New("Requires Acting User")
 	}
 	response_ch := make(chan response)

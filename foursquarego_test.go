@@ -1,7 +1,6 @@
 package foursquarego_test
 
 import (
-	"fmt"
 	"net/url"
 	"os"
 	"testing"
@@ -71,13 +70,12 @@ func Test_FoursquareApi_Categories(t *testing.T) {
 func Test_FoursquareApi_VenueHereNow(t *testing.T) {
 	const venueId = "4e5c0c64183883e00c042670"
 	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
-	api.SetOauthToken(OAUTH_TOKEN)
-	h, err := api.GetVenueHereNow(venueId, nil)
+	uv := url.Values{}
+	uv.Set("oauth_token", OAUTH_TOKEN)
+	_, err := api.GetVenueHereNow(venueId, v)
 	if err != nil {
 		t.Errorf("Getting venue here now returned error %s", err.Error())
 	}
-	// Not sure how to test this one
-	fmt.Println(h)
 }
 
 func Test_FoursquareApi_VenueHours(t *testing.T) {
@@ -143,8 +141,9 @@ func Test_FoursquareApi_VenueMenu(t *testing.T) {
 func Test_FoursquareApi_VenueSimilar(t *testing.T) {
 	const venueId = "40a55d80f964a52020f31ee3"
 	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
-	api.SetOauthToken(OAUTH_TOKEN)
-	s, err := api.GetVenueSimilar(venueId)
+	uv := url.Values{}
+	uv.Set("oauth_token", OAUTH_TOKEN)
+	s, err := api.GetVenueSimilar(venueId, v)
 	if err != nil {
 		t.Errorf("Getting similar venues returned error %s", err.Error())
 	}
