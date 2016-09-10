@@ -72,7 +72,7 @@ func Test_FoursquareApi_VenueHereNow(t *testing.T) {
 	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
 	uv := url.Values{}
 	uv.Set("oauth_token", OAUTH_TOKEN)
-	_, err := api.GetVenueHereNow(venueId, v)
+	_, err := api.GetVenueHereNow(venueId, uv)
 	if err != nil {
 		t.Errorf("Getting venue here now returned error %s", err.Error())
 	}
@@ -143,7 +143,7 @@ func Test_FoursquareApi_VenueSimilar(t *testing.T) {
 	api = foursquarego.NewFoursquareApi(CLIENT_ID, CLIENT_SECRET)
 	uv := url.Values{}
 	uv.Set("oauth_token", OAUTH_TOKEN)
-	s, err := api.GetVenueSimilar(venueId, v)
+	s, err := api.GetVenueSimilar(venueId, uv)
 	if err != nil {
 		t.Errorf("Getting similar venues returned error %s", err.Error())
 	}
