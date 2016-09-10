@@ -61,18 +61,26 @@ func (a *FoursquareApi) apiGet(urlStr string, form url.Values, data *foursquareR
 	if err != nil {
 		return err
 	}
+
 	req.URL.RawQuery = form.Encode()
 	resp, err := a.HttpClient.Do(req)
 	if err != nil {
 		return err
 	}
+
 	defer resp.Body.Close()
-	contents, _ := ioutil.ReadAll(resp.Body)
+
+	contents, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+
 	var apiResp apiResponse
 	json.Unmarshal(contents, &apiResp)
 	if resp.StatusCode != 200 || apiResp.Meta.Code != 200 {
 		return newApiError(resp, apiResp.Meta)
 	}
+
 	*data = apiResp.Response
 	return nil
 }
