@@ -39,6 +39,15 @@ type Venue struct {
 	BestPhoto     Photo      `json:"bestPhoto"`
 }
 
+func (v *Venue) HasCategory(cat string) bool {
+	for _, c := range v.Categories {
+		if c.Name == cat {
+			return true
+		}
+	}
+	return false
+}
+
 type Contact struct {
 	Phone          string `json:"phone"`
 	FormattedPhone string `json:"formattedPhone"`
