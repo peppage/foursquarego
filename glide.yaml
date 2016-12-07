@@ -1,0 +1,4 @@
+package: github.com/peppage/foursquarego
+import:
+- package: github.com/dghubble/sling
+  version: ^1.0.0
