@@ -1,6 +1,7 @@
 package foursquarego
 
 import (
+	"encoding/json"
 	"net/http"
 
 	"github.com/dghubble/sling"
@@ -25,4 +26,24 @@ func NewClient(httpClient *http.Client) *Client {
 		sling:  b,
 		Venues: newVenueService(b.New()),
 	}
+}
+
+// Response is a typical foursquare response
+// https://developer.foursquare.com/overview/responses
+type Response struct {
+	Meta          Meta            `json:"meta"`
+	Notifications []Notification  `json:"notifications"`
+	Response      json.RawMessage `json:"response"`
+}
+
+type Meta struct {
+	Code        int    `json:"code"`
+	ErrorType   string `json:"errorType"`
+	ErrorDetail string `json:"errorDetail"`
+	RequestID   string `json:"requestId"`
+}
+
+type Notification struct {
+	Type string          `json:"type"`
+	Item json.RawMessage `json:"item"`
 }

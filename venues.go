@@ -1,10 +1,16 @@
 package foursquarego
 
 import (
+	"encoding/json"
 	"net/http"
 
 	"github.com/dghubble/sling"
 )
+
+// Need this since the responses all have subitems.
+type venueResp struct {
+	Venue Venue `json:"venue"`
+}
 
 // Venue represents a foursquare Venue.
 // https://developer.foursquare.com/docs/responses/venue
@@ -59,7 +65,13 @@ func newVenueService(sling *sling.Sling) *VenueService {
 }
 
 func (s *VenueService) Details(id string) (*Venue, *http.Response, error) {
-	venue := new(Venue)
-	resp, err := s.sling.New().Get(id).Receive(venue)
-	return venue, resp, err
+	response := new(Response)
+	apiError := new(APIError)
+	venue := new(venueResp)
+
+	resp, err := s.sling.New().Get(id).Receive(response, apiError)
+	if err == nil {
+		json.Unmarshal(response.Response, venue)
+	}
+	return &venue.Venue, resp, relevantError(err, *apiError)
 }
