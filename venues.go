@@ -15,9 +15,9 @@ type venueResp struct {
 // Venue represents a foursquare Venue.
 // https://developer.foursquare.com/docs/responses/venue
 type Venue struct {
-	ID string `json:"id"`
-	/*Name          string     `json:"name"`
-	Contact       Contact    `json:"contact"`
+	ID   string `json:"id"`
+	Name string `json:"name"`
+	/*Contact       Contact    `json:"contact"`
 	Location      Location   `json:"location"`
 	CanonicalUrl  string     `json:"canonicalUrl"`
 	Categories    []Category `json:"categories"`
@@ -66,12 +66,11 @@ func newVenueService(sling *sling.Sling) *VenueService {
 
 func (s *VenueService) Details(id string) (*Venue, *http.Response, error) {
 	response := new(Response)
-	apiError := new(APIError)
 	venue := new(venueResp)
 
-	resp, err := s.sling.New().Get(id).Receive(response, apiError)
+	resp, err := s.sling.New().Get(id).Receive(response, response)
 	if err == nil {
 		json.Unmarshal(response.Response, venue)
 	}
-	return &venue.Venue, resp, relevantError(err, *apiError)
+	return &venue.Venue, resp, relevantError(err, *response)
 }

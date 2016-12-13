@@ -1,5 +1,5 @@
-hash: eb98ae75747ba68d24088daf810c7c16ef16de67969b1bd8befe66fa6ffb83d8
-updated: 2016-12-07T18:22:18.5549405-05:00
+hash: b2073237a026100758346b9ea9782ab7e8de4c82de0900a4429287072fa7d308
+updated: 2016-12-13T14:36:25.2953906-05:00
 imports:
 - name: github.com/dghubble/sling
   version: 9024207e2108fcd88df6a4614a19bf524cec4879
@@ -7,4 +7,8 @@ imports:
   version: 9235644dd9e52eeae6fa48efd539fdc351a0af53
   subpackages:
   - query
+- name: github.com/stretchr/testify
+  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
+  subpackages:
+  - assert
 testImports: []

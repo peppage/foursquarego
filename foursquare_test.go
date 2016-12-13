@@ -4,6 +4,9 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"net/url"
+	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func testServer() (*http.Client, *http.ServeMux, *httptest.Server) {
@@ -28,4 +31,8 @@ func (t *RewriteTransport) RoundTrip(req *http.Request) (*http.Response, error) 
 		return http.DefaultTransport.RoundTrip(req)
 	}
 	return t.Transport.RoundTrip(req)
+}
+
+func assertMethod(t *testing.T, expectedMethod string, req *http.Request) {
+	assert.Equal(t, expectedMethod, req.Method)
 }

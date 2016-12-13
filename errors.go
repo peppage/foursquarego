@@ -14,9 +14,16 @@ func (e APIError) Error() string {
 	return fmt.Sprintf("foursquare: %d %v", e.Meta.Code, e.Meta.ErrorDetail)
 }
 
-func relevantError(httpError error, apiError APIError) error {
+func relevantError(httpError error, resp Response) error {
 	if httpError != nil {
 		return httpError
 	}
-	return apiError
+
+	if resp.Meta.ErrorDetail != "" {
+		return &APIError{
+			Meta: resp.Meta,
+		}
+	}
+
+	return nil
 }
