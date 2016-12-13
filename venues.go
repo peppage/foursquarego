@@ -15,14 +15,14 @@ type venueResp struct {
 // Venue represents a foursquare Venue.
 // https://developer.foursquare.com/docs/responses/venue
 type Venue struct {
-	ID   string `json:"id"`
-	Name string `json:"name"`
-	/*Contact       Contact    `json:"contact"`
-	Location      Location   `json:"location"`
-	CanonicalUrl  string     `json:"canonicalUrl"`
-	Categories    []Category `json:"categories"`
-	Verified      bool       `json:"verified"`
-	Stats         Stats      `json:"stats"`
+	ID           string     `json:"id"`
+	Name         string     `json:"name"`
+	Contact      Contact    `json:"contact"`
+	Location     Location   `json:"location"`
+	CanonicalURL string     `json:"canonicalUrl"`
+	Categories   []Category `json:"categories"`
+	Verified     bool       `json:"verified"`
+	/*Stats         Stats      `json:"stats"`
 	Url           string     `json:"url"`
 	Price         Price      `json:"price"`
 	HasMenu       bool       `json:"hasMenu"`
@@ -51,6 +51,49 @@ type Venue struct {
 	VenueChains   Omit       `json:"-"`
 	Attributes    Attributes `json:"attributes"`
 	BestPhoto     Photo      `json:"bestPhoto"`*/
+}
+
+type Contact struct {
+	Phone          string `json:"phone"`
+	FormattedPhone string `json:"formattedPhone"`
+	Twitter        string `json:"twitter"`
+	Facebook       string `json:"facebook"`
+}
+
+type Location struct {
+	Address          string           `json:"address"`
+	CrossStreet      string           `json:"crossStreet"`
+	Lat              float64          `json:"lat"`
+	Lng              float64          `json:"lng"`
+	LabeledLatLngs   []LabeledLatLngs `json:"labeledLatLngs"`
+	PostalCode       string           `json:"postalCode"`
+	Cc               string           `json:"cc"`
+	City             string           `json:"city"`
+	State            string           `json:"state"`
+	Country          string           `json:"country"`
+	FormattedAddress []string         `json:"formattedAddress"`
+	IsFuzzed         bool             `json:"isFuzzed"`
+	Distance         int              `json:"distance"`
+}
+
+type LabeledLatLngs struct {
+	Label string  `json"label"`
+	Lat   float64 `json:"lat"`
+	Lng   float64 `json:"lng"`
+}
+
+type Category struct {
+	ID         string `json:"id"`
+	Name       string `json:"name"`
+	PluralName string `json:"pluralName"`
+	ShortName  string `json:"shortName"`
+	Icon       Icon   `json:"icon"`
+	Primary    bool   `json:"primary"`
+}
+
+type Icon struct {
+	Prefix string `json:"prefix"`
+	Suffix string `json:"suffix"`
 }
 
 // VenueService provies a method for accessing Foursquare venue endpoints
