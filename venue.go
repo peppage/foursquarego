@@ -180,6 +180,8 @@ type PhotoGroup struct {
 	Items []Photo `json:"items"`
 }
 
+// Photo is a foursquare photo
+// https://developer.foursquare.com/docs/responses/photo.html
 type Photo struct {
 	ID         string      `json:"id"`
 	CreatedAt  int         `json:"createdAt"`
