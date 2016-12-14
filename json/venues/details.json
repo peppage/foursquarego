@@ -80,6 +80,7 @@
             "message":"Moderate",
             "currency":"$"
          },
+         "hasMenu": true,
          "likes":{
             "count":767,
             "groups":[
@@ -99,6 +100,13 @@
          "rating":9.4,
          "ratingColor":"00B551",
          "ratingSignals":943,
+         "menu": {
+            "type": "Menu",
+            "label": "Menu",
+            "anchor": "View Menu",
+            "url": "https:\/\/foursquare.com\/palacediner/menu",
+            "mobileUrl": "https:\/\/foursquare.com\/v\/4ba37630f964a520103f38e3\/device_menu"
+         },
          "allowMenuUrlEdit":true,
          "friendVisits":{
             "count":4,

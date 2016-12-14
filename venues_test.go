@@ -80,4 +80,35 @@ func TestVenueService_Details(t *testing.T) {
 	assert.Equal(t, false, venue.Categories[1].Primary)
 
 	assert.Equal(t, true, venue.Verified)
+
+	assert.Equal(t, 9988, venue.Stats.CheckinsCount)
+	assert.Equal(t, 8301, venue.Stats.UsersCount)
+	assert.Equal(t, 124, venue.Stats.TipCount)
+	assert.Equal(t, 15919, venue.Stats.VisitsCount)
+
+	assert.Equal(t, "http://www.threesbrewing.com", venue.URL)
+
+	assert.Equal(t, 2, venue.Price.Tier)
+	assert.Equal(t, "Moderate", venue.Price.Message)
+	assert.Equal(t, "$", venue.Price.Currency)
+
+	assert.Equal(t, true, venue.HasMenu)
+
+	assert.Equal(t, 767, venue.Likes.Count)
+	assert.Equal(t, "767 Likes", venue.Likes.Summary)
+
+	assert.Equal(t, false, venue.Like)
+	assert.Equal(t, false, venue.Dislike)
+	assert.Equal(t, false, venue.Ok)
+	assert.Equal(t, 9.4, venue.Rating)
+	assert.Equal(t, "00B551", venue.RatingColor)
+	assert.Equal(t, 943, venue.RatingSignals)
+
+	assert.Equal(t, "Menu", venue.Menu.Type)
+	assert.Equal(t, "Menu", venue.Menu.Label)
+	assert.Equal(t, "View Menu", venue.Menu.Anchor)
+	assert.Equal(t, "https://foursquare.com/palacediner/menu", venue.Menu.URL)
+	assert.Equal(t, "https://foursquare.com/v/4ba37630f964a520103f38e3/device_menu", venue.Menu.MobileURL)
+
+	assert.Equal(t, true, venue.AllowMenuURLEdit)
 }
