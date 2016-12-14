@@ -1,10 +1,5 @@
 package foursquarego
 
-// Need this since the responses all have subitems.
-type venueResp struct {
-	Venue Venue `json:"venue"`
-}
-
 // Venue represents a foursquare Venue.
 // https://developer.foursquare.com/docs/responses/venue
 type Venue struct {

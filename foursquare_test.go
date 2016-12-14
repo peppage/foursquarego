@@ -36,3 +36,14 @@ func (t *RewriteTransport) RoundTrip(req *http.Request) (*http.Response, error) 
 func assertMethod(t *testing.T, expectedMethod string, req *http.Request) {
 	assert.Equal(t, expectedMethod, req.Method)
 }
+
+func assertQuery(t *testing.T, expected map[string]string, req *http.Request) {
+	expected["v"] = version
+	queryValues := req.URL.Query()
+	expectedValues := url.Values{}
+
+	for key, value := range expected {
+		expectedValues.Add(key, value)
+	}
+	assert.Equal(t, expectedValues, queryValues)
+}

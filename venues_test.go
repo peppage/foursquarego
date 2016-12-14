@@ -15,8 +15,8 @@ func TestVenueService_Details(t *testing.T) {
 	defer server.Close()
 
 	mux.HandleFunc("/v2/venues/5414d0a6498ea3d31a3c64cf", func(w http.ResponseWriter, r *http.Request) {
-
 		assertMethod(t, "GET", r)
+		assertQuery(t, map[string]string{"m": "foursquare"}, r)
 
 		// Open file with sample json
 		f, err := os.Open("./json/venues/details.json")
@@ -34,7 +34,7 @@ func TestVenueService_Details(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := NewClient(httpClient)
+	client := NewClient(httpClient, "foursquare")
 	venue, _, err := client.Venues.Details("5414d0a6498ea3d31a3c64cf")
 	assert.Nil(t, err)
 
@@ -249,4 +249,52 @@ func TestVenueService_Details(t *testing.T) {
 	assert.Equal(t, 870, venue.BestPhoto.Width)
 	assert.Equal(t, 580, venue.BestPhoto.Height)
 	assert.Equal(t, "public", venue.BestPhoto.Visibility)
+}
+
+func TestVenueService_Photos(t *testing.T) {
+	httpClient, mux, server := testServer()
+	defer server.Close()
+
+	mux.HandleFunc("/v2/venues/5414d0a6498ea3d31a3c64cf/photos", func(w http.ResponseWriter, r *http.Request) {
+		assertMethod(t, "GET", r)
+		assertQuery(t, map[string]string{"m": "foursquare"}, r)
+
+		// Open file with sample json
+		f, err := os.Open("./json/venues/photos.json")
+		if err != nil {
+			fmt.Fprintf(w, "error: %s", err)
+		}
+		defer f.Close()
+
+		b, err := ioutil.ReadAll(f)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(b)
+	})
+
+	client := NewClient(httpClient, "foursquare")
+	photos, _, err := client.Venues.Photos(&VenuePhotosParams{
+		VenueID: "5414d0a6498ea3d31a3c64cf",
+	})
+	assert.Nil(t, err)
+
+	assert.Equal(t, 30, photos.Count)
+	assert.Equal(t, "549ecb0f11d2ed4887ba35ab", photos.Items[0].ID)
+	assert.Equal(t, 1419692815, photos.Items[0].CreatedAt)
+	assert.Equal(t, "Foursquare Web", photos.Items[0].Source.Name)
+	assert.Equal(t, "https://foursquare.com", photos.Items[0].Source.URL)
+	assert.Equal(t, 870, photos.Items[0].Width)
+	assert.Equal(t, 580, photos.Items[0].Height)
+	assert.Equal(t, false, photos.Items[0].Demoted)
+	assert.Equal(t, "95760005", photos.Items[0].User.ID)
+	assert.Equal(t, "Threes Brewing", photos.Items[0].User.FirstName)
+	assert.Equal(t, "none", photos.Items[0].User.Gender)
+	assert.Equal(t, "https://irs0.4sqi.net/img/user/", photos.Items[0].User.Photo.Prefix)
+	assert.Equal(t, "/95760005-K35NSGGG10EE5XU2.png", photos.Items[0].User.Photo.Suffix)
+	assert.Equal(t, "venuePage", photos.Items[0].User.Type)
+	assert.Equal(t, "5414d0a6498ea3d31a3c64cf", photos.Items[0].User.Venue.ID)
+	assert.Equal(t, "public", photos.Items[0].Visibility)
 }
