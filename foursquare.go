@@ -9,7 +9,7 @@ import (
 
 const (
 	baseURL = "https://api.foursquare.com/v2/"
-	version = "20150813"
+	version = "20161213"
 	//MODE    = "foursquare"
 )
 
@@ -46,4 +46,14 @@ type Meta struct {
 type Notification struct {
 	Type string          `json:"type"`
 	Item json.RawMessage `json:"item"`
+}
+
+type Group struct {
+	Type  string `json:"type"`
+	Name  string `json:"name"`
+	Count int    `json:"count"`
+}
+
+type Count struct {
+	Count int `json:"count"`
 }
