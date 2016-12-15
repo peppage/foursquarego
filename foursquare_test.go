@@ -1,9 +1,11 @@
 package foursquarego
 
 import (
+	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
+	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -46,4 +48,15 @@ func assertQuery(t *testing.T, expected map[string]string, req *http.Request) {
 		expectedValues.Add(key, value)
 	}
 	assert.Equal(t, expectedValues, queryValues)
+}
+
+func getTestFile(path string) ([]byte, error) {
+	// Open file with sample json
+	f, err := os.Open(path)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+
+	return ioutil.ReadAll(f)
 }

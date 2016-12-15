@@ -384,3 +384,21 @@ type AttributeItem struct {
 	DisplayValue string `json:"displayValue"`
 	PriceTier    int    `json:"priceTier"`
 }
+
+type Events struct {
+	Count   int     `json:"count"`
+	Summary string  `json:"summary"`
+	Items   []Event `json:"items"`
+}
+
+type Event struct {
+	ID         string     `json:"id"`
+	Name       string     `json:"name"`
+	Categories []Category `json:"categories"`
+	HereNow    HereNow    `json:"hereNow"`
+	AllDay     bool       `json:"allDay"`
+	Date       int64      `json:"date"`
+	TimeZone   string     `json:"timeZone"`
+	Stats      Stats      `json:"stats"`
+	URL        string     `json:"url"`
+}

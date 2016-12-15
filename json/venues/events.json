@@ -1,0 +1,68 @@
+{
+   "meta":{
+      "code":200,
+      "requestId":"585309f89fb6b7213f947901"
+   },
+   "notifications":[
+      {
+         "type":"notificationTray",
+         "item":{
+            "unreadCount":10
+         }
+      }
+   ],
+   "response":{
+      "events":{
+         "count":26,
+         "summary":"26 movies",
+         "items":[
+            {
+               "id":"580850f7d67c37ceeeaae676",
+               "name":"Moonlight",
+               "categories":[
+                  {
+                     "id":"4dfb90c6bd413dd705e8f897",
+                     "name":"Movie",
+                     "pluralName":"Movies",
+                     "shortName":"Movie",
+                     "icon":{
+                        "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/arts_entertainment\/movietheater_",
+                        "suffix":".png"
+                     },
+                     "primary":true
+                  }
+               ],
+               "hereNow":{
+                  "count":0,
+                  "groups":[
+                     {
+                        "type":"friends",
+                        "name":"Friends here",
+                        "count":0,
+                        "items":[
+
+                        ]
+                     },
+                     {
+                        "type":"others",
+                        "name":"Other people here",
+                        "count":0,
+                        "items":[
+
+                        ]
+                     }
+                  ]
+               },
+               "allDay":true,
+               "date":1477540800,
+               "timeZone":"America\/New_York",
+               "stats":{
+                  "checkinsCount":81,
+                  "usersCount":78
+               },
+               "url":"https:\/\/foursquare.com\/events\/movies?theater=AAORE&movie=194816&wired=true"
+            }
+         ]
+      }
+   }
+}

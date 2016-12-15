@@ -298,3 +298,37 @@ func TestVenueService_Photos(t *testing.T) {
 	assert.Equal(t, "5414d0a6498ea3d31a3c64cf", photos.Items[0].User.Venue.ID)
 	assert.Equal(t, "public", photos.Items[0].Visibility)
 }
+
+func TestVenueService_Events(t *testing.T) {
+	const filePath = "./json/venues/events.json"
+	httpClient, mux, server := testServer()
+	defer server.Close()
+
+	mux.HandleFunc("/v2/venues/40afe980f964a5203bf31ee3/events", func(w http.ResponseWriter, r *http.Request) {
+		assertMethod(t, "GET", r)
+		assertQuery(t, map[string]string{"m": "foursquare"}, r)
+
+		b, err := getTestFile(filePath)
+		if err != nil {
+			t.Fatalf("Failed to open testfile %s", filePath)
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(b)
+	})
+
+	client := NewClient(httpClient, "foursquare")
+	events, _, err := client.Venues.Events("40afe980f964a5203bf31ee3")
+	assert.Nil(t, err)
+
+	assert.Equal(t, 26, events.Count)
+	assert.Equal(t, "26 movies", events.Summary)
+	assert.Equal(t, "580850f7d67c37ceeeaae676", events.Items[0].ID)
+	assert.Equal(t, "Moonlight", events.Items[0].Name)
+	assert.Equal(t, true, events.Items[0].AllDay)
+	assert.Equal(t, int64(1477540800), events.Items[0].Date)
+	assert.Equal(t, "America/New_York", events.Items[0].TimeZone)
+	assert.Equal(t, 81, events.Items[0].Stats.CheckinsCount)
+	assert.Equal(t, 78, events.Items[0].Stats.UsersCount)
+	assert.Equal(t, "https://foursquare.com/events/movies?theater=AAORE&movie=194816&wired=true", events.Items[0].URL)
+}

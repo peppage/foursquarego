@@ -61,3 +61,21 @@ func (s *VenueService) Photos(params *VenuePhotosParams) (*PhotoGroup, *http.Res
 	return &photos.Photos, resp, relevantError(err, *response)
 
 }
+
+type venueEventResp struct {
+	Events Events `json:"events"`
+}
+
+// Events are music and movie events at this venue
+// https://developer.foursquare.com/docs/venues/events
+func (s *VenueService) Events(id string) (*Events, *http.Response, error) {
+	events := new(venueEventResp)
+	response := new(Response)
+
+	resp, err := s.sling.New().Get(id+"/events").Receive(response, response)
+	if err == nil {
+		json.Unmarshal(response.Response, events)
+	}
+
+	return &events.Events, resp, relevantError(err, *response)
+}
