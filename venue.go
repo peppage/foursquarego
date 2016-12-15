@@ -348,6 +348,7 @@ type Hours struct {
 	Timeframes     []TimeFrame `json:"timeframes"`
 }
 
+// TimeFrame shows when a venue is open.
 type TimeFrame struct {
 	Days          string `json:"days"`
 	IncludesToday bool   `json:"includesToday"`
@@ -401,4 +402,18 @@ type Event struct {
 	TimeZone   string     `json:"timeZone"`
 	Stats      Stats      `json:"stats"`
 	URL        string     `json:"url"`
+}
+
+// HoursTimeFrame is specific to the hours endpoint
+// it switches the Days from a string to an array.
+// https://developer.foursquare.com/docs/responses/hours
+type HoursTimeFrame struct {
+	Days          []int       `json:"days"`
+	IncludesToday bool        `json:"includesToday"`
+	Open          []HoursOpen `json:"open"`
+}
+
+type HoursOpen struct {
+	Start string `json:"start"`
+	End   string `json:"end"`
 }

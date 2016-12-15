@@ -79,3 +79,24 @@ func (s *VenueService) Events(id string) (*Events, *http.Response, error) {
 
 	return &events.Events, resp, relevantError(err, *response)
 }
+
+type VenueHoursResp struct {
+	Hours   HoursResp `json:"hours"`
+	Popular HoursResp `json:"popular"`
+}
+
+type HoursResp struct {
+	TimeFrames []HoursTimeFrame `json:"timeframes"`
+}
+
+func (s *VenueService) Hours(id string) (*VenueHoursResp, *http.Response, error) {
+	hours := new(VenueHoursResp)
+	response := new(Response)
+
+	resp, err := s.sling.New().Get(id+"/hours").Receive(response, response)
+	if err == nil {
+		json.Unmarshal(response.Response, hours)
+	}
+
+	return hours, resp, relevantError(err, *response)
+}

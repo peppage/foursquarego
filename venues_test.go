@@ -332,3 +332,31 @@ func TestVenueService_Events(t *testing.T) {
 	assert.Equal(t, 78, events.Items[0].Stats.UsersCount)
 	assert.Equal(t, "https://foursquare.com/events/movies?theater=AAORE&movie=194816&wired=true", events.Items[0].URL)
 }
+
+func TestVenueService_Hours(t *testing.T) {
+	const filePath = "./json/venues/hours.json"
+	httpClient, mux, server := testServer()
+	defer server.Close()
+
+	mux.HandleFunc("/v2/venues/40a55d80f964a52020f31ee3/hours", func(w http.ResponseWriter, r *http.Request) {
+		assertMethod(t, "GET", r)
+		assertQuery(t, map[string]string{"m": "foursquare"}, r)
+
+		b, err := getTestFile(filePath)
+		if err != nil {
+			t.Fatalf("Failed to open testfile %s", filePath)
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(b)
+	})
+
+	client := NewClient(httpClient, "foursquare")
+	hours, _, err := client.Venues.Hours("40a55d80f964a52020f31ee3")
+	assert.Nil(t, err)
+
+	assert.Equal(t, []int{1, 2, 3, 4, 5}, hours.Hours.TimeFrames[0].Days)
+	assert.Equal(t, true, hours.Hours.TimeFrames[0].IncludesToday)
+	assert.Equal(t, "0800", hours.Hours.TimeFrames[0].Open[0].Start)
+	assert.Equal(t, "1600", hours.Hours.TimeFrames[0].Open[0].End)
+}
