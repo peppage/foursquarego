@@ -360,3 +360,36 @@ func TestVenueService_Hours(t *testing.T) {
 	assert.Equal(t, "0800", hours.Hours.TimeFrames[0].Open[0].Start)
 	assert.Equal(t, "1600", hours.Hours.TimeFrames[0].Open[0].End)
 }
+
+func TestVenueService_Likes(t *testing.T) {
+	const filePath = "./json/venues/likes.json"
+	httpClient, mux, server := testServer()
+	defer server.Close()
+
+	mux.HandleFunc("/v2/venues/40a55d80f964a52020f31ee3/likes", func(w http.ResponseWriter, r *http.Request) {
+		assertMethod(t, "GET", r)
+		assertQuery(t, map[string]string{"m": "foursquare"}, r)
+
+		b, err := getTestFile(filePath)
+		if err != nil {
+			t.Fatalf("Failed to open testfile %s", filePath)
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(b)
+	})
+
+	client := NewClient(httpClient, "foursquare")
+	likes, _, err := client.Venues.Likes("40a55d80f964a52020f31ee3")
+	assert.Nil(t, err)
+
+	assert.Equal(t, 1261, likes.Count)
+	assert.Equal(t, "1261 Likes", likes.Summary)
+	assert.Equal(t, "203153", likes.Items[0].ID)
+	assert.Equal(t, "Emiliano", likes.Items[0].FirstName)
+	assert.Equal(t, "Viscarra", likes.Items[0].LastName)
+	assert.Equal(t, "male", likes.Items[0].Gender)
+	assert.Equal(t, "https://irs1.4sqi.net/img/user/", likes.Items[0].Photo.Prefix)
+	assert.Equal(t, "/203153-0BI5LE1Y2ITI4XUU.jpg", likes.Items[0].Photo.Suffix)
+	assert.Equal(t, false, likes.Like)
+}

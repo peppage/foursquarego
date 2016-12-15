@@ -100,3 +100,26 @@ func (s *VenueService) Hours(id string) (*VenueHoursResp, *http.Response, error)
 
 	return hours, resp, relevantError(err, *response)
 }
+
+type venueLikesResp struct {
+	Likes LikesResp `json:"likes"`
+}
+
+type LikesResp struct {
+	Count   int    `json:"count"`
+	Summary string `json:"summary"`
+	Items   []User `json:"items"`
+	Like    bool   `json:"like"`
+}
+
+func (s *VenueService) Likes(id string) (*LikesResp, *http.Response, error) {
+	likes := new(venueLikesResp)
+	response := new(Response)
+
+	resp, err := s.sling.New().Get(id+"/likes").Receive(response, response)
+	if err == nil {
+		json.Unmarshal(response.Response, likes)
+	}
+
+	return &likes.Likes, resp, err
+}
