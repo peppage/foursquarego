@@ -417,3 +417,20 @@ type HoursOpen struct {
 	Start string `json:"start"`
 	End   string `json:"end"`
 }
+
+type Links struct {
+	Count int    `json:"count"`
+	Items []Link `json:"items"`
+}
+
+// Link is part of the response for the venues link endpoint
+// https://developer.foursquare.com/docs/responses/link
+type Link struct {
+	Provider Provider `json:"provider"`
+	LinkedID string   `json:"linkedId"`
+	URL      string   `json:"url"`
+}
+
+type Provider struct {
+	ID string `json:"id"`
+}

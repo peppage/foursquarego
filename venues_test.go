@@ -393,3 +393,31 @@ func TestVenueService_Likes(t *testing.T) {
 	assert.Equal(t, "/203153-0BI5LE1Y2ITI4XUU.jpg", likes.Items[0].Photo.Suffix)
 	assert.Equal(t, false, likes.Like)
 }
+
+func TestVenueservice_Links(t *testing.T) {
+	const filePath = "./json/venues/links.json"
+	httpClient, mux, server := testServer()
+	defer server.Close()
+
+	mux.HandleFunc("/v2/venues/3fd66200f964a52074e31ee3/links", func(w http.ResponseWriter, r *http.Request) {
+		assertMethod(t, "GET", r)
+		assertQuery(t, map[string]string{"m": "foursquare"}, r)
+
+		b, err := getTestFile(filePath)
+		if err != nil {
+			t.Fatalf("Failed to open testfile %s", filePath)
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(b)
+	})
+
+	client := NewClient(httpClient, "foursquare")
+	links, _, err := client.Venues.Links("3fd66200f964a52074e31ee3")
+	assert.Nil(t, err)
+
+	assert.Equal(t, 11, links.Count)
+	assert.Equal(t, "nyt", links.Items[0].Provider.ID)
+	assert.Equal(t, "1002207971611", links.Items[0].LinkedID)
+	assert.Equal(t, "http://www.nytimes.com/restaurants/1002207971611/db-bistro-moderne/details.html", links.Items[0].URL)
+}
