@@ -79,12 +79,13 @@ type LabeledLatLngs struct {
 }
 
 type Category struct {
-	ID         string `json:"id"`
-	Name       string `json:"name"`
-	PluralName string `json:"pluralName"`
-	ShortName  string `json:"shortName"`
-	Icon       Icon   `json:"icon"`
-	Primary    bool   `json:"primary"`
+	ID         string     `json:"id"`
+	Name       string     `json:"name"`
+	PluralName string     `json:"pluralName"`
+	ShortName  string     `json:"shortName"`
+	Icon       Icon       `json:"icon"`
+	Primary    bool       `json:"primary"`
+	Categories []Category `json:"categories,omitempty"`
 }
 
 type Icon struct {

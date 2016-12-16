@@ -1,0 +1,43 @@
+{
+   "meta":{
+      "code":200,
+      "requestId":"58545246f594df0687e36c62"
+   },
+   "notifications":[
+      {
+         "type":"notificationTray",
+         "item":{
+            "unreadCount":11
+         }
+      }
+   ],
+   "response":{
+      "categories":[
+         {
+            "id":"4d4b7104d754a06370d81259",
+            "name":"Arts & Entertainment",
+            "pluralName":"Arts & Entertainment",
+            "shortName":"Arts & Entertainment",
+            "icon":{
+               "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/arts_entertainment\/default_",
+               "suffix":".png"
+            },
+            "categories":[
+               {
+                  "id":"56aa371be4b08b9a8d5734db",
+                  "name":"Amphitheater",
+                  "pluralName":"Amphitheaters",
+                  "shortName":"Amphitheater",
+                  "icon":{
+                     "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/arts_entertainment\/default_",
+                     "suffix":".png"
+                  },
+                  "categories":[
+
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}

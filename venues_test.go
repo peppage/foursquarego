@@ -421,3 +421,39 @@ func TestVenueservice_Links(t *testing.T) {
 	assert.Equal(t, "1002207971611", links.Items[0].LinkedID)
 	assert.Equal(t, "http://www.nytimes.com/restaurants/1002207971611/db-bistro-moderne/details.html", links.Items[0].URL)
 }
+
+func TestVenueService_Categories(t *testing.T) {
+	const filePath = "./json/venues/categories.json"
+	httpClient, mux, server := testServer()
+	defer server.Close()
+
+	mux.HandleFunc("/v2/venues/categories", func(w http.ResponseWriter, r *http.Request) {
+		assertMethod(t, "GET", r)
+		assertQueryNoUser(t, map[string]string{}, r)
+
+		b, err := getTestFile(filePath)
+		if err != nil {
+			t.Fatalf("Failed to open testfile %s", filePath)
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(b)
+	})
+
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret)
+	categories, _, err := client.Venues.Categories()
+	assert.Nil(t, err)
+
+	assert.Equal(t, "4d4b7104d754a06370d81259", categories[0].ID)
+	assert.Equal(t, "Arts & Entertainment", categories[0].Name)
+	assert.Equal(t, "Arts & Entertainment", categories[0].PluralName)
+	assert.Equal(t, "Arts & Entertainment", categories[0].ShortName)
+	assert.Equal(t, "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/default_", categories[0].Icon.Prefix)
+	assert.Equal(t, ".png", categories[0].Icon.Suffix)
+	assert.Equal(t, "56aa371be4b08b9a8d5734db", categories[0].Categories[0].ID)
+	assert.Equal(t, "Amphitheater", categories[0].Categories[0].Name)
+	assert.Equal(t, "Amphitheaters", categories[0].Categories[0].PluralName)
+	assert.Equal(t, "Amphitheater", categories[0].Categories[0].ShortName)
+	assert.Equal(t, "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/default_", categories[0].Categories[0].Icon.Prefix)
+	assert.Equal(t, ".png", categories[0].Categories[0].Icon.Suffix)
+}
