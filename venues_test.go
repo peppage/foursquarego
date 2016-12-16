@@ -16,7 +16,7 @@ func TestVenueService_Details(t *testing.T) {
 
 	mux.HandleFunc("/v2/venues/5414d0a6498ea3d31a3c64cf", func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, "GET", r)
-		assertQuery(t, map[string]string{"m": "foursquare"}, r)
+		assertQueryNoUser(t, map[string]string{}, r)
 
 		// Open file with sample json
 		f, err := os.Open("./json/venues/details.json")
@@ -34,7 +34,7 @@ func TestVenueService_Details(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := NewClient(httpClient, "foursquare")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret)
 	venue, _, err := client.Venues.Details("5414d0a6498ea3d31a3c64cf")
 	assert.Nil(t, err)
 
@@ -257,7 +257,7 @@ func TestVenueService_Photos(t *testing.T) {
 
 	mux.HandleFunc("/v2/venues/5414d0a6498ea3d31a3c64cf/photos", func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, "GET", r)
-		assertQuery(t, map[string]string{"m": "foursquare"}, r)
+		assertQueryNoUser(t, map[string]string{}, r)
 
 		// Open file with sample json
 		f, err := os.Open("./json/venues/photos.json")
@@ -275,7 +275,7 @@ func TestVenueService_Photos(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := NewClient(httpClient, "foursquare")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret)
 	photos, _, err := client.Venues.Photos(&VenuePhotosParams{
 		VenueID: "5414d0a6498ea3d31a3c64cf",
 	})
@@ -306,7 +306,7 @@ func TestVenueService_Events(t *testing.T) {
 
 	mux.HandleFunc("/v2/venues/40afe980f964a5203bf31ee3/events", func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, "GET", r)
-		assertQuery(t, map[string]string{"m": "foursquare"}, r)
+		assertQueryNoUser(t, map[string]string{}, r)
 
 		b, err := getTestFile(filePath)
 		if err != nil {
@@ -317,7 +317,7 @@ func TestVenueService_Events(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := NewClient(httpClient, "foursquare")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret)
 	events, _, err := client.Venues.Events("40afe980f964a5203bf31ee3")
 	assert.Nil(t, err)
 
@@ -340,7 +340,7 @@ func TestVenueService_Hours(t *testing.T) {
 
 	mux.HandleFunc("/v2/venues/40a55d80f964a52020f31ee3/hours", func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, "GET", r)
-		assertQuery(t, map[string]string{"m": "foursquare"}, r)
+		assertQueryNoUser(t, map[string]string{}, r)
 
 		b, err := getTestFile(filePath)
 		if err != nil {
@@ -351,7 +351,7 @@ func TestVenueService_Hours(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := NewClient(httpClient, "foursquare")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret)
 	hours, _, err := client.Venues.Hours("40a55d80f964a52020f31ee3")
 	assert.Nil(t, err)
 
@@ -368,7 +368,7 @@ func TestVenueService_Likes(t *testing.T) {
 
 	mux.HandleFunc("/v2/venues/40a55d80f964a52020f31ee3/likes", func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, "GET", r)
-		assertQuery(t, map[string]string{"m": "foursquare"}, r)
+		assertQueryNoUser(t, map[string]string{}, r)
 
 		b, err := getTestFile(filePath)
 		if err != nil {
@@ -379,7 +379,7 @@ func TestVenueService_Likes(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := NewClient(httpClient, "foursquare")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret)
 	likes, _, err := client.Venues.Likes("40a55d80f964a52020f31ee3")
 	assert.Nil(t, err)
 
@@ -401,7 +401,7 @@ func TestVenueservice_Links(t *testing.T) {
 
 	mux.HandleFunc("/v2/venues/3fd66200f964a52074e31ee3/links", func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, "GET", r)
-		assertQuery(t, map[string]string{"m": "foursquare"}, r)
+		assertQueryNoUser(t, map[string]string{}, r)
 
 		b, err := getTestFile(filePath)
 		if err != nil {
@@ -412,7 +412,7 @@ func TestVenueservice_Links(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := NewClient(httpClient, "foursquare")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret)
 	links, _, err := client.Venues.Links("3fd66200f964a52074e31ee3")
 	assert.Nil(t, err)
 

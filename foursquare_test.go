@@ -11,6 +11,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+const clientSecret = "cs"
+const clientID = "ci"
+
 func testServer() (*http.Client, *http.ServeMux, *httptest.Server) {
 	mux := http.NewServeMux()
 	server := httptest.NewServer(mux)
@@ -39,8 +42,12 @@ func assertMethod(t *testing.T, expectedMethod string, req *http.Request) {
 	assert.Equal(t, expectedMethod, req.Method)
 }
 
-func assertQuery(t *testing.T, expected map[string]string, req *http.Request) {
+func assertQueryNoUser(t *testing.T, expected map[string]string, req *http.Request) {
 	expected["v"] = version
+	expected["m"] = "foursquare"
+	expected["client_id"] = clientID
+	expected["client_secret"] = clientSecret
+
 	queryValues := req.URL.Query()
 	expectedValues := url.Values{}
 
