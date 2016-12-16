@@ -490,3 +490,43 @@ func TestVenueService_Search(t *testing.T) {
 	assert.Equal(t, false, venues[0].HasPerk)
 
 }
+
+func TestVenueService_Listed(t *testing.T) {
+	const filePath = "./json/venues/listed.json"
+	httpClient, mux, server := testServer()
+	defer server.Close()
+
+	mux.HandleFunc("/v2/venues/4f68de6bd5fbee32e5f4f3a5/listed", func(w http.ResponseWriter, r *http.Request) {
+		assertMethod(t, "GET", r)
+		assertQueryNoUser(t, map[string]string{
+			"limit": "1",
+		}, r)
+
+		b, err := getTestFile(filePath)
+		if err != nil {
+			t.Fatalf("Failed to open testfile %s", filePath)
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(b)
+	})
+
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret)
+	lists, _, err := client.Venues.Listed(&VenueListedParams{
+		VenueID: "4f68de6bd5fbee32e5f4f3a5",
+		Limit:   1,
+	})
+	assert.Nil(t, err)
+
+	assert.Equal(t, 382, lists.Count)
+	assert.Equal(t, "others", lists.Groups[0].Type)
+	assert.Equal(t, "Lists from other people", lists.Groups[0].Name)
+	assert.Equal(t, 382, lists.Groups[0].Count)
+	assert.Equal(t, "561e72cf498ee3be0c697a9a", lists.Groups[0].Items[0].ID)
+	assert.Equal(t, "America's Best Breweries", lists.Groups[0].Items[0].Name)
+	assert.Equal(t, "others", lists.Groups[0].Items[0].Type)
+	assert.Equal(t, false, lists.Groups[0].Items[0].Editable)
+	assert.Equal(t, true, lists.Groups[0].Items[0].Public)
+	assert.Equal(t, false, lists.Groups[0].Items[0].Collaborative)
+	assert.Equal(t, "/foursquare/list/americas-best-breweries", lists.Groups[0].Items[0].URL)
+}

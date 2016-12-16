@@ -175,3 +175,32 @@ func (s *VenueService) Links(id string) (*Links, *http.Response, error) {
 
 	return &links.Links, resp, err
 }
+
+type ListedGroupParam string
+
+const (
+	OtherListedGroup = ListedGroupParam("other")
+)
+
+type VenueListedParams struct {
+	VenueID string           `url:"-"`
+	Group   ListedGroupParam `url:"group,omitempty"`
+	Limit   int              `url:"limit,omitempty"`
+	Offset  int              `url:"offset,omitempty"`
+}
+
+type venueListedResp struct {
+	Lists Listed `json:"lists"`
+}
+
+func (s *VenueService) Listed(params *VenueListedParams) (*Listed, *http.Response, error) {
+	lists := new(venueListedResp)
+	response := new(Response)
+
+	resp, err := s.sling.New().Get(params.VenueID+"/listed").QueryStruct(params).Receive(response, response)
+	if err == nil {
+		json.Unmarshal(response.Response, lists)
+	}
+
+	return &lists.Lists, resp, err
+}
