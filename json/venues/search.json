@@ -1,0 +1,106 @@
+{
+   "meta":{
+      "code":200,
+      "requestId":"585462066a60715f71e9e4f6"
+   },
+   "notifications":[
+      {
+         "type":"notificationTray",
+         "item":{
+            "unreadCount":11
+         }
+      }
+   ],
+   "response":{
+      "venues":[
+         {
+            "id":"4f68de6bd5fbee32e5f4f3a5",
+            "name":"SingleCut Beersmiths",
+            "contact":{
+               "phone":"7186060788",
+               "formattedPhone":"(718) 606-0788",
+               "twitter":"singlecutbeer"
+            },
+            "location":{
+               "address":"19-33 37th St",
+               "crossStreet":"btwn 19th & 20th Ave",
+               "lat":40.77833165180664,
+               "lng":-73.90178918838501,
+               "labeledLatLngs":[
+                  {
+                     "label":"display",
+                     "lat":40.77833165180664,
+                     "lng":-73.90178918838501
+                  }
+               ],
+               "distance":12027,
+               "postalCode":"11105",
+               "cc":"US",
+               "city":"Astoria",
+               "state":"NY",
+               "country":"United States",
+               "formattedAddress":[
+                  "19-33 37th St (btwn 19th & 20th Ave)",
+                  "Astoria, NY 11105"
+               ]
+            },
+            "categories":[
+               {
+                  "id":"50327c8591d4c4b30a586d5d",
+                  "name":"Brewery",
+                  "pluralName":"Breweries",
+                  "shortName":"Brewery",
+                  "icon":{
+                     "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/brewery_",
+                     "suffix":".png"
+                  },
+                  "primary":true
+               }
+            ],
+            "verified":true,
+            "stats":{
+               "checkinsCount":6040,
+               "usersCount":3086,
+               "tipCount":76
+            },
+            "url":"http:\/\/www.singlecutbeer.com",
+            "hasMenu":true,
+            "menu":{
+               "type":"Menu",
+               "label":"Menu",
+               "anchor":"View Menu",
+               "url":"https:\/\/foursquare.com\/v\/singlecut-beersmiths\/4f68de6bd5fbee32e5f4f3a5\/menu",
+               "mobileUrl":"https:\/\/foursquare.com\/v\/4f68de6bd5fbee32e5f4f3a5\/device_menu"
+            },
+            "allowMenuUrlEdit":true,
+            "beenHere":{
+               "count":1,
+               "marked":true,
+               "lastCheckinExpiredAt":0
+            },
+            "specials":{
+               "count":0,
+               "items":[
+
+               ]
+            },
+            "venuePage":{
+               "id":"42728420"
+            },
+            "storeId":"",
+            "hereNow":{
+               "count":0,
+               "summary":"Nobody here",
+               "groups":[
+
+               ]
+            },
+            "referralId":"v-1481925126",
+            "venueChains":[
+
+            ],
+            "hasPerk":false
+         }
+      ]
+   }
+}

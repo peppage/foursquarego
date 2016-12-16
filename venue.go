@@ -44,7 +44,9 @@ type Venue struct {
 	Popular     Hours       `json:"popular"`
 	PageUpates  PageUpdates `json:"pageUpdates"`
 	Inbox       Inbox       `json:"inbox"`
+	ReferralID  string      `json:"referralId"`
 	//VenueChains   Omit       `json:"-"` Not enough data
+	HasPerk    bool       `json:"hasPerk"`
 	Attributes Attributes `json:"attributes"`
 	BestPhoto  Photo      `json:"bestPhoto"`
 }

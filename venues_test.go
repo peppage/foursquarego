@@ -457,3 +457,36 @@ func TestVenueService_Categories(t *testing.T) {
 	assert.Equal(t, "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/default_", categories[0].Categories[0].Icon.Prefix)
 	assert.Equal(t, ".png", categories[0].Categories[0].Icon.Suffix)
 }
+
+func TestVenueService_Search(t *testing.T) {
+	const filePath = "./json/venues/search.json"
+	httpClient, mux, server := testServer()
+	defer server.Close()
+
+	mux.HandleFunc("/v2/venues/search", func(w http.ResponseWriter, r *http.Request) {
+		assertMethod(t, "GET", r)
+		assertQueryNoUser(t, map[string]string{
+			"ll":    "40.7,-74",
+			"query": "singlecut",
+		}, r)
+
+		b, err := getTestFile(filePath)
+		if err != nil {
+			t.Fatalf("Failed to open testfile %s", filePath)
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(b)
+	})
+
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret)
+	venues, _, err := client.Venues.Search(&VenueSearchParams{
+		LatLong: "40.7,-74",
+		Query:   "singlecut",
+	})
+	assert.Nil(t, err)
+
+	assert.Equal(t, "4f68de6bd5fbee32e5f4f3a5", venues[0].ID)
+	assert.Equal(t, false, venues[0].HasPerk)
+
+}
