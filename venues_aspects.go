@@ -5,12 +5,21 @@ import (
 	"net/http"
 )
 
+// PhotoGroupParam represents the options available to group photos on photos endpoint
+type PhotoGroupParam string
+
+// Options that are valid for the group on the photos endpoint
+const (
+	VenuePhotoGroup    = PhotoGroupParam("venue")
+	CheckingPhotoGroup = PhotoGroupParam("checkin")
+)
+
 // VenuePhotosParams are the paremeters for the VenueService.Photos
 type VenuePhotosParams struct {
-	VenueID string `url:"-"`
-	Group   string `url:"group,omitempty"`
-	Limit   int    `url:"limit,omitempty"`
-	Offset  int    `url:"offset,omitempty"`
+	VenueID string          `url:"-"`
+	Group   PhotoGroupParam `url:"group,omitempty"`
+	Limit   int             `url:"limit,omitempty"`
+	Offset  int             `url:"offset,omitempty"`
 }
 
 type venuePhotoResp struct {
