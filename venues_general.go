@@ -75,3 +75,49 @@ func (s *VenueService) Search(params *VenueSearchParams) ([]Venue, *http.Respons
 
 	return venues.Venues, resp, relevantError(err, *response)
 }
+
+type VenueSuggestParams struct {
+	LatLong          string `url:"ll,omitempty"`
+	Near             string `url:"near,omitempty"`
+	LatLongAccuracy  int    `url:"llAcc,omitempty"`
+	Altitude         int    `url:"alt,omitempty"`
+	AltitudeAccuracy int    `url:"altAcc,omitempty"`
+	Query            string `url:"query,omitempty"`
+	Limit            int    `url:"limit,omitempty"`
+	Radius           int    `url:"raidus,omitempty"`
+	Sw               string `url:"sw,omitempty"`
+	Ne               string `url:"ne,omitempty"`
+}
+
+type MiniVenue struct {
+	ID       string     `json:"id"`
+	Name     string     `json:"name"`
+	Location Location   `json:"location"`
+	Category []Category `json:"categories"`
+	HasPerk  bool       `json:"hasPerk"`
+}
+
+type venueSuggestResp struct {
+	MiniVenues []MiniVenue `json:"minivenues"`
+}
+
+func (s *VenueService) SuggestCompletion(params *VenueSuggestParams) ([]MiniVenue, *http.Response, error) {
+	if params.LatLong == "" && params.Near == "" {
+		return nil, nil, errors.New("LatLong or Near are required")
+	}
+
+	if params.Query == "" {
+		return nil, nil, errors.New("Query is required")
+	}
+
+	venues := new(venueSuggestResp)
+	response := new(Response)
+
+	resp, err := s.sling.New().Get("suggestCompletion").QueryStruct(params).Receive(response, response)
+	if err == nil {
+		json.Unmarshal(response.Response, venues)
+	}
+
+	return venues.MiniVenues, resp, relevantError(err, *response)
+
+}

@@ -1,0 +1,66 @@
+{
+   "meta":{
+      "code":200,
+      "requestId":"5858656ddb04f53f912285aa"
+   },
+   "notifications":[
+      {
+         "type":"notificationTray",
+         "item":{
+            "unreadCount":11
+         }
+      }
+   ],
+   "response":{
+      "minivenues":[
+         {
+            "id":"4ef0e7cf7beb5932d5bdeb4e",
+            "name":"Foursquare HQ",
+            "location":{
+               "address":"568 Broadway Fl 10",
+               "crossStreet":"at Prince St",
+               "city":"New York",
+               "state":"NY",
+               "postalCode":"10012",
+               "country":"US",
+               "lat":40.72412842453194,
+               "lng":-73.99726510047911,
+               "distance":2695
+            },
+            "categories":[
+               {
+                  "id":"4bf58dd8d48988d125941735",
+                  "name":"Tech Startup",
+                  "pluralName":"Tech Startups",
+                  "shortName":"Tech Startup",
+                  "icon":{
+                     "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/technology_",
+                     "suffix":".png"
+                  }
+               },
+               {
+                  "id":"4d4b7105d754a06375d81259",
+                  "name":"Professional & Other Places",
+                  "pluralName":"Professional & Other Places",
+                  "shortName":"Professional",
+                  "icon":{
+                     "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/building\/default_",
+                     "suffix":".png"
+                  }
+               },
+               {
+                  "id":"4bf58dd8d48988d124941735",
+                  "name":"Office",
+                  "pluralName":"Offices",
+                  "shortName":"Office",
+                  "icon":{
+                     "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/building\/default_",
+                     "suffix":".png"
+                  }
+               }
+            ],
+            "hasPerk":false
+         }
+      ]
+   }
+}

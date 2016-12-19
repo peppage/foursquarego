@@ -530,3 +530,36 @@ func TestVenueService_Listed(t *testing.T) {
 	assert.Equal(t, false, lists.Groups[0].Items[0].Collaborative)
 	assert.Equal(t, "/foursquare/list/americas-best-breweries", lists.Groups[0].Items[0].URL)
 }
+
+func TestVenueService_SuggestCompletion(t *testing.T) {
+	const filePath = "./json/venues/suggest.json"
+	httpClient, mux, server := testServer()
+	defer server.Close()
+
+	mux.HandleFunc("/v2/venues/suggestCompletion", func(w http.ResponseWriter, r *http.Request) {
+		assertMethod(t, "GET", r)
+		assertQueryNoUser(t, map[string]string{
+			"ll":    "40.7,-74",
+			"query": "foursqu",
+		}, r)
+
+		b, err := getTestFile(filePath)
+		if err != nil {
+			t.Fatalf("Failed to open testfile %s", filePath)
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(b)
+	})
+
+	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	venues, _, err := client.Venues.SuggestCompletion(&VenueSuggestParams{
+		LatLong: "40.7,-74",
+		Query:   "foursqu",
+	})
+	assert.Nil(t, err)
+
+	assert.Equal(t, "4ef0e7cf7beb5932d5bdeb4e", venues[0].ID)
+	assert.Equal(t, "Foursquare HQ", venues[0].Name)
+	assert.Equal(t, false, venues[0].HasPerk)
+}
