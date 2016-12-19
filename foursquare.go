@@ -20,7 +20,12 @@ type Client struct {
 }
 
 // NewClient returns a new Client.
-func NewClient(httpClient *http.Client, mode, clientID, clientSecret string) *Client {
+func NewClient(mode, clientID, clientSecret string) *Client {
+	httpClient := http.DefaultClient
+	return newClient(httpClient, mode, clientID, clientSecret)
+}
+
+func newClient(httpClient *http.Client, mode, clientID, clientSecret string) *Client {
 	b := sling.New().Client(httpClient).Base(baseURL)
 	b.QueryStruct(struct {
 		V            string `url:"v"`
