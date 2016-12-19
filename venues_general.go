@@ -76,6 +76,7 @@ func (s *VenueService) Search(params *VenueSearchParams) ([]Venue, *http.Respons
 	return venues.Venues, resp, relevantError(err, *response)
 }
 
+// VenueSuggestParams are the parementers for the VenueService.SuggestCompletion
 type VenueSuggestParams struct {
 	LatLong          string `url:"ll,omitempty"`
 	Near             string `url:"near,omitempty"`
@@ -101,6 +102,8 @@ type venueSuggestResp struct {
 	MiniVenues []MiniVenue `json:"minivenues"`
 }
 
+// SuggestCompletion returns a list of mini-venues partially matching the search term, near the location.
+// https://developer.foursquare.com/docs/venues/suggestcompletion
 func (s *VenueService) SuggestCompletion(params *VenueSuggestParams) ([]MiniVenue, *http.Response, error) {
 	if params.LatLong == "" && params.Near == "" {
 		return nil, nil, errors.New("LatLong or Near are required")
@@ -119,5 +122,33 @@ func (s *VenueService) SuggestCompletion(params *VenueSuggestParams) ([]MiniVenu
 	}
 
 	return venues.MiniVenues, resp, relevantError(err, *response)
+}
 
+// VenueTrendingParams are the parameters for the VenueService.Trending endpoint
+type VenueTrendingParams struct {
+	LatLong string `url:"ll,omitempty"`
+	Limit   int    `url:"limit,omitempty"`
+	Radius  int    `url:"raidus,omitempty"`
+}
+
+type venueTrendingResp struct {
+	Venues []Venue `json:"venues"`
+}
+
+// Trending returns a list of venues near the current location with the most people currently checked in.
+// https://developer.foursquare.com/docs/venues/trending
+func (s *VenueService) Trending(params *VenueTrendingParams) ([]Venue, *http.Response, error) {
+	if params.LatLong == "" {
+		return nil, nil, errors.New("LatLong is required")
+	}
+
+	venues := new(venueTrendingResp)
+	response := new(Response)
+
+	resp, err := s.sling.New().Get("trending").QueryStruct(params).Receive(response, response)
+	if err == nil {
+		json.Unmarshal(response.Response, venues)
+	}
+
+	return venues.Venues, resp, relevantError(err, *response)
 }

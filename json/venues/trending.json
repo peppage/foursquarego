@@ -1,0 +1,85 @@
+{
+   "meta":{
+      "code":200,
+      "requestId":"585868911ed219042a174531"
+   },
+   "notifications":[
+      {
+         "type":"notificationTray",
+         "item":{
+            "unreadCount":11
+         }
+      }
+   ],
+   "response":{
+      "venues":[
+         {
+            "id":"4eb90d85722e09311d356915",
+            "name":"World Trade Center Transportation Hub (The Oculus)",
+            "contact":{
+               "twitter":"pathtrain"
+            },
+            "location":{
+               "address":"Liberty St & Church Ave",
+               "lat":40.711516296607606,
+               "lng":-74.01123458506063,
+               "labeledLatLngs":[
+                  {
+                     "label":"display",
+                     "lat":40.711516296607606,
+                     "lng":-74.01123458506063
+                  }
+               ],
+               "distance":1594,
+               "postalCode":"10007",
+               "cc":"US",
+               "city":"New York",
+               "state":"NY",
+               "country":"United States",
+               "formattedAddress":[
+                  "Liberty St & Church Ave",
+                  "New York, NY 10007"
+               ]
+            },
+            "categories":[
+               {
+                  "id":"4bf58dd8d48988d1fd931735",
+                  "name":"Metro Station",
+                  "pluralName":"Metro Stations",
+                  "shortName":"Metro",
+                  "icon":{
+                     "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/travel\/subway_",
+                     "suffix":".png"
+                  },
+                  "primary":true
+               }
+            ],
+            "verified":false,
+            "stats":{
+               "checkinsCount":21287,
+               "usersCount":8768,
+               "tipCount":36
+            },
+            "url":"http:\/\/www.panynj.gov\/wtcprogress\/transportation-hub.html",
+            "venueRatingBlacklisted":true,
+            "beenHere":{
+               "lastCheckinExpiredAt":0
+            },
+            "hereNow":{
+               "count":7,
+               "summary":"7 people are here",
+               "groups":[
+                  {
+                     "type":"others",
+                     "name":"Other people here",
+                     "count":7,
+                     "items":[
+
+                     ]
+                  }
+               ]
+            }
+         }
+      ]
+   }
+}
