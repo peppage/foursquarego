@@ -621,3 +621,43 @@ func TestVenueService_NextVenues(t *testing.T) {
 	assert.Len(t, venues, 5)
 	assert.Equal(t, "4acbe67af964a52044c820e3", venues[0].ID)
 }
+
+func TestVenueService_Menu(t *testing.T) {
+	const filePath = "./json/venues/menu.json"
+	httpClient, mux, server := testServer()
+	defer server.Close()
+
+	mux.HandleFunc("/v2/venues/4fa89bb2e4b0bad89524b84a/menu", func(w http.ResponseWriter, r *http.Request) {
+		assertMethod(t, "GET", r)
+
+		b, err := getTestFile(filePath)
+		if err != nil {
+			t.Fatalf("Failed to open testfile %s", filePath)
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(b)
+	})
+
+	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	resp, _, err := client.Venues.Menu("4fa89bb2e4b0bad89524b84a")
+	assert.Nil(t, err)
+
+	assert.Len(t, resp.Menus.Items, 1)
+	assert.Equal(t, "singleplatform", resp.Provider.Name)
+	assert.Equal(t, "https://as.singleplatform.com/Foursquare/mission-chinese-food-0/provided_by.png", resp.Provider.AttributionImage)
+	assert.Equal(t, "http://w.singlepage.com/mission-chinese-food-0/menu?ref=Foursquare", resp.Provider.AttributionLink)
+	assert.Equal(t, "Disclaimer: Always check with the business for pricing and availability of menu items. SinglePlatform is not responsible for menu or pricing changes, but the information is believed to be accurate when posted. Listing of a menu does not mean that there is any affiliation, endorsement or sponsorship between SinglePlatform and the listed business.", resp.Provider.AttributionText)
+	assert.Equal(t, "m4bgurrarjo79z0xiwb2iy5rt", resp.Menus.Items[0].MenuID)
+	assert.Equal(t, "Main Menu", resp.Menus.Items[0].Name)
+	assert.Equal(t, "", resp.Menus.Items[0].Description)
+	assert.Len(t, resp.Menus.Items[0].Entries.Items, 12)
+	assert.Equal(t, "s9289544", resp.Menus.Items[0].Entries.Items[0].SectionID)
+	assert.Equal(t, "Soups", resp.Menus.Items[0].Entries.Items[0].Name)
+	assert.Len(t, resp.Menus.Items[0].Entries.Items[0].Entries.Items, 5)
+	assert.Equal(t, "62463372", resp.Menus.Items[0].Entries.Items[0].Entries.Items[0].EntryID)
+	assert.Equal(t, "Westlake Rice Porridge", resp.Menus.Items[0].Entries.Items[0].Entries.Items[0].Name)
+	assert.Equal(t, "Rare beef, crunchy scallop floss, soft egg.", resp.Menus.Items[0].Entries.Items[0].Entries.Items[0].Description)
+	assert.Equal(t, "16.00", resp.Menus.Items[0].Entries.Items[0].Entries.Items[0].Prices[0])
+	assert.Equal(t, "16.00", resp.Menus.Items[0].Entries.Items[0].Entries.Items[0].Price)
+}

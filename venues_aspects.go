@@ -138,7 +138,7 @@ func (s *VenueService) Likes(id string) (*LikesResp, *http.Response, error) {
 		json.Unmarshal(response.Response, likes)
 	}
 
-	return &likes.Likes, resp, err
+	return &likes.Likes, resp, relevantError(err, *response)
 }
 
 type venueLinkResp struct {
@@ -173,7 +173,7 @@ func (s *VenueService) Links(id string) (*Links, *http.Response, error) {
 		json.Unmarshal(response.Response, links)
 	}
 
-	return &links.Links, resp, err
+	return &links.Links, resp, relevantError(err, *response)
 }
 
 type ListedGroupParam string
@@ -204,7 +204,7 @@ func (s *VenueService) Listed(params *VenueListedParams) (*Listed, *http.Respons
 		json.Unmarshal(response.Response, lists)
 	}
 
-	return &lists.Lists, resp, err
+	return &lists.Lists, resp, relevantError(err, *response)
 }
 
 type venueNextVenuesResp struct {
@@ -227,5 +227,73 @@ func (s *VenueService) NextVenues(id string) ([]Venue, *http.Response, error) {
 		json.Unmarshal(response.Response, venues)
 	}
 
-	return venues.NextVenues.Items, resp, err
+	return venues.NextVenues.Items, resp, relevantError(err, *response)
+}
+
+type venueMenuResp struct {
+	Menu MenuResp `json:"menu"`
+}
+
+type MenuResp struct {
+	Provider MenuProvider `json:"provider"`
+	Menus    Menus        `json:"menus"`
+}
+
+type MenuProvider struct {
+	Name             string `json:"name"`
+	AttributionImage string `json:"attributionImage"`
+	AttributionLink  string `json;"attributionLink"`
+	AttributionText  string `json:"attributionText"`
+}
+
+type Menus struct {
+	Count int        `json:"count"`
+	Items []FullMenu `json:"items"`
+}
+
+type FullMenu struct {
+	MenuID      string  `json:"menuId"`
+	Name        string  `json:"name"`
+	Description string  `json:"description"`
+	Entries     Entries `json:"entries"`
+}
+
+type Entries struct {
+	Count int     `json:"count"`
+	Items []Entry `json:"items"`
+}
+
+type Entry struct {
+	SectionID string     `json:"sectionId"`
+	Name      string     `json:"name"`
+	Entries   SubEntries `json:"entries"`
+}
+
+type SubEntries struct {
+	Count int        `json:"count"`
+	Items []SubEntry `json:"items"`
+}
+
+type SubEntry struct {
+	EntryID     string   `json:"entryId"`
+	Name        string   `json:"name"`
+	Description string   `json:"description"`
+	Prices      []string `json:"prices"`
+	Price       string   `json:"price"`
+	//Options requires more data
+	//Additions requires more data
+}
+
+// Menu returns menu information for a venue.
+// https://developer.foursquare.com/docs/venues/menu
+func (s *VenueService) Menu(id string) (*MenuResp, *http.Response, error) {
+	menuResp := new(venueMenuResp)
+	response := new(Response)
+
+	resp, err := s.sling.New().Get(id+"/menu").Receive(response, response)
+	if err == nil {
+		json.Unmarshal(response.Response, menuResp)
+	}
+
+	return &menuResp.Menu, resp, relevantError(err, *response)
 }
