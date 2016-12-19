@@ -596,3 +596,28 @@ func TestVenueService_Trending(t *testing.T) {
 	assert.Equal(t, "World Trade Center Transportation Hub (The Oculus)", venues[0].Name)
 	assert.Equal(t, "pathtrain", venues[0].Contact.Twitter)
 }
+
+func TestVenueService_NextVenues(t *testing.T) {
+	const filePath = "./json/venues/nextvenues.json"
+	httpClient, mux, server := testServer()
+	defer server.Close()
+
+	mux.HandleFunc("/v2/venues/40a55d80f964a52020f31ee3/nextvenues", func(w http.ResponseWriter, r *http.Request) {
+		assertMethod(t, "GET", r)
+
+		b, err := getTestFile(filePath)
+		if err != nil {
+			t.Fatalf("Failed to open testfile %s", filePath)
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(b)
+	})
+
+	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	venues, _, err := client.Venues.NextVenues("40a55d80f964a52020f31ee3")
+	assert.Nil(t, err)
+
+	assert.Len(t, venues, 5)
+	assert.Equal(t, "4acbe67af964a52044c820e3", venues[0].ID)
+}

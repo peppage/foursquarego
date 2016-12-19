@@ -1,0 +1,353 @@
+{
+   "meta":{
+      "code":200,
+      "requestId":"58586ade1ed2190428023925"
+   },
+   "notifications":[
+      {
+         "type":"notificationTray",
+         "item":{
+            "unreadCount":11
+         }
+      }
+   ],
+   "response":{
+      "nextVenues":{
+         "count":5,
+         "items":[
+            {
+               "id":"4acbe67af964a52044c820e3",
+               "name":"Katz's Delicatessen",
+               "contact":{
+                  "phone":"8004468364",
+                  "formattedPhone":"(800) 446-8364",
+                  "twitter":"katzsdeli",
+                  "facebook":"89033874836",
+                  "facebookUsername":"katzsdeli",
+                  "facebookName":"Katz's Delicatessen"
+               },
+               "location":{
+                  "address":"205 E Houston St",
+                  "crossStreet":"at Ludlow St",
+                  "lat":40.72230706635953,
+                  "lng":-73.98735165596008,
+                  "postalCode":"10002",
+                  "cc":"US",
+                  "city":"New York",
+                  "state":"NY",
+                  "country":"United States",
+                  "formattedAddress":[
+                     "205 E Houston St (at Ludlow St)",
+                     "New York, NY 10002"
+                  ]
+               },
+               "categories":[
+                  {
+                     "id":"4bf58dd8d48988d1c5941735",
+                     "name":"Sandwich Place",
+                     "pluralName":"Sandwich Places",
+                     "shortName":"Sandwiches",
+                     "icon":{
+                        "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/deli_",
+                        "suffix":".png"
+                     },
+                     "primary":true
+                  }
+               ],
+               "verified":true,
+               "stats":{
+                  "checkinsCount":62638,
+                  "usersCount":47313,
+                  "tipCount":1120
+               },
+               "url":"http:\/\/katzsdelicatessen.com",
+               "hasMenu":true,
+               "delivery":{
+                  "id":"25417",
+                  "url":"http:\/\/www.seamless.com\/food-delivery\/restaurant.25417.r?a=1026&utm_source=Foursquare&utm_medium=affiliate&utm_campaign=SeamlessOrderDeliveryLink",
+                  "provider":{
+                     "name":"seamless"
+                  }
+               },
+               "menu":{
+                  "type":"Menu",
+                  "label":"Menu",
+                  "anchor":"View Menu",
+                  "url":"https:\/\/foursquare.com\/v\/katzs-delicatessen\/4acbe67af964a52044c820e3\/menu",
+                  "mobileUrl":"https:\/\/foursquare.com\/v\/4acbe67af964a52044c820e3\/device_menu"
+               },
+               "allowMenuUrlEdit":true,
+               "beenHere":{
+                  "lastCheckinExpiredAt":0
+               },
+               "venuePage":{
+                  "id":"36639778"
+               }
+            },
+            {
+               "id":"4cd5f138aeb1224b77be25ff",
+               "name":"Il Laboratorio Del Gelato",
+               "contact":{
+                  "phone":"2123439922",
+                  "formattedPhone":"(212) 343-9922",
+                  "facebook":"112378065860",
+                  "facebookName":"il laboratorio del gelato"
+               },
+               "location":{
+                  "address":"188 Ludlow St",
+                  "crossStreet":"at E Houston St",
+                  "lat":40.72250100787867,
+                  "lng":-73.98712646658963,
+                  "labeledLatLngs":[
+                     {
+                        "label":"display",
+                        "lat":40.72250100787867,
+                        "lng":-73.98712646658963
+                     }
+                  ],
+                  "postalCode":"10002",
+                  "cc":"US",
+                  "city":"New York",
+                  "state":"NY",
+                  "country":"United States",
+                  "formattedAddress":[
+                     "188 Ludlow St (at E Houston St)",
+                     "New York, NY 10002"
+                  ]
+               },
+               "categories":[
+                  {
+                     "id":"4bf58dd8d48988d1c9941735",
+                     "name":"Ice Cream Shop",
+                     "pluralName":"Ice Cream Shops",
+                     "shortName":"Ice Cream",
+                     "icon":{
+                        "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/icecream_",
+                        "suffix":".png"
+                     },
+                     "primary":true
+                  }
+               ],
+               "verified":true,
+               "stats":{
+                  "checkinsCount":15628,
+                  "usersCount":10365,
+                  "tipCount":313
+               },
+               "url":"http:\/\/www.laboratoriodelgelato.com",
+               "hasMenu":true,
+               "menu":{
+                  "type":"Menu",
+                  "label":"Menu",
+                  "anchor":"View Menu",
+                  "url":"https:\/\/foursquare.com\/v\/il-laboratorio-del-gelato\/4cd5f138aeb1224b77be25ff\/menu",
+                  "mobileUrl":"https:\/\/foursquare.com\/v\/4cd5f138aeb1224b77be25ff\/device_menu"
+               },
+               "allowMenuUrlEdit":true,
+               "beenHere":{
+                  "lastCheckinExpiredAt":0
+               },
+               "venuePage":{
+                  "id":"99503910"
+               }
+            },
+            {
+               "id":"460d4b1ef964a52004451fe3",
+               "name":"Whole Foods Market",
+               "contact":{
+                  "phone":"2124201320",
+                  "formattedPhone":"(212) 420-1320",
+                  "twitter":"wholefoodsnyc",
+                  "facebook":"160380060670252",
+                  "facebookName":"Wholefoods"
+               },
+               "location":{
+                  "address":"95 East Houston St",
+                  "crossStreet":"btwn Bowery & Chrystie St",
+                  "lat":40.72378919148991,
+                  "lng":-73.99158563544898,
+                  "postalCode":"10002",
+                  "cc":"US",
+                  "city":"New York",
+                  "state":"NY",
+                  "country":"United States",
+                  "formattedAddress":[
+                     "95 East Houston St (btwn Bowery & Chrystie St)",
+                     "New York, NY 10002"
+                  ]
+               },
+               "categories":[
+                  {
+                     "id":"4bf58dd8d48988d118951735",
+                     "name":"Grocery Store",
+                     "pluralName":"Grocery Stores",
+                     "shortName":"Grocery Store",
+                     "icon":{
+                        "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/food_grocery_",
+                        "suffix":".png"
+                     },
+                     "primary":true
+                  }
+               ],
+               "verified":true,
+               "stats":{
+                  "checkinsCount":85850,
+                  "usersCount":23078,
+                  "tipCount":314
+               },
+               "url":"http:\/\/www.wholefoodsmarket.com\/stores\/bowery",
+               "hasMenu":true,
+               "menu":{
+                  "type":"Products",
+                  "label":"Products",
+                  "anchor":"View Products",
+                  "url":"https:\/\/foursquare.com\/v\/whole-foods-market\/460d4b1ef964a52004451fe3\/menu",
+                  "mobileUrl":"https:\/\/foursquare.com\/v\/460d4b1ef964a52004451fe3\/device_menu"
+               },
+               "allowMenuUrlEdit":true,
+               "beenHere":{
+                  "lastCheckinExpiredAt":0
+               },
+               "storeId":"HOU",
+               "locked":true
+            },
+            {
+               "id":"4657db7ef964a5200f471fe3",
+               "name":"Cocoa Bar",
+               "contact":{
+                  "phone":"2126777417",
+                  "formattedPhone":"(212) 677-7417",
+                  "twitter":"cocoabarnyc",
+                  "facebook":"58656595944",
+                  "facebookUsername":"cocoabarnyc",
+                  "facebookName":"Cocoa Bar"
+               },
+               "location":{
+                  "address":"21 Clinton St",
+                  "crossStreet":"btwn  Avenue B & Houston St",
+                  "lat":40.72059136642329,
+                  "lng":-73.98430466651917,
+                  "labeledLatLngs":[
+                     {
+                        "label":"display",
+                        "lat":40.72059136642329,
+                        "lng":-73.98430466651917
+                     }
+                  ],
+                  "postalCode":"10002",
+                  "cc":"US",
+                  "city":"New York",
+                  "state":"NY",
+                  "country":"United States",
+                  "formattedAddress":[
+                     "21 Clinton St (btwn  Avenue B & Houston St)",
+                     "New York, NY 10002"
+                  ]
+               },
+               "categories":[
+                  {
+                     "id":"4bf58dd8d48988d16d941735",
+                     "name":"Café",
+                     "pluralName":"Cafés",
+                     "shortName":"Café",
+                     "icon":{
+                        "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/cafe_",
+                        "suffix":".png"
+                     },
+                     "primary":true
+                  }
+               ],
+               "verified":true,
+               "stats":{
+                  "checkinsCount":5170,
+                  "usersCount":2590,
+                  "tipCount":67
+               },
+               "url":"http:\/\/www.cocoabarnyc.com",
+               "hasMenu":true,
+               "menu":{
+                  "type":"Menu",
+                  "label":"Menu",
+                  "anchor":"View Menu",
+                  "url":"https:\/\/foursquare.com\/v\/cocoa-bar\/4657db7ef964a5200f471fe3\/menu",
+                  "mobileUrl":"https:\/\/foursquare.com\/v\/4657db7ef964a5200f471fe3\/device_menu"
+               },
+               "allowMenuUrlEdit":true,
+               "beenHere":{
+                  "lastCheckinExpiredAt":0
+               },
+               "venuePage":{
+                  "id":"81252401"
+               },
+               "storeId":""
+            },
+            {
+               "id":"4d406a44de17a0932403f86b",
+               "name":"Pause Cafe",
+               "contact":{
+                  "phone":"2126775415",
+                  "formattedPhone":"(212) 677-5415",
+                  "twitter":"pausecafenyc"
+               },
+               "location":{
+                  "address":"3 Clinton St",
+                  "crossStreet":"btwn E Houston & Stanton St",
+                  "lat":40.7212077,
+                  "lng":-73.9840915,
+                  "labeledLatLngs":[
+                     {
+                        "label":"display",
+                        "lat":40.7212077,
+                        "lng":-73.9840915
+                     }
+                  ],
+                  "postalCode":"10002",
+                  "cc":"US",
+                  "city":"New York",
+                  "state":"NY",
+                  "country":"United States",
+                  "formattedAddress":[
+                     "3 Clinton St (btwn E Houston & Stanton St)",
+                     "New York, NY 10002"
+                  ]
+               },
+               "categories":[
+                  {
+                     "id":"4bf58dd8d48988d112941735",
+                     "name":"Juice Bar",
+                     "pluralName":"Juice Bars",
+                     "shortName":"Juice Bar",
+                     "icon":{
+                        "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/juicebar_",
+                        "suffix":".png"
+                     },
+                     "primary":true
+                  }
+               ],
+               "verified":true,
+               "stats":{
+                  "checkinsCount":4919,
+                  "usersCount":1806,
+                  "tipCount":90
+               },
+               "url":"http:\/\/pausecafenyc.com",
+               "hasMenu":true,
+               "menu":{
+                  "type":"Menu",
+                  "label":"Menu",
+                  "anchor":"View Menu",
+                  "url":"https:\/\/foursquare.com\/v\/pause-cafe\/4d406a44de17a0932403f86b\/menu",
+                  "mobileUrl":"https:\/\/foursquare.com\/v\/4d406a44de17a0932403f86b\/device_menu"
+               },
+               "allowMenuUrlEdit":true,
+               "beenHere":{
+                  "lastCheckinExpiredAt":0
+               },
+               "venuePage":{
+                  "id":"95461219"
+               }
+            }
+         ]
+      }
+   }
+}

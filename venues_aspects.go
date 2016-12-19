@@ -193,6 +193,8 @@ type venueListedResp struct {
 	Lists Listed `json:"lists"`
 }
 
+// Listed returns the lists that this venue appears on
+// https://developer.foursquare.com/docs/venues/listed
 func (s *VenueService) Listed(params *VenueListedParams) (*Listed, *http.Response, error) {
 	lists := new(venueListedResp)
 	response := new(Response)
@@ -203,4 +205,27 @@ func (s *VenueService) Listed(params *VenueListedParams) (*Listed, *http.Respons
 	}
 
 	return &lists.Lists, resp, err
+}
+
+type venueNextVenuesResp struct {
+	NextVenues nextVenues `json:"nextVenues"`
+}
+
+type nextVenues struct {
+	Count int     `json:"count"`
+	Items []Venue `json:"items"`
+}
+
+// NextVenues returns venues that are checked into after the given one
+// https://developer.foursquare.com/docs/venues/nextvenues
+func (s *VenueService) NextVenues(id string) ([]Venue, *http.Response, error) {
+	venues := new(venueNextVenuesResp)
+	response := new(Response)
+
+	resp, err := s.sling.New().Get(id+"/nextvenues").Receive(response, response)
+	if err == nil {
+		json.Unmarshal(response.Response, venues)
+	}
+
+	return venues.NextVenues.Items, resp, err
 }
