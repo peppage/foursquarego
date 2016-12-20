@@ -661,3 +661,60 @@ func TestVenueService_Menu(t *testing.T) {
 	assert.Equal(t, "16.00", resp.Menus.Items[0].Entries.Items[0].Entries.Items[0].Prices[0])
 	assert.Equal(t, "16.00", resp.Menus.Items[0].Entries.Items[0].Entries.Items[0].Price)
 }
+
+func TestVenueService_Explore(t *testing.T) {
+	const filePath = "./json/venues/explore.json"
+	httpClient, mux, server := testServer()
+	defer server.Close()
+
+	mux.HandleFunc("/v2/venues/explore", func(w http.ResponseWriter, r *http.Request) {
+		assertMethod(t, "GET", r)
+		assertQueryNoUser(t, map[string]string{
+			"ll":    "40.76502,-73.97999",
+			"limit": "3",
+		}, r)
+
+		b, err := getTestFile(filePath)
+		if err != nil {
+			t.Fatalf("Failed to open testfile %s", filePath)
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(b)
+	})
+
+	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	resp, _, err := client.Venues.Explore(&VenueExploreParams{
+		LatLong: "40.76502,-73.97999",
+		Limit:   3,
+	})
+	assert.Nil(t, err)
+
+	assert.Equal(t, "Tap to show:", resp.SuggestedFilters.Header)
+	assert.Len(t, resp.SuggestedFilters.Filters, 2)
+	assert.Equal(t, "$-$$$$", resp.SuggestedFilters.Filters[0].Name)
+	assert.Equal(t, "price", resp.SuggestedFilters.Filters[0].Key)
+	assert.Equal(t, "There aren't a lot of results near you. Try something more general, reset your filters, or expand the search area.", resp.Warning.Text)
+	assert.Equal(t, 600, resp.SuggestedRadius)
+	assert.Equal(t, "Theater District", resp.HeaderLocation)
+	assert.Equal(t, "Theater District, New York", resp.HeaderFullLocation)
+	assert.Equal(t, "neighborhood", resp.HeaderLocationGranularity)
+	assert.Equal(t, 234, resp.TotalResults)
+	assert.Equal(t, 40.765735484141466, resp.SuggestedBounds.Ne.Lat)
+	assert.Equal(t, -73.98070944232728, resp.SuggestedBounds.Ne.Lng)
+	assert.Equal(t, 40.76303582435602, resp.SuggestedBounds.Sw.Lat)
+	assert.Equal(t, -73.97800190124289, resp.SuggestedBounds.Sw.Lng)
+	assert.Len(t, resp.Groups, 1)
+	assert.Equal(t, "Recommended Places", resp.Groups[0].Type)
+	assert.Equal(t, "recommended", resp.Groups[0].Name)
+	assert.Len(t, resp.Groups[0].Items, 3)
+	assert.Equal(t, 2, resp.Groups[0].Items[0].Reasons.Count)
+	assert.Len(t, resp.Groups[0].Items[0].Reasons.Items, 1)
+	assert.Equal(t, "On: Time Out New York's Best of NYC 2011", resp.Groups[0].Items[0].Reasons.Items[0].Summary)
+	assert.Equal(t, "social", resp.Groups[0].Items[0].Reasons.Items[0].Type)
+	assert.Equal(t, "combinationOfListsReason", resp.Groups[0].Items[0].Reasons.Items[0].ReasonName)
+	assert.Equal(t, "On: Time Out New York's Best of NYC 2011", resp.Groups[0].Items[0].Reasons.Items[0].Message)
+	assert.NotNil(t, resp.Groups[0].Items[0].Venue)
+	assert.Len(t, resp.Groups[0].Items[0].Tips, 1)
+	assert.Equal(t, "e-0-3fd66200f964a520b6e71ee3-0", resp.Groups[0].Items[0].ReferralID)
+}

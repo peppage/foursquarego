@@ -152,3 +152,147 @@ func (s *VenueService) Trending(params *VenueTrendingParams) ([]Venue, *http.Res
 
 	return venues.Venues, resp, relevantError(err, *response)
 }
+
+// ExploreSectionParam represents the options that are available for the Section param on the Venue Explore endpoint
+type ExploreSectionParam string
+
+// Options that are valid for Section in the Venue Explore endpoint
+const (
+	SectionFood       = ExploreSectionParam("food")
+	SectionDrink      = ExploreSectionParam("drink")
+	SectionCoffee     = ExploreSectionParam("coffee")
+	SectionShops      = ExploreSectionParam("shops")
+	SectionArts       = ExploreSectionParam("arts")
+	SectionOutdoors   = ExploreSectionParam("outdoors")
+	SectionSights     = ExploreSectionParam("sights")
+	SectionTrending   = ExploreSectionParam("trending")
+	SectionSpecials   = ExploreSectionParam("specials")
+	SectionNextVenues = ExploreSectionParam("nextVenues")
+	SectionTopPicks   = ExploreSectionParam("topPicks")
+)
+
+// ExploreNoveltyParam represents the options that are available for the novelty param on the Venue Explore endpoint
+type ExploreNoveltyParam string
+
+// Options that are valid for Novelty in the Venue Explore endpoint
+const (
+	NoveltyNew = ExploreNoveltyParam("new")
+	NoveltyOld = ExploreNoveltyParam("old")
+)
+
+// ExploreFriendVisitParam represents the options that are available for the FriendVisits on the Venue Explore endpoint
+type ExploreFriendVisitParam string
+
+// Options that are valid for FriendVisit in the Venue Explore endpoint
+const (
+	FriendVisited    = ExploreFriendVisitParam("visited")
+	FriendNotVisited = ExploreFriendVisitParam("notvisited")
+)
+
+// ExploreTimeParam represents the options that are available for the Time & Dat params on the Venue Explore endpoint
+type ExploreTimeParam string
+
+// Option that are valid for Time & Day in the Venue Explore endpoint
+const (
+	TimeAny = ExploreTimeParam("any")
+)
+
+// BoolAsAnInt is a bool that needs to be an int when transferred to an endpoint
+type BoolAsAnInt int
+
+// Option available for BoolAsAnInt
+const (
+	True = BoolAsAnInt(1)
+)
+
+// VenueExploreParams are the parameters for the VenueService.Explore endpoint
+type VenueExploreParams struct {
+	LatLong          string                  `url:"ll,omitempty"`
+	Near             string                  `url:"near,omitempty"`
+	LatLongAccuracy  int                     `url:"llAcc,omitempty"`
+	Altitude         int                     `url:"alt,omitempty"`
+	AltitudeAccuracy int                     `url:"altAcc,omitempty"`
+	Radius           int                     `url:"raidus,omitempty"`
+	Section          ExploreSectionParam     `url:"section,omitempty"`
+	Query            string                  `url:"query,omitempty"`
+	Limit            int                     `url:"limit,omitempty"`
+	Offset           int                     `url:"offset,omitempty"`
+	Novelty          ExploreNoveltyParam     `url:"novelty,omitempty"`
+	FriendVisits     ExploreFriendVisitParam `url:"friendVists,omitempty"`
+	Time             ExploreTimeParam        `url:"time,omitempty"`
+	Day              ExploreTimeParam        `url:"day,omitempty"`
+	VenuePhotos      BoolAsAnInt             `url:"venuePhotos,omitempty"`
+	LastVenue        string                  `url:"lastVenue,omitempty"`
+	OpenNow          BoolAsAnInt             `url:"openNow,omitempty"`
+	SortByDistance   BoolAsAnInt             `url:"sortByDistance,omitempty"`
+	Price            []int                   `url:"price,omitempty"`
+	Saved            BoolAsAnInt             `url:"saved,omitempty"`
+	Specials         BoolAsAnInt             `url:"specials,omitempty"`
+}
+
+type VenueExploreResponse struct {
+	SuggestedFilters          SuggestedFilters `json:"suggestedFilters"`
+	Warning                   Warning          `json:"warning"`
+	SuggestedRadius           int              `json:"suggestedRadius"`
+	HeaderLocation            string           `json:"headerLocation"`
+	HeaderFullLocation        string           `json:"headerFullLocation"`
+	HeaderLocationGranularity string           `json:"headerLocationGranularity"`
+	TotalResults              int              `json:"totalResults"`
+	SuggestedBounds           SuggestedBounds  `json:"suggestedBounds"`
+	Groups                    []Recommendation `json:"groups"`
+}
+
+type SuggestedFilters struct {
+	Header  string   `json:"header"`
+	Filters []Filter `json:"filters"`
+}
+
+type Filter struct {
+	Name string `json:"name"`
+	Key  string `json:"key"`
+}
+
+type Warning struct {
+	Text string `json:"text"`
+}
+
+type SuggestedBounds struct {
+	Ne LatLong `json:"ne"`
+	Sw LatLong `json:"sw"`
+}
+
+type LatLong struct {
+	Lat float64 `json:"lat"`
+	Lng float64 `json:"lng"`
+}
+
+type Recommendation struct {
+	Type  string      `json:"type"`
+	Name  string      `json:"name"`
+	Items []Recommend `json:"items"`
+}
+
+type Recommend struct {
+	Reasons    Reasons `json:"reasons"`
+	Venue      Venue   `json:"venue"`
+	Tips       []Tip   `json:"tips"`
+	ReferralID string  `json:"referralId"`
+}
+
+// Explore returns a list of recommended venues near the current location.
+// https://developer.foursquare.com/docs/venues/explore
+func (s *VenueService) Explore(params *VenueExploreParams) (*VenueExploreResponse, *http.Response, error) {
+	if params.LatLong == "" && params.Near == "" {
+		return nil, nil, errors.New("LatLong or Near are required")
+	}
+
+	exploreResponse := new(VenueExploreResponse)
+	response := new(Response)
+
+	resp, err := s.sling.New().Get("explore").QueryStruct(params).Receive(response, response)
+	if err == nil {
+		json.Unmarshal(response.Response, exploreResponse)
+	}
+
+	return exploreResponse, resp, relevantError(err, *response)
+}
