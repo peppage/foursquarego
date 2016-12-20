@@ -18,7 +18,8 @@ func newVenueService(sling *sling.Sling) *VenueService {
 	}
 }
 
-// Need this since the responses all have subitems.
+// Need special responses for endpoints since
+// the objects we want are subitems of the response
 type venueResp struct {
 	Venue Venue `json:"venue"`
 }

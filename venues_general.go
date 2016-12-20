@@ -124,7 +124,7 @@ func (s *VenueService) SuggestCompletion(params *VenueSuggestParams) ([]MiniVenu
 	return venues.MiniVenues, resp, relevantError(err, *response)
 }
 
-// VenueTrendingParams are the parameters for the VenueService.Trending endpoint
+// VenueTrendingParams are the parameters for VenueService.Trending
 type VenueTrendingParams struct {
 	LatLong string `url:"ll,omitempty"`
 	Limit   int    `url:"limit,omitempty"`
@@ -205,7 +205,7 @@ const (
 	True = BoolAsAnInt(1)
 )
 
-// VenueExploreParams are the parameters for the VenueService.Explore endpoint
+// VenueExploreParams are the parameters for VenueService.Explore
 type VenueExploreParams struct {
 	LatLong          string                  `url:"ll,omitempty"`
 	Near             string                  `url:"near,omitempty"`

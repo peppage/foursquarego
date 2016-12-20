@@ -183,6 +183,7 @@ const (
 	OtherListedGroup = ListedGroupParam("other")
 )
 
+// VenueListedParams are the parameters for VenueService.Listed
 type VenueListedParams struct {
 	VenueID string           `url:"-"`
 	Group   ListedGroupParam `url:"group,omitempty"`
@@ -309,7 +310,7 @@ const (
 	TipSortPopular  = VenueTipSort("popular")
 )
 
-// VenueTipsParams are the possible parameters for the venue tips endpoint
+// VenueTipsParams are the parameters for VenueService.Tips
 type VenueTipsParams struct {
 	VenueID string       `url:"-"`
 	Sort    VenueTipSort `url:"sort,omitempty"`
