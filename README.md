@@ -10,10 +10,11 @@ If you find any errors please create an issue, the foursquare API has different 
 ```go
 
     httpClient := http.DefaultClient
-    client := foursquarego.NewClient("foursquare", "clientId", "clientSecret")
+    // When creating the client you can specify either clientSecret or the accesstoken
+    client := foursquarego.NewClient("foursquare", "clientId", "clientSecret", "")
 
     // Get venue details
-    venue, resp, err := client.Venues.Details("57d1efb5498e018d15de8ba3)
+    venue, resp, err := client.Venues.Details("57d1efb5498e018d15de8ba3")
     
     // Search Venues
     venues, resp, err := client.Venues.Search(&VenueSearchParams{
