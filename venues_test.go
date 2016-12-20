@@ -718,3 +718,36 @@ func TestVenueService_Explore(t *testing.T) {
 	assert.Len(t, resp.Groups[0].Items[0].Tips, 1)
 	assert.Equal(t, "e-0-3fd66200f964a520b6e71ee3-0", resp.Groups[0].Items[0].ReferralID)
 }
+
+func TestVenueService_Tips(t *testing.T) {
+	const filePath = "./json/venues/tips.json"
+	httpClient, mux, server := testServer()
+	defer server.Close()
+
+	mux.HandleFunc("/v2/venues/5557c94e498ebde0672e57f4/tips", func(w http.ResponseWriter, r *http.Request) {
+		assertMethod(t, "GET", r)
+		assertQueryNoUser(t, map[string]string{
+			"sort":  "recent",
+			"limit": "1",
+		}, r)
+
+		b, err := getTestFile(filePath)
+		if err != nil {
+			t.Fatalf("Failed to open testfile %s", filePath)
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(b)
+	})
+
+	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	resp, _, err := client.Venues.Tips(&VenueTipsParams{
+		VenueID: "5557c94e498ebde0672e57f4",
+		Sort:    TipSortRecent,
+		Limit:   1,
+	})
+	assert.Nil(t, err)
+
+	assert.Len(t, resp, 1)
+	assert.Equal(t, "57f1673c498e128bfb537f04", resp[0].ID)
+}

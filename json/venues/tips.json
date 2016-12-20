@@ -1,0 +1,70 @@
+{
+   "meta":{
+      "code":200,
+      "requestId":"5859b8091ed219042620b391"
+   },
+   "notifications":[
+      {
+         "type":"notificationTray",
+         "item":{
+            "unreadCount":11
+         }
+      }
+   ],
+   "response":{
+      "tips":{
+         "count":20,
+         "items":[
+            {
+               "id":"57f1673c498e128bfb537f04",
+               "createdAt":1475438396,
+               "text":"Tasting room with games and seating for about 30. Awesome seasonal beers",
+               "type":"user",
+               "canonicalUrl":"https:\/\/foursquare.com\/item\/57f1673c498e128bfb537f04",
+               "photo":{
+                  "id":"57f167aa498ea7494a04923e",
+                  "createdAt":1475438506,
+                  "source":{
+                     "name":"Foursquare for iOS",
+                     "url":"https:\/\/foursquare.com\/download\/#\/iphone"
+                  },
+                  "prefix":"https:\/\/irs3.4sqi.net\/img\/general\/",
+                  "suffix":"\/4740390_BvMODplPMlY8q02V-bru2ym_MqpChXW2yYxAenuK1Dk.jpg",
+                  "width":1440,
+                  "height":1799,
+                  "demoted":false,
+                  "visibility":"public"
+               },
+               "photourl":"https:\/\/irs3.4sqi.net\/img\/general\/original\/4740390_BvMODplPMlY8q02V-bru2ym_MqpChXW2yYxAenuK1Dk.jpg",
+               "flags":[
+
+               ],
+               "likes":{
+                  "count":0,
+                  "groups":[
+
+                  ]
+               },
+               "like":false,
+               "logView":true,
+               "agreeCount":0,
+               "disagreeCount":0,
+               "todo":{
+                  "count":0
+               },
+               "user":{
+                  "id":"4740390",
+                  "firstName":"Jennifer",
+                  "lastName":"T.",
+                  "gender":"female",
+                  "photo":{
+                     "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
+                     "suffix":"\/0O1PZS5F34CLE3K2.jpg"
+                  }
+               },
+               "authorInteractionType":"liked"
+            }
+         ]
+      }
+   }
+}

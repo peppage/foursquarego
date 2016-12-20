@@ -2,6 +2,7 @@ package foursquarego
 
 import (
 	"encoding/json"
+	"errors"
 	"net/http"
 )
 
@@ -296,4 +297,49 @@ func (s *VenueService) Menu(id string) (*MenuResp, *http.Response, error) {
 	}
 
 	return &menuResp.Menu, resp, relevantError(err, *response)
+}
+
+// VenueTipSort represents the options to send Sort on the venue tips endpoint
+type VenueTipSort string
+
+// Options for Sort on the venue tips endpoint
+const (
+	TipsSortFriends = VenueTipSort("friends")
+	TipSortRecent   = VenueTipSort("recent")
+	TipSortPopular  = VenueTipSort("popular")
+)
+
+// VenueTipsParams are the possible parameters for the venue tips endpoint
+type VenueTipsParams struct {
+	VenueID string       `url:"-"`
+	Sort    VenueTipSort `url:"sort,omitempty"`
+	Limit   int          `url:"limit,omitempty"`
+	Offset  int          `url:"offset,omitempty"`
+}
+
+type tipResp struct {
+	Tips tipsResp `json:"tips"`
+}
+
+type tipsResp struct {
+	Count int   `json:"count"`
+	Items []Tip `json:"items"`
+}
+
+// Tips returns tips for a venue.
+// https://developer.foursquare.com/docs/venues/tips
+func (s *VenueService) Tips(params *VenueTipsParams) ([]Tip, *http.Response, error) {
+	if params.VenueID == "" {
+		return nil, nil, errors.New("VenueID is required")
+	}
+
+	tipResp := new(tipResp)
+	response := new(Response)
+
+	resp, err := s.sling.New().Get(params.VenueID+"/tips").QueryStruct(params).Receive(response, response)
+	if err == nil {
+		json.Unmarshal(response.Response, tipResp)
+	}
+
+	return tipResp.Tips.Items, resp, relevantError(err, *response)
 }
