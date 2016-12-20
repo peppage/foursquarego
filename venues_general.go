@@ -230,7 +230,7 @@ type VenueExploreParams struct {
 	Specials         BoolAsAnInt             `url:"specials,omitempty"`
 }
 
-type VenueExploreResponse struct {
+type VenueExploreResp struct {
 	SuggestedFilters          SuggestedFilters `json:"suggestedFilters"`
 	Warning                   Warning          `json:"warning"`
 	SuggestedRadius           int              `json:"suggestedRadius"`
@@ -281,12 +281,12 @@ type Recommend struct {
 
 // Explore returns a list of recommended venues near the current location.
 // https://developer.foursquare.com/docs/venues/explore
-func (s *VenueService) Explore(params *VenueExploreParams) (*VenueExploreResponse, *http.Response, error) {
+func (s *VenueService) Explore(params *VenueExploreParams) (*VenueExploreResp, *http.Response, error) {
 	if params.LatLong == "" && params.Near == "" {
 		return nil, nil, errors.New("LatLong or Near are required")
 	}
 
-	exploreResponse := new(VenueExploreResponse)
+	exploreResponse := new(VenueExploreResp)
 	response := new(Response)
 
 	resp, err := s.sling.New().Get("explore").QueryStruct(params).Receive(response, response)
