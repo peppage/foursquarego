@@ -76,3 +76,8 @@ type Group struct {
 type Count struct {
 	Count int `json:"count"`
 }
+
+// Omitted is for fields that do not have a known datastructure. If you find
+// an example where this field is used please let me know. You will need to handle
+// this in your application until that time.
+type Omitted interface{}

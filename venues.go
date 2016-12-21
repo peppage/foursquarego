@@ -62,30 +62,30 @@ type Venue struct {
 	AllowMenuURLEdit bool         `json:"allowMenuUrlEdit"`
 	FriendVisits     FriendVisits `json:"friendVisits"`
 	BeenHere         BeenHere     `json:"beenHere"`
-	//Specials      Specials   `json:"specials"` Come back to this one not enough data
-	Photos      Photos      `json:"photos"`
-	VenuePage   VenuePage   `json:"venuePage"`
-	Reasons     Reasons     `json:"reasons"`
-	Description string      `json:"description"`
-	StoreID     string      `json:"storeId"`
-	Page        Page        `json:"page"`
-	HereNow     HereNow     `json:"hereNow"`
-	CreatedAt   int64       `json:"createdAt"`
-	Tips        Tips        `json:"tips"`
-	Tags        []string    `json:"tags"`
-	ShortURL    string      `json:"shortUrl"`
-	TimeZone    string      `json:"timeZone"`
-	Listed      Listed      `json:"listed"`
-	Phrases     []Phrase    `json:"phrases"`
-	Hours       Hours       `json:"hours"`
-	Popular     Hours       `json:"popular"`
-	PageUpates  PageUpdates `json:"pageUpdates"`
-	Inbox       Inbox       `json:"inbox"`
-	ReferralID  string      `json:"referralId"`
-	//VenueChains   Omit       `json:"-"` Not enough data
-	HasPerk    bool       `json:"hasPerk"`
-	Attributes Attributes `json:"attributes"`
-	BestPhoto  Photo      `json:"bestPhoto"`
+	Specials         Omitted      `json:"Specials"`
+	Photos           Photos       `json:"photos"`
+	VenuePage        VenuePage    `json:"venuePage"`
+	Reasons          Reasons      `json:"reasons"`
+	Description      string       `json:"description"`
+	StoreID          string       `json:"storeId"`
+	Page             Page         `json:"page"`
+	HereNow          HereNow      `json:"hereNow"`
+	CreatedAt        int64        `json:"createdAt"`
+	Tips             Tips         `json:"tips"`
+	Tags             []string     `json:"tags"`
+	ShortURL         string       `json:"shortUrl"`
+	TimeZone         string       `json:"timeZone"`
+	Listed           Listed       `json:"listed"`
+	Phrases          []Phrase     `json:"phrases"`
+	Hours            Hours        `json:"hours"`
+	Popular          Hours        `json:"popular"`
+	PageUpates       PageUpdates  `json:"pageUpdates"`
+	Inbox            Inbox        `json:"inbox"`
+	ReferralID       string       `json:"referralId"`
+	VenueChains      Omitted      `json:"venueChains"`
+	HasPerk          bool         `json:"hasPerk"`
+	Attributes       Attributes   `json:"attributes"`
+	BestPhoto        Photo        `json:"bestPhoto"`
 }
 
 type Contact struct {
@@ -301,25 +301,25 @@ type TipGroup struct {
 }
 
 type Tip struct {
-	ID           string `json:"id"`
-	CreatedAt    int    `json:"createdAt"`
-	Text         string `json:"text"`
-	Type         string `json:"type"`
-	URL          string `json:"url"`
-	CanonicalURL string `json:"canonicalurl"`
-	Photo        Photo  `json:"photo"`
-	PhotoURL     string `json:"photoUrl"`
-	//Flags        Omit   `json:"flags"` //TODO:  not enough data
-	Likes                 Likes  `json:"likes"`
-	Like                  bool   `json:"like"`
-	LogView               bool   `json:"logView"`
-	ViewCount             int    `json:"viewCount"`
-	Listed                Lists  `json:"listed"`
-	AgreeCount            int    `json:"agreeCount"`
-	DisagreeCount         int    `json:"disagreeCount"`
-	Todo                  Count  `json:"todo"`
-	User                  User   `json:"user"`
-	AuthorInteractionType string `json:"authorInteractionType"`
+	ID                    string  `json:"id"`
+	CreatedAt             int     `json:"createdAt"`
+	Text                  string  `json:"text"`
+	Type                  string  `json:"type"`
+	URL                   string  `json:"url"`
+	CanonicalURL          string  `json:"canonicalurl"`
+	Photo                 Photo   `json:"photo"`
+	PhotoURL              string  `json:"photoUrl"`
+	Flags                 Omitted `json:"flags"`
+	Likes                 Likes   `json:"likes"`
+	Like                  bool    `json:"like"`
+	LogView               bool    `json:"logView"`
+	ViewCount             int     `json:"viewCount"`
+	Listed                Lists   `json:"listed"`
+	AgreeCount            int     `json:"agreeCount"`
+	DisagreeCount         int     `json:"disagreeCount"`
+	Todo                  Count   `json:"todo"`
+	User                  User    `json:"user"`
+	AuthorInteractionType string  `json:"authorInteractionType"`
 }
 
 type Listed struct {
@@ -390,10 +390,10 @@ type Hours struct {
 
 // TimeFrame shows when a venue is open.
 type TimeFrame struct {
-	Days          string `json:"days"`
-	IncludesToday bool   `json:"includesToday"`
-	Open          []Open `json:"open"`
-	//Segments      Omit   `json:"-"` //TODO: Not enough data
+	Days          string  `json:"days"`
+	IncludesToday bool    `json:"includesToday"`
+	Open          []Open  `json:"open"`
+	Segments      Omitted `json:"Segments"`
 }
 
 type Open struct {

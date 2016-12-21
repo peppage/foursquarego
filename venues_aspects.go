@@ -282,8 +282,8 @@ type SubEntry struct {
 	Description string   `json:"description"`
 	Prices      []string `json:"prices"`
 	Price       string   `json:"price"`
-	//Options requires more data
-	//Additions requires more data
+	Options     Omitted  `json:"options"`
+	Additions   Omitted  `json:"additions"`
 }
 
 // Menu returns menu information for a venue.
