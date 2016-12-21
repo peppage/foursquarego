@@ -23,34 +23,34 @@ func (s *VenueService) Categories() ([]Category, *http.Response, error) {
 	return cats.Categories, resp, relevantError(err, *response)
 }
 
-// SearchIntentParam represents the options available for Intent on the search endpoint
-type SearchIntentParam string
+// SearchIntent are the intent options on VenueService.Search
+type SearchIntent string
 
-// Options that are valid for the Intent on the search endpoint
+// Options for SearchIntent
 const (
-	CheckinIntent = SearchIntentParam("checkin")
-	BrowseIntent  = SearchIntentParam("browse")
-	GlobalIntent  = SearchIntentParam("global")
-	MatchIntent   = SearchIntentParam("match")
+	IntentCheckin SearchIntent = "checkin"
+	IntentBrowse  SearchIntent = "browse"
+	IntentGlobal  SearchIntent = "global"
+	IntentMatch   SearchIntent = "match"
 )
 
 // VenueSearchParams are the parameters for the VenueService.Search
 type VenueSearchParams struct {
-	LatLong          string            `url:"ll,omitempty"`
-	Near             string            `url:"near,omitempty"`
-	LatLongAccuracy  int               `url:"llAcc,omitempty"`
-	Altitude         int               `url:"alt,omitempty"`
-	AltitudeAccuracy int               `url:"altAcc,omitempty"`
-	Query            string            `url:"query,omitempty"`
-	Limit            int               `url:"limit,omitempty"`
-	Intent           SearchIntentParam `url:"intent,omitempty"`
-	Radius           int               `url:"raidus,omitempty"`
-	Sw               string            `url:"sw,omitempty"`
-	Ne               string            `url:"ne,omitempty"`
-	CategoryID       []string          `url:"categoryId,omitempty"`
-	URL              string            `url:"url,omitempty"`
-	ProviderID       string            `url:"providerId,omitempty"`
-	LinkedID         int               `url:"linkedId,omitempty"`
+	LatLong          string       `url:"ll,omitempty"`
+	Near             string       `url:"near,omitempty"`
+	LatLongAccuracy  int          `url:"llAcc,omitempty"`
+	Altitude         int          `url:"alt,omitempty"`
+	AltitudeAccuracy int          `url:"altAcc,omitempty"`
+	Query            string       `url:"query,omitempty"`
+	Limit            int          `url:"limit,omitempty"`
+	Intent           SearchIntent `url:"intent,omitempty"`
+	Radius           int          `url:"raidus,omitempty"`
+	Sw               string       `url:"sw,omitempty"`
+	Ne               string       `url:"ne,omitempty"`
+	CategoryID       []string     `url:"categoryId,omitempty"`
+	URL              string       `url:"url,omitempty"`
+	ProviderID       string       `url:"providerId,omitempty"`
+	LinkedID         int          `url:"linkedId,omitempty"`
 }
 
 type venueSearchResp struct {
@@ -136,81 +136,73 @@ func (s *VenueService) Trending(params *VenueTrendingParams) ([]Venue, *http.Res
 	return venues.Venues, resp, relevantError(err, *response)
 }
 
-// ExploreSectionParam represents the options that are available for the Section param on the Venue Explore endpoint
-type ExploreSectionParam string
+// ExploreSection are the section options on VenueService.Explore
+type ExploreSection string
 
-// Options that are valid for Section in the Venue Explore endpoint
+// Options for ExploreSection
 const (
-	SectionFood       = ExploreSectionParam("food")
-	SectionDrink      = ExploreSectionParam("drink")
-	SectionCoffee     = ExploreSectionParam("coffee")
-	SectionShops      = ExploreSectionParam("shops")
-	SectionArts       = ExploreSectionParam("arts")
-	SectionOutdoors   = ExploreSectionParam("outdoors")
-	SectionSights     = ExploreSectionParam("sights")
-	SectionTrending   = ExploreSectionParam("trending")
-	SectionSpecials   = ExploreSectionParam("specials")
-	SectionNextVenues = ExploreSectionParam("nextVenues")
-	SectionTopPicks   = ExploreSectionParam("topPicks")
+	SectionFood       ExploreSection = "food"
+	SectionDrink      ExploreSection = "drink"
+	SectionCoffee     ExploreSection = "coffee"
+	SectionShops      ExploreSection = "shops"
+	SectionArts       ExploreSection = "arts"
+	SectionOutdoors   ExploreSection = "outdoors"
+	SectionSights     ExploreSection = "sights"
+	SectionTrending   ExploreSection = "trending"
+	SectionSpecials   ExploreSection = "specials"
+	SectionNextVenues ExploreSection = "nextVenues"
+	SectionTopPicks   ExploreSection = "topPicks"
 )
 
-// ExploreNoveltyParam represents the options that are available for the novelty param on the Venue Explore endpoint
-type ExploreNoveltyParam string
+// Novelty are the novelty options on VenueService.Explore
+type Novelty string
 
-// Options that are valid for Novelty in the Venue Explore endpoint
+// Options for Novelty
 const (
-	NoveltyNew = ExploreNoveltyParam("new")
-	NoveltyOld = ExploreNoveltyParam("old")
+	NoveltyNew Novelty = "new"
+	NoveltyOld Novelty = "old"
 )
 
-// ExploreFriendVisitParam represents the options that are available for the FriendVisits on the Venue Explore endpoint
-type ExploreFriendVisitParam string
+// FriendVisit are the friendVisit options on VenueService.Explore
+type FriendVisit string
 
-// Options that are valid for FriendVisit in the Venue Explore endpoint
+// Options for FriendVisit
 const (
-	FriendVisited    = ExploreFriendVisitParam("visited")
-	FriendNotVisited = ExploreFriendVisitParam("notvisited")
+	FriendVisited    FriendVisit = "visited"
+	FriendNotVisited FriendVisit = "notvisited"
 )
 
-// ExploreTimeParam represents the options that are available for the Time & Dat params on the Venue Explore endpoint
-type ExploreTimeParam string
+// ExploreTime are the time options on VenueService.Explore
+type ExploreTime string
 
-// Option that are valid for Time & Day in the Venue Explore endpoint
+// Options for ExploreTime
 const (
-	TimeAny = ExploreTimeParam("any")
-)
-
-// BoolAsAnInt is a bool that needs to be an int when transferred to an endpoint
-type BoolAsAnInt int
-
-// Option available for BoolAsAnInt
-const (
-	True = BoolAsAnInt(1)
+	TimeAny ExploreTime = "any"
 )
 
 // VenueExploreParams are the parameters for VenueService.Explore
 type VenueExploreParams struct {
-	LatLong          string                  `url:"ll,omitempty"`
-	Near             string                  `url:"near,omitempty"`
-	LatLongAccuracy  int                     `url:"llAcc,omitempty"`
-	Altitude         int                     `url:"alt,omitempty"`
-	AltitudeAccuracy int                     `url:"altAcc,omitempty"`
-	Radius           int                     `url:"raidus,omitempty"`
-	Section          ExploreSectionParam     `url:"section,omitempty"`
-	Query            string                  `url:"query,omitempty"`
-	Limit            int                     `url:"limit,omitempty"`
-	Offset           int                     `url:"offset,omitempty"`
-	Novelty          ExploreNoveltyParam     `url:"novelty,omitempty"`
-	FriendVisits     ExploreFriendVisitParam `url:"friendVists,omitempty"`
-	Time             ExploreTimeParam        `url:"time,omitempty"`
-	Day              ExploreTimeParam        `url:"day,omitempty"`
-	VenuePhotos      BoolAsAnInt             `url:"venuePhotos,omitempty"`
-	LastVenue        string                  `url:"lastVenue,omitempty"`
-	OpenNow          BoolAsAnInt             `url:"openNow,omitempty"`
-	SortByDistance   BoolAsAnInt             `url:"sortByDistance,omitempty"`
-	Price            []int                   `url:"price,omitempty"`
-	Saved            BoolAsAnInt             `url:"saved,omitempty"`
-	Specials         BoolAsAnInt             `url:"specials,omitempty"`
+	LatLong          string         `url:"ll,omitempty"`
+	Near             string         `url:"near,omitempty"`
+	LatLongAccuracy  int            `url:"llAcc,omitempty"`
+	Altitude         int            `url:"alt,omitempty"`
+	AltitudeAccuracy int            `url:"altAcc,omitempty"`
+	Radius           int            `url:"raidus,omitempty"`
+	Section          ExploreSection `url:"section,omitempty"`
+	Query            string         `url:"query,omitempty"`
+	Limit            int            `url:"limit,omitempty"`
+	Offset           int            `url:"offset,omitempty"`
+	Novelty          Novelty        `url:"novelty,omitempty"`
+	FriendVisits     FriendVisit    `url:"friendVists,omitempty"`
+	Time             ExploreTime    `url:"time,omitempty"`
+	Day              ExploreTime    `url:"day,omitempty"`
+	VenuePhotos      BoolAsAnInt    `url:"venuePhotos,omitempty"`
+	LastVenue        string         `url:"lastVenue,omitempty"`
+	OpenNow          BoolAsAnInt    `url:"openNow,omitempty"`
+	SortByDistance   BoolAsAnInt    `url:"sortByDistance,omitempty"`
+	Price            []int          `url:"price,omitempty"`
+	Saved            BoolAsAnInt    `url:"saved,omitempty"`
+	Specials         BoolAsAnInt    `url:"specials,omitempty"`
 }
 
 type VenueExploreResp struct {

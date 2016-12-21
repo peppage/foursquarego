@@ -103,3 +103,11 @@ type Count struct {
 // an example where this field is used please let me know. You will need to handle
 // this in your application until that time.
 type Omitted interface{}
+
+// BoolAsAnInt is a bool that needs to be an int when transferred to an endpoint
+type BoolAsAnInt int
+
+// Option available for BoolAsAnInt
+const (
+	True = BoolAsAnInt(1)
+)

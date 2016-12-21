@@ -229,12 +229,12 @@ type BeenHere struct {
 
 // Photos contains a count and groups of photos for the venue.
 type Photos struct {
-	Count  int          `json:"count"`
-	Groups []PhotoGroup `json:"groups"`
+	Count  int             `json:"count"`
+	Groups []PhotoGrouping `json:"groups"`
 }
 
-// PhotoGroup is a default group with items of type photo.
-type PhotoGroup struct {
+// PhotoGrouping is a default group with items of type photo.
+type PhotoGrouping struct {
 	Group
 	Items []Photo `json:"items"`
 }

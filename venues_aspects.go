@@ -5,30 +5,30 @@ import (
 	"net/http"
 )
 
-// PhotoGroupParam represents the options available to group photos on photos endpoint
-type PhotoGroupParam string
+// PhotoGroup are the group options on VenueService.Photos
+type PhotoGroup string
 
-// Options that are valid for the group on the photos endpoint
+// Options for a PhotoGroup
 const (
-	VenuePhotoGroup    = PhotoGroupParam("venue")
-	CheckingPhotoGroup = PhotoGroupParam("checkin")
+	PhotoGroupVenue   PhotoGroup = "venue"
+	PhotoGroupCheckin PhotoGroup = "checkin"
 )
 
 // VenuePhotosParams are the paremeters for the VenueService.Photos
 type VenuePhotosParams struct {
-	VenueID string          `url:"-"`
-	Group   PhotoGroupParam `url:"group,omitempty"`
-	Limit   int             `url:"limit,omitempty"`
-	Offset  int             `url:"offset,omitempty"`
+	VenueID string     `url:"-"`
+	Group   PhotoGroup `url:"group,omitempty"`
+	Limit   int        `url:"limit,omitempty"`
+	Offset  int        `url:"offset,omitempty"`
 }
 
 type venuePhotoResp struct {
-	Photos PhotoGroup `json:"photos"`
+	Photos PhotoGrouping `json:"photos"`
 }
 
 // Photos gets photos for a venue
 // https://developer.foursquare.com/docs/venues/photos
-func (s *VenueService) Photos(params *VenuePhotosParams) (*PhotoGroup, *http.Response, error) {
+func (s *VenueService) Photos(params *VenuePhotosParams) (*PhotoGrouping, *http.Response, error) {
 	photos := new(venuePhotoResp)
 	response := new(Response)
 
@@ -179,18 +179,20 @@ func (s *VenueService) Links(id string) (*Links, *http.Response, error) {
 	return &links.Links, resp, relevantError(err, *response)
 }
 
-type ListedGroupParam string
+// ListedGroup are the group options on VenueService.Listed
+type ListedGroup string
 
+// Options for a ListedGroup
 const (
-	OtherListedGroup = ListedGroupParam("other")
+	ListedGroupOther ListedGroup = "other"
 )
 
 // VenueListedParams are the parameters for VenueService.Listed
 type VenueListedParams struct {
-	VenueID string           `url:"-"`
-	Group   ListedGroupParam `url:"group,omitempty"`
-	Limit   int              `url:"limit,omitempty"`
-	Offset  int              `url:"offset,omitempty"`
+	VenueID string      `url:"-"`
+	Group   ListedGroup `url:"group,omitempty"`
+	Limit   int         `url:"limit,omitempty"`
+	Offset  int         `url:"offset,omitempty"`
 }
 
 type venueListedResp struct {
@@ -302,22 +304,22 @@ func (s *VenueService) Menu(id string) (*MenuResp, *http.Response, error) {
 	return &menuResp.Menu, resp, relevantError(err, *response)
 }
 
-// VenueTipSort represents the options to send Sort on the venue tips endpoint
-type VenueTipSort string
+// TipSort is the sort options on VenueService.Tips
+type TipSort string
 
-// Options for Sort on the venue tips endpoint
+// Options for TipSort
 const (
-	TipsSortFriends = VenueTipSort("friends")
-	TipSortRecent   = VenueTipSort("recent")
-	TipSortPopular  = VenueTipSort("popular")
+	TipsSortFriends TipSort = "friends"
+	TipSortRecent   TipSort = "recent"
+	TipSortPopular  TipSort = "popular"
 )
 
 // VenueTipsParams are the parameters for VenueService.Tips
 type VenueTipsParams struct {
-	VenueID string       `url:"-"`
-	Sort    VenueTipSort `url:"sort,omitempty"`
-	Limit   int          `url:"limit,omitempty"`
-	Offset  int          `url:"offset,omitempty"`
+	VenueID string  `url:"-"`
+	Sort    TipSort `url:"sort,omitempty"`
+	Limit   int     `url:"limit,omitempty"`
+	Offset  int     `url:"offset,omitempty"`
 }
 
 type tipResp struct {
