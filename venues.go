@@ -88,6 +88,7 @@ type Venue struct {
 	BestPhoto        Photo        `json:"bestPhoto"`
 }
 
+// Contact are details to contact this venue. Can contain all or none.
 type Contact struct {
 	Phone          string `json:"phone"`
 	FormattedPhone string `json:"formattedPhone"`
@@ -95,6 +96,8 @@ type Contact struct {
 	Facebook       string `json:"facebook"`
 }
 
+// Location is a location for the venue. Can contain all or none and
+// some venues have a hidden location.
 type Location struct {
 	Address          string           `json:"address"`
 	CrossStreet      string           `json:"crossStreet"`
@@ -111,12 +114,15 @@ type Location struct {
 	Distance         int              `json:"distance"`
 }
 
+// LabeledLatLngs is further details in the Location of a venue.
 type LabeledLatLngs struct {
-	Label string  `json"label"`
+	Label string  `json:"label"`
 	Lat   float64 `json:"lat"`
 	Lng   float64 `json:"lng"`
 }
 
+// Category is a category applied to a venue
+// https://developer.foursquare.com/docs/responses/category
 type Category struct {
 	ID         string     `json:"id"`
 	Name       string     `json:"name"`
@@ -127,11 +133,13 @@ type Category struct {
 	Categories []Category `json:"categories,omitempty"`
 }
 
+// Icon is the pieces needed to construct icons at various sizes.
 type Icon struct {
 	Prefix string `json:"prefix"`
 	Suffix string `json:"suffix"`
 }
 
+// Stats are the stats for a venue.
 type Stats struct {
 	CheckinsCount int `json:"checkinsCount"`
 	UsersCount    int `json:"usersCount"`
@@ -139,23 +147,28 @@ type Stats struct {
 	VisitsCount   int `json:"visitsCount"`
 }
 
+// Price is the price tier of a venue from 1 (least pricey) - 4 (most pricey).
 type Price struct {
 	Tier     int    `json:"tier"`
 	Message  string `json:"message"`
 	Currency string `json:"currency"`
 }
 
+// Likes is a count of users who liked the venue and groups containing
+// users who liked it (friends and others).
 type Likes struct {
 	Count   int         `json:"count"`
 	Groups  []LikeGroup `json:"groups"`
 	Summary string      `json:"summary"`
 }
 
+// LikeGroup is a group of users for the Likes struct.
 type LikeGroup struct {
 	Group
-	Items []User `json""items"`
+	Items []User `json:"items"`
 }
 
+// Menu contains how to access the menu for the venue.
 type Menu struct {
 	Type      string `json:"type"`
 	Label     string `json:"label"`
@@ -164,12 +177,16 @@ type Menu struct {
 	MobileURL string `json:"mobileUrl"`
 }
 
+// FriendVisits contains if an authed user's friends visited, includes
+// self visits.
 type FriendVisits struct {
 	Count   int               `json:"count"`
 	Summary string            `json:"summary"`
 	Items   []FriendVisitItem `json:"items"`
 }
 
+// FriendVisitItem contains the user that visited along with information
+// about their interaction with the venue.
 type FriendVisitItem struct {
 	VisitedCount int  `json:"visitedCount"`
 	Liked        bool `json:"liked"`
@@ -178,30 +195,30 @@ type FriendVisitItem struct {
 	User         User `json:"user"`
 }
 
+// User is a foursquare user
+// https://developer.foursquare.com/docs/responses/user
 type User struct {
-	ID           string    `json:"id"`
-	FirstName    string    `json:"firstName"`
-	LastName     string    `json:"lastName"`
-	Gender       string    `json:"gender"`
-	Relationship string    `json:"relationship"`
-	Photo        *Photo    `json:"photo"`
-	Type         string    `json:"type"`
-	Venue        VenuePage `json:"venue"`
-	Tips         UserTips  `json:"tips"`
-	Lists        Lists     `json:"lists"`
-	HomeCity     string    `json:"homeCity"`
-	Bio          string    `json:"bio"`
-	Contact      Contact   `json:"contact"`
-}
-
-type UserTips struct {
-	Count int `json:"count"`
+	ID           string  `json:"id"`
+	FirstName    string  `json:"firstName"`
+	LastName     string  `json:"lastName"`
+	Gender       string  `json:"gender"`
+	Relationship string  `json:"relationship"`
+	Photo        *Photo  `json:"photo"`
+	Type         string  `json:"type"`
+	Venue        ID      `json:"venue"`
+	Tips         Count   `json:"tips"`
+	Lists        Lists   `json:"lists"`
+	HomeCity     string  `json:"homeCity"`
+	Bio          string  `json:"bio"`
+	Contact      Contact `json:"contact"`
 }
 
 type Lists struct {
 	Groups []Group `json:"groups"`
 }
 
+// BeenHere contains the number of times the acting user has
+// been to the venue. Absent if there is no acting user.
 type BeenHere struct {
 	Count                int   `json:"count"`
 	UnconfirmedCount     int   `json:"unconfirmedCount"`
@@ -210,11 +227,13 @@ type BeenHere struct {
 	LastCheckinExpiredAt int64 `json:"lastCheckinExpiredAt"`
 }
 
+// Photos contains a count and groups of photos for the venue.
 type Photos struct {
 	Count  int          `json:"count"`
 	Groups []PhotoGroup `json:"groups"`
 }
 
+// PhotoGroup is a default group with items of type photo.
 type PhotoGroup struct {
 	Group
 	Items []Photo `json:"items"`
@@ -235,6 +254,7 @@ type Photo struct {
 	Visibility string      `json:"visibility"`
 }
 
+// PhotoSource is the source on a photo struct.
 type PhotoSource struct {
 	Name string `json:"name"`
 	URL  string `json:"url"`
@@ -271,10 +291,13 @@ type ReasonObjectTarget struct {
 	URL  string `json:"url"`
 }
 
+// Page (optional) contains the user that is the branded page
+// associated with the venue.
 type Page struct {
 	User User `json:"user"`
 }
 
+// HereNow contains which users are here now.
 type HereNow struct {
 	Count   int            `json:"count"`
 	Summary string         `json:"summary"`
@@ -283,19 +306,22 @@ type HereNow struct {
 
 type HereNowGroup struct {
 	Group
-	//Items
+	Items Omitted `json:"items"`
 }
 
+// Tips contains a count and groups of tips.
 type Tips struct {
 	Count  int        `json:"count"`
 	Groups []TipGroup `json:"groups"`
 }
 
+// TipGroup is the standard group field where the items are tips.
 type TipGroup struct {
 	Group
 	Items []Tip `json:"items"`
 }
 
+// Tip is a foursquare tip on a venue.
 type Tip struct {
 	ID                    string  `json:"id"`
 	CreatedAt             int     `json:"createdAt"`
@@ -318,16 +344,21 @@ type Tip struct {
 	AuthorInteractionType string  `json:"authorInteractionType"`
 }
 
+// Listed contains a count and the grouped lists
 type Listed struct {
 	Count  int         `json:"count"`
 	Groups []ListGroup `json:"groups"`
 }
 
+// ListGroup is the standard group field where the items are of
+// type List.
 type ListGroup struct {
 	Group
 	Items []List `json:"items"`
 }
 
+// List is a foursquare list.
+// https://developer.foursquare.com/docs/responses/list.html
 type List struct {
 	ID            string    `json:"id"`
 	Name          string    `json:"name"`
@@ -349,11 +380,14 @@ type List struct {
 	ListItems     ListItems `json:"listItems"`
 }
 
+// ListItems contains a count and an array of ListItem.
 type ListItems struct {
 	Count int        `json:"count"`
 	Items []ListItem `json:"items"`
 }
 
+// ListItem contains more information about a list.
+// https://developer.foursquare.com/docs/responses/item.html
 type ListItem struct {
 	ID        string `json:"id"`
 	CreatedAt int    `json:"createdAt"`
@@ -361,22 +395,27 @@ type ListItem struct {
 	Photo     Photo  `json:"photo"`
 }
 
+// Phrase contains a phrase commonly seen with a venue's tips.
 type Phrase struct {
 	Phrase string `json:"phrase"`
 	Sample Sample `json:"sample"`
 	Count  int    `json:"count"`
 }
 
+// Sample contains an example of a Phrase being used in a tip.
 type Sample struct {
 	Entities []Entitie `json:"entities"`
 	Text     string    `json:"text"`
 }
 
+// Entitie contains where the Phrase is in the Sample.
 type Entitie struct {
 	Indices []int  `json:"indices"`
 	Type    string `json:"type"`
 }
 
+// Hours contains hours during the week when a venue is open.
+// Used in Venue struct.
 type Hours struct {
 	Status         string      `json:"status"`
 	IsOpen         bool        `json:"isOpen"`
@@ -392,6 +431,8 @@ type TimeFrame struct {
 	Segments      Omitted `json:"Segments"`
 }
 
+// Open contains how a timeframe would be written out.
+// Used only in TimeFrame.
 type Open struct {
 	RenderedTime string `json:"renderedTime"`
 }
@@ -406,16 +447,20 @@ type Inbox struct {
 	Items Omitted `json:"items"`
 }
 
+// Attributes contains Attribute associated with a venue.
 type Attributes struct {
 	Groups []Attribute `json:"groups"`
 }
 
+// Attribute contains info about Venue such as price tier,
+// reservations and parking.
 type Attribute struct {
 	Group
 	Summary string          `json:"summary"`
 	Items   []AttributeItem `json:"Items"`
 }
 
+// AttributeItem is the actual value shown in an Attribute.
 type AttributeItem struct {
 	DisplayName  string `json:"displayName"`
 	DisplayValue string `json:"displayValue"`

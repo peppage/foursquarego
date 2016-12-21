@@ -97,6 +97,9 @@ type HoursTimeFrame struct {
 	Open          []HoursOpen `json:"open"`
 }
 
+// HoursOpen contains the start time and end time when the HoursTimeFrame
+// is open.
+// Used only in HoursTimeFrame
 type HoursOpen struct {
 	Start string `json:"start"`
 	End   string `json:"end"`
