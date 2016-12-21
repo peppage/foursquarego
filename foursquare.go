@@ -10,12 +10,13 @@ import (
 const (
 	baseURL = "https://api.foursquare.com/v2/"
 	version = "20161213"
-	//MODE    = "foursquare"
 )
 
 // Client is a Foursquare client for making Foursquare API requests.
 type Client struct {
-	sling  *sling.Sling
+	sling *sling.Sling
+
+	// Services used for talking to different parts of the API
 	Venues *VenueService
 }
 
@@ -63,6 +64,8 @@ type Response struct {
 	Response      json.RawMessage `json:"response"`
 }
 
+// Meta contains request information and error details
+// https://developer.foursquare.com/overview/responses
 type Meta struct {
 	Code        int    `json:"code"`
 	ErrorType   string `json:"errorType"`
@@ -70,17 +73,23 @@ type Meta struct {
 	RequestID   string `json:"requestId"`
 }
 
+// Notification comes with all responses.
+// https://developer.foursquare.com/docs/responses/notifications
 type Notification struct {
 	Type string  `json:"type"`
 	Item Omitted `json:"item"`
 }
 
+// Group contains the default fields in a group. A lot of responses
+// share these fields.
 type Group struct {
 	Type  string `json:"type"`
 	Name  string `json:"name"`
 	Count int    `json:"count"`
 }
 
+// Count is a simple struct with just a count. Followers and todo are examples
+// that only have a count.
 type Count struct {
 	Count int `json:"count"`
 }
