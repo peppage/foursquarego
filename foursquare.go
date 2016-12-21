@@ -88,6 +88,11 @@ type Group struct {
 	Count int    `json:"count"`
 }
 
+// ID is a simple struct with just an id. VenuePage is an example.
+type ID struct {
+	ID string `json:"id"`
+}
+
 // Count is a simple struct with just a count. Followers and todo are examples
 // that only have a count.
 type Count struct {

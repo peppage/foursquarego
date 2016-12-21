@@ -64,7 +64,7 @@ type Venue struct {
 	BeenHere         BeenHere     `json:"beenHere"`
 	Specials         Omitted      `json:"Specials"`
 	Photos           Photos       `json:"photos"`
-	VenuePage        VenuePage    `json:"venuePage"`
+	VenuePage        ID           `json:"venuePage"`
 	Reasons          Reasons      `json:"reasons"`
 	Description      string       `json:"description"`
 	StoreID          string       `json:"storeId"`
@@ -238,10 +238,6 @@ type Photo struct {
 type PhotoSource struct {
 	Name string `json:"name"`
 	URL  string `json:"url"`
-}
-
-type VenuePage struct {
-	ID string `json:"id"`
 }
 
 type Reasons struct {
