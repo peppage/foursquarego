@@ -47,6 +47,14 @@ func newClient(httpClient *http.Client, mode, clientID, clientSecret, accessToke
 	}
 }
 
+// RawRequest allows you to make any request you want. This will automatically add
+// the client/user tokens. Gives back exactly the response from foursquare.
+func (c *Client) RawRequest(url string) (*Response, *http.Response, error) {
+	response := new(Response)
+	resp, err := c.sling.New().Get(url).Receive(response, response)
+	return response, resp, relevantError(err, *response)
+}
+
 // Response is a typical foursquare response
 // https://developer.foursquare.com/overview/responses
 type Response struct {
