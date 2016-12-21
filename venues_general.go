@@ -2,7 +2,6 @@ package foursquarego
 
 import (
 	"encoding/json"
-	"errors"
 	"net/http"
 )
 
@@ -61,10 +60,6 @@ type venueSearchResp struct {
 // Search returns a list of venues near the current location, optionally matching a search term.
 // https://developer.foursquare.com/docs/venues/search
 func (s *VenueService) Search(params *VenueSearchParams) ([]Venue, *http.Response, error) {
-	if params.LatLong == "" && params.Near == "" {
-		return nil, nil, errors.New("LatLong or Near are required")
-	}
-
 	venues := new(venueSearchResp)
 	response := new(Response)
 
@@ -105,14 +100,6 @@ type venueSuggestResp struct {
 // SuggestCompletion returns a list of mini-venues partially matching the search term, near the location.
 // https://developer.foursquare.com/docs/venues/suggestcompletion
 func (s *VenueService) SuggestCompletion(params *VenueSuggestParams) ([]MiniVenue, *http.Response, error) {
-	if params.LatLong == "" && params.Near == "" {
-		return nil, nil, errors.New("LatLong or Near are required")
-	}
-
-	if params.Query == "" {
-		return nil, nil, errors.New("Query is required")
-	}
-
 	venues := new(venueSuggestResp)
 	response := new(Response)
 
@@ -138,10 +125,6 @@ type venueTrendingResp struct {
 // Trending returns a list of venues near the current location with the most people currently checked in.
 // https://developer.foursquare.com/docs/venues/trending
 func (s *VenueService) Trending(params *VenueTrendingParams) ([]Venue, *http.Response, error) {
-	if params.LatLong == "" {
-		return nil, nil, errors.New("LatLong is required")
-	}
-
 	venues := new(venueTrendingResp)
 	response := new(Response)
 
@@ -282,10 +265,6 @@ type Recommend struct {
 // Explore returns a list of recommended venues near the current location.
 // https://developer.foursquare.com/docs/venues/explore
 func (s *VenueService) Explore(params *VenueExploreParams) (*VenueExploreResp, *http.Response, error) {
-	if params.LatLong == "" && params.Near == "" {
-		return nil, nil, errors.New("LatLong or Near are required")
-	}
-
 	exploreResponse := new(VenueExploreResp)
 	response := new(Response)
 

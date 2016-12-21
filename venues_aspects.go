@@ -2,7 +2,6 @@ package foursquarego
 
 import (
 	"encoding/json"
-	"errors"
 	"net/http"
 )
 
@@ -333,10 +332,6 @@ type tipsResp struct {
 // Tips returns tips for a venue.
 // https://developer.foursquare.com/docs/venues/tips
 func (s *VenueService) Tips(params *VenueTipsParams) ([]Tip, *http.Response, error) {
-	if params.VenueID == "" {
-		return nil, nil, errors.New("VenueID is required")
-	}
-
 	tipResp := new(tipResp)
 	response := new(Response)
 
