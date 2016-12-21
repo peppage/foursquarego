@@ -71,8 +71,8 @@ type Meta struct {
 }
 
 type Notification struct {
-	Type string          `json:"type"`
-	Item json.RawMessage `json:"item"`
+	Type string  `json:"type"`
+	Item Omitted `json:"item"`
 }
 
 type Group struct {

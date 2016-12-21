@@ -401,13 +401,13 @@ type Open struct {
 }
 
 type PageUpdates struct {
-	Count int `json:"count"`
-	//Items not enough data
+	Count int     `json:"count"`
+	Items Omitted `json:"items"`
 }
 
 type Inbox struct {
-	Count int `json:"count"`
-	//Items not enough data
+	Count int     `json:"count"`
+	Items Omitted `json:"items"`
 }
 
 type Attributes struct {
