@@ -34,7 +34,7 @@ func TestVenueService_Details(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	venue, _, err := client.Venues.Details("5414d0a6498ea3d31a3c64cf")
 	assert.Nil(t, err)
 
@@ -275,7 +275,7 @@ func TestVenueService_Photos(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	photos, _, err := client.Venues.Photos(&VenuePhotosParams{
 		VenueID: "5414d0a6498ea3d31a3c64cf",
 	})
@@ -317,7 +317,7 @@ func TestVenueService_Events(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	events, _, err := client.Venues.Events("40afe980f964a5203bf31ee3")
 	assert.Nil(t, err)
 
@@ -351,7 +351,7 @@ func TestVenueService_Hours(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	hours, _, err := client.Venues.Hours("40a55d80f964a52020f31ee3")
 	assert.Nil(t, err)
 
@@ -379,7 +379,7 @@ func TestVenueService_Likes(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	likes, _, err := client.Venues.Likes("40a55d80f964a52020f31ee3")
 	assert.Nil(t, err)
 
@@ -412,7 +412,7 @@ func TestVenueservice_Links(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	links, _, err := client.Venues.Links("3fd66200f964a52074e31ee3")
 	assert.Nil(t, err)
 
@@ -440,7 +440,7 @@ func TestVenueService_Categories(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	categories, _, err := client.Venues.Categories()
 	assert.Nil(t, err)
 
@@ -479,7 +479,7 @@ func TestVenueService_Search(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	venues, _, err := client.Venues.Search(&VenueSearchParams{
 		LatLong: "40.7,-74",
 		Query:   "singlecut",
@@ -511,7 +511,7 @@ func TestVenueService_Listed(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	lists, _, err := client.Venues.Listed(&VenueListedParams{
 		VenueID: "4f68de6bd5fbee32e5f4f3a5",
 		Limit:   1,
@@ -552,7 +552,7 @@ func TestVenueService_SuggestCompletion(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	venues, _, err := client.Venues.SuggestCompletion(&VenueSuggestParams{
 		LatLong: "40.7,-74",
 		Query:   "foursqu",
@@ -585,7 +585,7 @@ func TestVenueService_Trending(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	venues, _, err := client.Venues.Trending(&VenueTrendingParams{
 		LatLong: "40.7,-74",
 		Limit:   2,
@@ -614,7 +614,7 @@ func TestVenueService_NextVenues(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	venues, _, err := client.Venues.NextVenues("40a55d80f964a52020f31ee3")
 	assert.Nil(t, err)
 
@@ -639,7 +639,7 @@ func TestVenueService_Menu(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	resp, _, err := client.Venues.Menu("4fa89bb2e4b0bad89524b84a")
 	assert.Nil(t, err)
 
@@ -683,7 +683,7 @@ func TestVenueService_Explore(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	resp, _, err := client.Venues.Explore(&VenueExploreParams{
 		LatLong: "40.76502,-73.97999",
 		Limit:   3,
@@ -740,7 +740,7 @@ func TestVenueService_Tips(t *testing.T) {
 		w.Write(b)
 	})
 
-	client := newClient(httpClient, "foursquare", clientID, clientSecret, "")
+	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	resp, _, err := client.Venues.Tips(&VenueTipsParams{
 		VenueID: "5557c94e498ebde0672e57f4",
 		Sort:    TipSortRecent,

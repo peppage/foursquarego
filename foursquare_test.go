@@ -77,7 +77,7 @@ func TestRateLimit(t *testing.T) {
 	resp.Header.Add(headerRatePath, "/v2/venues/X")
 	resp.Header.Add(headerRateRemaining, "4999")
 
-	rl := RateLimitData(&resp)
+	rl := ParseRate(&resp)
 
 	assert.Equal(t, 5000, rl.Limit)
 	assert.Equal(t, "/v2/venues/X", rl.Path)
