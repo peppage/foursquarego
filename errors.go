@@ -1,8 +1,6 @@
 package foursquarego
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // APIError is a foursquare error response
 // https://developer.foursquare.com/overview/responses

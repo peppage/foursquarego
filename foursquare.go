@@ -3,13 +3,17 @@ package foursquarego
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
 
 	"github.com/dghubble/sling"
 )
 
 const (
-	baseURL = "https://api.foursquare.com/v2/"
-	version = "20161213"
+	baseURL             = "https://api.foursquare.com/v2/"
+	version             = "20161213"
+	headerRateLimit     = "X-RateLimit-Limit"
+	headerRateRemaining = "x-RateLimit-Remaining"
+	headerRatePath      = "X-RateLimit-Path"
 )
 
 // Client is a Foursquare client for making Foursquare API requests.
@@ -111,3 +115,26 @@ type BoolAsAnInt int
 const (
 	True = BoolAsAnInt(1)
 )
+
+// RateLimit is a struct of foursquare ratelimit data
+type RateLimit struct {
+	Limit     int
+	Path      string
+	Remaining int
+}
+
+// ParseRate is a helper function to get all the Rate info
+func ParseRate(resp *http.Response) *RateLimit {
+	limit := resp.Header.Get(headerRateLimit)
+	path := resp.Header.Get(headerRatePath)
+	remain := resp.Header.Get(headerRateRemaining)
+
+	l, _ := strconv.Atoi(limit)
+	r, _ := strconv.Atoi(remain)
+
+	return &RateLimit{
+		Limit:     l,
+		Path:      path,
+		Remaining: r,
+	}
+}

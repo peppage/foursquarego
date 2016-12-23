@@ -67,3 +67,19 @@ func getTestFile(path string) ([]byte, error) {
 
 	return ioutil.ReadAll(f)
 }
+
+func TestRateLimit(t *testing.T) {
+	resp := http.Response{
+		Header: make(http.Header),
+	}
+
+	resp.Header.Add(headerRateLimit, "5000")
+	resp.Header.Add(headerRatePath, "/v2/venues/X")
+	resp.Header.Add(headerRateRemaining, "4999")
+
+	rl := RateLimitData(&resp)
+
+	assert.Equal(t, 5000, rl.Limit)
+	assert.Equal(t, "/v2/venues/X", rl.Path)
+	assert.Equal(t, 4999, rl.Remaining)
+}
