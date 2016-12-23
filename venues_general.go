@@ -85,6 +85,8 @@ type VenueSuggestParams struct {
 	Ne               string `url:"ne,omitempty"`
 }
 
+// MiniVenue is a compact Venue
+// https://developer.foursquare.com/docs/responses/venue
 type MiniVenue struct {
 	ID       string     `json:"id"`
 	Name     string     `json:"name"`
@@ -205,6 +207,8 @@ type VenueExploreParams struct {
 	Specials         BoolAsAnInt    `url:"specials,omitempty"`
 }
 
+// VenueExploreResp is the response for VenueService.Explore
+// https://developer.foursquare.com/docs/venues/explore
 type VenueExploreResp struct {
 	SuggestedFilters          SuggestedFilters `json:"suggestedFilters"`
 	Warning                   Warning          `json:"warning"`
@@ -217,36 +221,43 @@ type VenueExploreResp struct {
 	Groups                    []Recommendation `json:"groups"`
 }
 
+// SuggestedFilters are filters to show the user
 type SuggestedFilters struct {
 	Header  string   `json:"header"`
 	Filters []Filter `json:"filters"`
 }
 
+// Filter is a Filter in SuggestedFilters
 type Filter struct {
 	Name string `json:"name"`
 	Key  string `json:"key"`
 }
 
+// Warning is a text field that contains a warning message
 type Warning struct {
 	Text string `json:"text"`
 }
 
+// SuggestedBounds are the bounds that were used in the search
 type SuggestedBounds struct {
 	Ne LatLong `json:"ne"`
 	Sw LatLong `json:"sw"`
 }
 
+// LatLong simple lat/long fields for SuggestedBounds
 type LatLong struct {
 	Lat float64 `json:"lat"`
 	Lng float64 `json:"lng"`
 }
 
+// Recommendation the groups field in VenueExploreResp
 type Recommendation struct {
 	Type  string      `json:"type"`
 	Name  string      `json:"name"`
 	Items []Recommend `json:"items"`
 }
 
+// Recommend is a recommendation with a Venue for VenueService.Explore
 type Recommend struct {
 	Reasons    Reasons `json:"reasons"`
 	Venue      Venue   `json:"venue"`
