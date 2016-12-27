@@ -456,6 +456,7 @@
                         "createdAt":1379826872,
                         "text":"Fried pork sandwich is one of the best lunch options in the area. Extremely tasty and spicy if you're into that sort of thing",
                         "type":"user",
+                        "url":"http:\/\/www.newyorker.com\/magazine\/2015\/06\/29\/bar-tab-threes-brewing",
                         "canonicalUrl":"https:\/\/foursquare.com\/item\/523e7cb811d2c579d576a7d7",
                         "flags":[
 
@@ -486,6 +487,7 @@
                            "summary":"1 like"
                         },
                         "like":false,
+                        "logView":true,
                         "viewCount":619,
                         "listed":{
                            "groups":[
