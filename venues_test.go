@@ -760,7 +760,7 @@ func TestVenueService_Tips(t *testing.T) {
 	client := NewClient(httpClient, "foursquare", clientID, clientSecret, "")
 	resp, _, err := client.Venues.Tips(&VenueTipsParams{
 		VenueID: "5557c94e498ebde0672e57f4",
-		Sort:    TipSortRecent,
+		Sort:    SortTipRecent,
 		Limit:   1,
 	})
 	assert.Nil(t, err)
