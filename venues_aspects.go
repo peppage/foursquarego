@@ -10,8 +10,8 @@ type PhotoGroup string
 
 // Options for a PhotoGroup
 const (
-	PhotoGroupVenue   PhotoGroup = "venue"
-	PhotoGroupCheckin PhotoGroup = "checkin"
+	GroupPhotoVenue   PhotoGroup = "venue"
+	GroupPhotoCheckin PhotoGroup = "checkin"
 )
 
 // VenuePhotosParams are the paremeters for the VenueService.Photos
@@ -188,7 +188,7 @@ type ListedGroup string
 
 // Options for a ListedGroup
 const (
-	ListedGroupOther ListedGroup = "other"
+	GroupListedOther ListedGroup = "other"
 )
 
 // VenueListedParams are the parameters for VenueService.Listed
@@ -321,9 +321,9 @@ type TipSort string
 
 // Options for TipSort
 const (
-	TipsSortFriends TipSort = "friends"
-	TipSortRecent   TipSort = "recent"
-	TipSortPopular  TipSort = "popular"
+	SortTipFriends TipSort = "friends"
+	SortTipRecent  TipSort = "recent"
+	SortTipPopular TipSort = "popular"
 )
 
 // VenueTipsParams are the parameters for VenueService.Tips
