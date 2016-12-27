@@ -1,4 +1,4 @@
-# Foursquarego
+# Foursquarego [![Build Status](https://travis-ci.org/peppage/foursquarego.svg?branch=master)](https://travis-ci.org/peppage/foursquarego) [![GoDoc](https://godoc.org/github.com/peppage/foursquarego?status.svg)](https://godoc.org/github.com/peppage/foursquarego) [![Go Report Card](https://goreportcard.com/badge/github.com/peppage/foursquarego)](https://goreportcard.com/report/github.com/peppage/foursquarego)
 Foursquarego is a simple Go package for accessing the[Foursquare API](https://developer.foursquare.com/docs/).
 
 If you find any errors please create an issue, the foursquare API has different types even for things with the same name.
