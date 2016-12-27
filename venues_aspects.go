@@ -44,12 +44,14 @@ type venueEventResp struct {
 	Events Events `json:"events"`
 }
 
+// Events is part of the respon for VenueService.Events
 type Events struct {
 	Count   int     `json:"count"`
 	Summary string  `json:"summary"`
 	Items   []Event `json:"items"`
 }
 
+// Event is the Items in Events.
 type Event struct {
 	ID         string     `json:"id"`
 	Name       string     `json:"name"`
@@ -122,7 +124,7 @@ type venueLikesResp struct {
 	Likes LikesResp `json:"likes"`
 }
 
-// Likesresp is the response for the venue likes endpoint
+// LikesResp is the response for the venue likes endpoint
 type LikesResp struct {
 	Count   int    `json:"count"`
 	Summary string `json:"summary"`
@@ -148,6 +150,7 @@ type venueLinkResp struct {
 	Links Links `json:"links"`
 }
 
+// Links is the response for VenueService.Links
 type Links struct {
 	Count int    `json:"count"`
 	Items []Link `json:"items"`
@@ -161,6 +164,7 @@ type Link struct {
 	URL      string   `json:"url"`
 }
 
+// Provider is Provider in a Link.
 type Provider struct {
 	ID string `json:"id"`
 }
@@ -240,23 +244,27 @@ type venueMenuResp struct {
 	Menu MenuResp `json:"menu"`
 }
 
+// MenuResp is the response for VenueService.Menu.
 type MenuResp struct {
 	Provider MenuProvider `json:"provider"`
 	Menus    Menus        `json:"menus"`
 }
 
+// MenuProvider is the Provider for the MenuResp.
 type MenuProvider struct {
 	Name             string `json:"name"`
 	AttributionImage string `json:"attributionImage"`
-	AttributionLink  string `json;"attributionLink"`
+	AttributionLink  string `json:"attributionLink"`
 	AttributionText  string `json:"attributionText"`
 }
 
+// Menus is part of the MenueResp.
 type Menus struct {
 	Count int        `json:"count"`
 	Items []FullMenu `json:"items"`
 }
 
+// FullMenu are the items on a Menu.
 type FullMenu struct {
 	MenuID      string  `json:"menuId"`
 	Name        string  `json:"name"`
@@ -264,22 +272,26 @@ type FullMenu struct {
 	Entries     Entries `json:"entries"`
 }
 
+// Entries is the Entires on a FullMenu.
 type Entries struct {
 	Count int     `json:"count"`
 	Items []Entry `json:"items"`
 }
 
+// Entry are the Items on a Entries.
 type Entry struct {
 	SectionID string     `json:"sectionId"`
 	Name      string     `json:"name"`
 	Entries   SubEntries `json:"entries"`
 }
 
+// SubEntries are the Entries on an Entry
 type SubEntries struct {
 	Count int        `json:"count"`
 	Items []SubEntry `json:"items"`
 }
 
+// SubEntry are the Items on a SubEntry
 type SubEntry struct {
 	EntryID     string   `json:"entryId"`
 	Name        string   `json:"name"`

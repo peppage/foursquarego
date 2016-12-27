@@ -213,6 +213,7 @@ type User struct {
 	Contact      Contact `json:"contact"`
 }
 
+// Lists are Lists on User.
 type Lists struct {
 	Groups []Group `json:"groups"`
 }
@@ -260,11 +261,13 @@ type PhotoSource struct {
 	URL  string `json:"url"`
 }
 
+// Reasons why the venue is shown.
 type Reasons struct {
 	Count int      `json:"count"`
 	Items []Reason `json:"items"`
 }
 
+// Reason is the items in Reasons.
 type Reason struct {
 	Summary    string       `json:"summary"`
 	Type       string       `json:"type"`
@@ -274,11 +277,13 @@ type Reason struct {
 	Count      int          `json:"count"`
 }
 
+// ReasonTarget where the reason would be shwon for Reason.
 type ReasonTarget struct {
 	Type   string       `json:"type"`
 	Object ReasonObject `json:"object"`
 }
 
+// ReasonObject is Object in ReasonTarget.
 type ReasonObject struct {
 	ID         string             `json:"id"`
 	Type       string             `json:"type"`
@@ -286,6 +291,7 @@ type ReasonObject struct {
 	Ignoreable bool               `json:"ignoreable"`
 }
 
+// ReasonObjectTarget what type of target and the url for a ReasonObject.
 type ReasonObjectTarget struct {
 	Type string `json:"type"`
 	URL  string `json:"url"`
@@ -304,6 +310,7 @@ type HereNow struct {
 	Groups  []HereNowGroup `json:"Groups"`
 }
 
+// HereNowGroup is the groups item in HereNow.
 type HereNowGroup struct {
 	Group
 	Items Omitted `json:"items"`
@@ -437,11 +444,13 @@ type Open struct {
 	RenderedTime string `json:"renderedTime"`
 }
 
+// PageUpdates is on a Venue.
 type PageUpdates struct {
 	Count int     `json:"count"`
 	Items Omitted `json:"items"`
 }
 
+// Inbox is on a Venue.
 type Inbox struct {
 	Count int     `json:"count"`
 	Items Omitted `json:"items"`
