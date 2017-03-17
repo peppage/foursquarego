@@ -44,7 +44,7 @@ type VenueSearchParams struct {
 	Query            string       `url:"query,omitempty"`
 	Limit            int          `url:"limit,omitempty"`
 	Intent           SearchIntent `url:"intent,omitempty"`
-	Radius           int          `url:"raidus,omitempty"`
+	Radius           int          `url:"radius,omitempty"`
 	Sw               string       `url:"sw,omitempty"`
 	Ne               string       `url:"ne,omitempty"`
 	CategoryID       []string     `url:"categoryId,omitempty"`
@@ -80,7 +80,7 @@ type VenueSuggestParams struct {
 	AltitudeAccuracy int    `url:"altAcc,omitempty"`
 	Query            string `url:"query,omitempty"`
 	Limit            int    `url:"limit,omitempty"`
-	Radius           int    `url:"raidus,omitempty"`
+	Radius           int    `url:"radius,omitempty"`
 	Sw               string `url:"sw,omitempty"`
 	Ne               string `url:"ne,omitempty"`
 }
@@ -117,7 +117,7 @@ func (s *VenueService) SuggestCompletion(params *VenueSuggestParams) ([]MiniVenu
 type VenueTrendingParams struct {
 	LatLong string `url:"ll,omitempty"`
 	Limit   int    `url:"limit,omitempty"`
-	Radius  int    `url:"raidus,omitempty"`
+	Radius  int    `url:"radius,omitempty"`
 }
 
 type venueTrendingResp struct {
@@ -189,7 +189,7 @@ type VenueExploreParams struct {
 	LatLongAccuracy  int            `url:"llAcc,omitempty"`
 	Altitude         int            `url:"alt,omitempty"`
 	AltitudeAccuracy int            `url:"altAcc,omitempty"`
-	Radius           int            `url:"raidus,omitempty"`
+	Radius           int            `url:"radius,omitempty"`
 	Section          ExploreSection `url:"section,omitempty"`
 	Query            string         `url:"query,omitempty"`
 	Limit            int            `url:"limit,omitempty"`
