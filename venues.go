@@ -24,6 +24,13 @@ type venueResp struct {
 	Venue Venue `json:"venue"`
 }
 
+// SetHeader sets a header to be sent with the request for internationalization
+// https://developer.foursquare.com/overview/versioning
+func (s *VenueService) SetHeader(key, value string) *VenueService {
+	s.sling.Set(key, value)
+	return s
+}
+
 // Details gets all the data for a venue
 // https://developer.foursquare.com/docs/venues/venues
 func (s *VenueService) Details(id string) (*Venue, *http.Response, error) {
