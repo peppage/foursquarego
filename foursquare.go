@@ -56,7 +56,7 @@ func (c *Client) RawRequest(url string) (*Response, *http.Response, error) {
 }
 
 // Response is a typical foursquare response
-// https://developer.foursquare.com/overview/responses
+// https://developer.foursquare.com/docs/api/getting-started#6-make-your-first-api-call
 type Response struct {
 	Meta          Meta            `json:"meta"`
 	Notifications []Notification  `json:"notifications"`
@@ -64,7 +64,7 @@ type Response struct {
 }
 
 // Meta contains request information and error details
-// https://developer.foursquare.com/overview/responses
+// https://developer.foursquare.com/docs/api/troubleshooting/errors
 type Meta struct {
 	Code        int    `json:"code"`
 	ErrorType   string `json:"errorType"`

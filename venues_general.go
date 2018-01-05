@@ -10,7 +10,7 @@ type categoriesResp struct {
 }
 
 // Categories returns a hierarchical list of categories applied to venues.
-// https://developer.foursquare.com/docs/venues/categories
+// https://developer.foursquare.com/docs/api/venues/categories
 func (s *VenueService) Categories() ([]Category, *http.Response, error) {
 	cats := new(categoriesResp)
 	response := new(Response)
@@ -58,7 +58,7 @@ type venueSearchResp struct {
 }
 
 // Search returns a list of venues near the current location, optionally matching a search term.
-// https://developer.foursquare.com/docs/venues/search
+// https://developer.foursquare.com/docs/api/venues/search
 func (s *VenueService) Search(params *VenueSearchParams) ([]Venue, *http.Response, error) {
 	venues := new(venueSearchResp)
 	response := new(Response)
@@ -86,7 +86,7 @@ type VenueSuggestParams struct {
 }
 
 // MiniVenue is a compact Venue
-// https://developer.foursquare.com/docs/responses/venue
+// https://developer.foursquare.com/docs/api/venues/suggestcompletion
 type MiniVenue struct {
 	ID       string     `json:"id"`
 	Name     string     `json:"name"`
@@ -100,7 +100,7 @@ type venueSuggestResp struct {
 }
 
 // SuggestCompletion returns a list of mini-venues partially matching the search term, near the location.
-// https://developer.foursquare.com/docs/venues/suggestcompletion
+// https://developer.foursquare.com/docs/api/venues/suggestcompletion
 func (s *VenueService) SuggestCompletion(params *VenueSuggestParams) ([]MiniVenue, *http.Response, error) {
 	venues := new(venueSuggestResp)
 	response := new(Response)
@@ -125,7 +125,7 @@ type venueTrendingResp struct {
 }
 
 // Trending returns a list of venues near the current location with the most people currently checked in.
-// https://developer.foursquare.com/docs/venues/trending
+// https://developer.foursquare.com/docs/api/venues/trending
 func (s *VenueService) Trending(params *VenueTrendingParams) ([]Venue, *http.Response, error) {
 	venues := new(venueTrendingResp)
 	response := new(Response)
@@ -208,7 +208,7 @@ type VenueExploreParams struct {
 }
 
 // VenueExploreResp is the response for VenueService.Explore
-// https://developer.foursquare.com/docs/venues/explore
+// https://developer.foursquare.com/docs/api/venues/explore
 type VenueExploreResp struct {
 	SuggestedFilters          SuggestedFilters `json:"suggestedFilters"`
 	Warning                   Warning          `json:"warning"`
@@ -266,7 +266,7 @@ type Recommend struct {
 }
 
 // Explore returns a list of recommended venues near the current location.
-// https://developer.foursquare.com/docs/venues/explore
+// https://developer.foursquare.com/docs/api/venues/explore
 func (s *VenueService) Explore(params *VenueExploreParams) (*VenueExploreResp, *http.Response, error) {
 	exploreResponse := new(VenueExploreResp)
 	response := new(Response)

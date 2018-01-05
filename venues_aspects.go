@@ -27,7 +27,7 @@ type venuePhotoResp struct {
 }
 
 // Photos gets photos for a venue
-// https://developer.foursquare.com/docs/venues/photos
+// https://developer.foursquare.com/docs/api/venues/photos
 func (s *VenueService) Photos(params *VenuePhotosParams) (*PhotoGrouping, *http.Response, error) {
 	photos := new(venuePhotoResp)
 	response := new(Response)
@@ -65,7 +65,7 @@ type Event struct {
 }
 
 // Events are music and movie events at this venue
-// https://developer.foursquare.com/docs/venues/events
+// https://developer.foursquare.com/docs/api/venues/events
 func (s *VenueService) Events(id string) (*Events, *http.Response, error) {
 	events := new(venueEventResp)
 	response := new(Response)
@@ -91,7 +91,7 @@ type HoursResp struct {
 
 // HoursTimeFrame is specific to the hours endpoint
 // it switches the Days from a string to an array.
-// https://developer.foursquare.com/docs/responses/hours
+// https://developer.foursquare.com/docs/api/venues/hours
 type HoursTimeFrame struct {
 	Days          []int       `json:"days"`
 	IncludesToday bool        `json:"includesToday"`
@@ -107,7 +107,7 @@ type HoursOpen struct {
 }
 
 // Hours Returns hours for a venue.
-// https://developer.foursquare.com/docs/venues/hours
+// https://developer.foursquare.com/docs/api/venues/hours
 func (s *VenueService) Hours(id string) (*VenueHoursResp, *http.Response, error) {
 	hours := new(VenueHoursResp)
 	response := new(Response)
@@ -133,7 +133,7 @@ type LikesResp struct {
 }
 
 // Likes returns friends and a total count of users who have liked this venue.
-// https://developer.foursquare.com/docs/venues/likes
+// https://developer.foursquare.com/docs/api/venues/likes
 func (s *VenueService) Likes(id string) (*LikesResp, *http.Response, error) {
 	likes := new(venueLikesResp)
 	response := new(Response)
@@ -157,7 +157,7 @@ type Links struct {
 }
 
 // Link is part of the response for the venues link endpoint
-// https://developer.foursquare.com/docs/responses/link
+// https://developer.foursquare.com/docs/api/venues/links
 type Link struct {
 	Provider Provider `json:"provider"`
 	LinkedID string   `json:"linkedId"`
@@ -170,7 +170,7 @@ type Provider struct {
 }
 
 // Links returns URLs or identifies from third parties for this venue
-// https://developer.foursquare.com/docs/venues/links
+// https://developer.foursquare.com/docs/api/venues/links
 func (s *VenueService) Links(id string) (*Links, *http.Response, error) {
 	links := new(venueLinkResp)
 	response := new(Response)
@@ -204,7 +204,7 @@ type venueListedResp struct {
 }
 
 // Listed returns the lists that this venue appears on
-// https://developer.foursquare.com/docs/venues/listed
+// https://developer.foursquare.com/docs/api/venues/listed
 func (s *VenueService) Listed(params *VenueListedParams) (*Listed, *http.Response, error) {
 	lists := new(venueListedResp)
 	response := new(Response)
@@ -227,7 +227,7 @@ type nextVenues struct {
 }
 
 // NextVenues returns venues that are checked into after the given one
-// https://developer.foursquare.com/docs/venues/nextvenues
+// https://developer.foursquare.com/docs/api/venues/nextvenues
 func (s *VenueService) NextVenues(id string) ([]Venue, *http.Response, error) {
 	venues := new(venueNextVenuesResp)
 	response := new(Response)
@@ -303,7 +303,7 @@ type SubEntry struct {
 }
 
 // Menu returns menu information for a venue.
-// https://developer.foursquare.com/docs/venues/menu
+// https://developer.foursquare.com/docs/api/venues/menu
 func (s *VenueService) Menu(id string) (*MenuResp, *http.Response, error) {
 	menuResp := new(venueMenuResp)
 	response := new(Response)
@@ -344,7 +344,7 @@ type tipsResp struct {
 }
 
 // Tips returns tips for a venue.
-// https://developer.foursquare.com/docs/venues/tips
+// https://developer.foursquare.com/docs/api/venues/tips
 func (s *VenueService) Tips(params *VenueTipsParams) ([]Tip, *http.Response, error) {
 	tipResp := new(tipResp)
 	response := new(Response)

@@ -25,14 +25,14 @@ type venueResp struct {
 }
 
 // SetHeader sets a header to be sent with the request for internationalization
-// https://developer.foursquare.com/overview/versioning
+// https://developer.foursquare.com/docs/api/configuration/versioning
 func (s *VenueService) SetHeader(key, value string) *VenueService {
 	s.sling.Set(key, value)
 	return s
 }
 
 // Details gets all the data for a venue
-// https://developer.foursquare.com/docs/venues/venues
+// https://developer.foursquare.com/docs/api/venues/details
 func (s *VenueService) Details(id string) (*Venue, *http.Response, error) {
 	response := new(Response)
 	venue := new(venueResp)
@@ -45,7 +45,7 @@ func (s *VenueService) Details(id string) (*Venue, *http.Response, error) {
 }
 
 // Venue represents a foursquare Venue.
-// https://developer.foursquare.com/docs/responses/venue
+// https://developer.foursquare.com/docs/api/venues/details
 type Venue struct {
 	ID               string       `json:"id"`
 	Name             string       `json:"name"`
@@ -129,7 +129,7 @@ type LabeledLatLngs struct {
 }
 
 // Category is a category applied to a venue
-// https://developer.foursquare.com/docs/responses/category
+// https://developer.foursquare.com/docs/api/venues/categories
 type Category struct {
 	ID         string     `json:"id"`
 	Name       string     `json:"name"`
@@ -203,7 +203,7 @@ type FriendVisitItem struct {
 }
 
 // User is a foursquare user
-// https://developer.foursquare.com/docs/responses/user
+// https://developer.foursquare.com/docs/api/users/details
 type User struct {
 	ID           string  `json:"id"`
 	FirstName    string  `json:"firstName"`
@@ -248,7 +248,7 @@ type PhotoGrouping struct {
 }
 
 // Photo is a foursquare photo
-// https://developer.foursquare.com/docs/responses/photo.html
+// https://developer.foursquare.com/docs/api/photos/details
 type Photo struct {
 	ID         string      `json:"id"`
 	CreatedAt  int         `json:"createdAt"`
@@ -372,7 +372,7 @@ type ListGroup struct {
 }
 
 // List is a foursquare list.
-// https://developer.foursquare.com/docs/responses/list.html
+// https://developer.foursquare.com/docs/api/lists/details
 type List struct {
 	ID            string    `json:"id"`
 	Name          string    `json:"name"`
@@ -401,7 +401,7 @@ type ListItems struct {
 }
 
 // ListItem contains more information about a list.
-// https://developer.foursquare.com/docs/responses/item.html
+// https://developer.foursquare.com/docs/api/lists/details
 type ListItem struct {
 	ID        string `json:"id"`
 	CreatedAt int    `json:"createdAt"`
