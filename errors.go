@@ -3,7 +3,7 @@ package foursquarego
 import "fmt"
 
 // APIError is a foursquare error response
-// https://developer.foursquare.com/overview/responses
+// https://developer.foursquare.com/docs/api/troubleshooting/errors
 type APIError struct {
 	Meta Meta `json:"meta"`
 }

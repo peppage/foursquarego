@@ -24,7 +24,7 @@ strict options for the parameters then there will be a struct as seen in the sea
 
 For Authentication the just send either the Client Secret or the users's Access Token. If you send both
 to the client it will send both to foursquare. Foursquare expects that if you're making a request
-for a user you will send the Access Token. More information can be found on their auth page, https://developer.foursquare.com/overview/auth
+for a user you will send the Access Token. More information can be found on their auth page, https://developer.foursquare.com/docs/api/configuration/authentication
 
 */
 package foursquarego
