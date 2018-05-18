@@ -79,7 +79,6 @@ type Venue struct {
 	HereNow          HereNow      `json:"hereNow"`
 	CreatedAt        int64        `json:"createdAt"`
 	Tips             Tips         `json:"tips"`
-	Tags             []string     `json:"tags"`
 	ShortURL         string       `json:"shortUrl"`
 	TimeZone         string       `json:"timeZone"`
 	Listed           Listed       `json:"listed"`
@@ -93,6 +92,7 @@ type Venue struct {
 	HasPerk          bool         `json:"hasPerk"`
 	Attributes       Attributes   `json:"attributes"`
 	BestPhoto        Photo        `json:"bestPhoto"`
+	Colors           Colors       `json:"colors"`
 }
 
 // Contact are details to contact this venue. Can contain all or none.
@@ -100,6 +100,7 @@ type Contact struct {
 	Phone          string `json:"phone"`
 	FormattedPhone string `json:"formattedPhone"`
 	Twitter        string `json:"twitter"`
+	Instagram      string `json:"instagram"`
 	Facebook       string `json:"facebook"`
 }
 
@@ -117,8 +118,8 @@ type Location struct {
 	State            string           `json:"state"`
 	Country          string           `json:"country"`
 	FormattedAddress []string         `json:"formattedAddress"`
-	IsFuzzed         bool             `json:"isFuzzed"`
-	Distance         int              `json:"distance"`
+	IsFuzzed         bool             `json:"isFuzzed,omitempty"`
+	Distance         int              `json:"distance,omitempty"`
 }
 
 // LabeledLatLngs is further details in the Location of a venue.
@@ -349,7 +350,6 @@ type Tip struct {
 	Likes                 Likes   `json:"likes"`
 	Like                  bool    `json:"like"`
 	LogView               bool    `json:"logView"`
-	ViewCount             int     `json:"viewCount"`
 	Listed                Lists   `json:"listed"`
 	AgreeCount            int     `json:"agreeCount"`
 	DisagreeCount         int     `json:"disagreeCount"`
@@ -481,4 +481,17 @@ type AttributeItem struct {
 	DisplayName  string `json:"displayName"`
 	DisplayValue string `json:"displayValue"`
 	PriceTier    int    `json:"priceTier"`
+}
+
+// Colors is undocumented
+type Colors struct {
+	HighlightedColor     Color `json:"highlightColor"`
+	HighlightedTextColor Color `json:"highlightTextColor"`
+	AlgoVersion          int   `json:"algoVersion"`
+}
+
+// Color is undocumented and part of colors struct
+type Color struct {
+	PhotoID string `json:"photoId"`
+	Value   int    `json:"value"`
 }
