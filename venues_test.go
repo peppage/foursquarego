@@ -304,6 +304,8 @@ func TestVenueService_Photos(t *testing.T) {
 	assert.Equal(t, "549ecb0f11d2ed4887ba35ab", photos.Items[0].ID)
 	assert.Equal(t, 1419692815, photos.Items[0].CreatedAt)
 	assert.Equal(t, "Foursquare Web", photos.Items[0].Source.Name)
+	assert.Equal(t, "https://igx.4sqi.net/img/general/", photos.Items[0].Prefix)
+	assert.Equal(t, "/95760005_78vNYkB4sZbQ23LykVYIccyi2zSkD98qo3CHkQ-vI5k.jpg", photos.Items[0].Suffix)
 	assert.Equal(t, "https://foursquare.com", photos.Items[0].Source.URL)
 	assert.Equal(t, 870, photos.Items[0].Width)
 	assert.Equal(t, 580, photos.Items[0].Height)
@@ -311,7 +313,7 @@ func TestVenueService_Photos(t *testing.T) {
 	assert.Equal(t, "95760005", photos.Items[0].User.ID)
 	assert.Equal(t, "Threes Brewing", photos.Items[0].User.FirstName)
 	assert.Equal(t, "none", photos.Items[0].User.Gender)
-	assert.Equal(t, "https://irs0.4sqi.net/img/user/", photos.Items[0].User.Photo.Prefix)
+	assert.Equal(t, "https://igx.4sqi.net/img/user/", photos.Items[0].User.Photo.Prefix)
 	assert.Equal(t, "/95760005-K35NSGGG10EE5XU2.png", photos.Items[0].User.Photo.Suffix)
 	assert.Equal(t, "venuePage", photos.Items[0].User.Type)
 	assert.Equal(t, "5414d0a6498ea3d31a3c64cf", photos.Items[0].User.Venue.ID)
@@ -376,10 +378,10 @@ func TestVenueService_Hours(t *testing.T) {
 	hours, _, err := client.Venues.Hours("40a55d80f964a52020f31ee3")
 	assert.Nil(t, err)
 
-	assert.Equal(t, []int{1, 2, 3, 4, 5}, hours.Hours.TimeFrames[0].Days)
+	assert.Equal(t, []int{1, 2, 3, 4, 5, 6, 7}, hours.Hours.TimeFrames[0].Days)
 	assert.Equal(t, true, hours.Hours.TimeFrames[0].IncludesToday)
 	assert.Equal(t, "0800", hours.Hours.TimeFrames[0].Open[0].Start)
-	assert.Equal(t, "1600", hours.Hours.TimeFrames[0].Open[0].End)
+	assert.Equal(t, "+0200", hours.Hours.TimeFrames[0].Open[0].End)
 }
 
 func TestVenueService_Likes(t *testing.T) {
@@ -404,14 +406,15 @@ func TestVenueService_Likes(t *testing.T) {
 	likes, _, err := client.Venues.Likes("40a55d80f964a52020f31ee3")
 	assert.Nil(t, err)
 
-	assert.Equal(t, 1261, likes.Count)
-	assert.Equal(t, "1261 Likes", likes.Summary)
-	assert.Equal(t, "203153", likes.Items[0].ID)
-	assert.Equal(t, "Emiliano", likes.Items[0].FirstName)
-	assert.Equal(t, "Viscarra", likes.Items[0].LastName)
-	assert.Equal(t, "male", likes.Items[0].Gender)
-	assert.Equal(t, "https://irs1.4sqi.net/img/user/", likes.Items[0].Photo.Prefix)
-	assert.Equal(t, "/203153-0BI5LE1Y2ITI4XUU.jpg", likes.Items[0].Photo.Suffix)
+	assert.Equal(t, 1077, likes.Count)
+	assert.Equal(t, "1077 Likes", likes.Summary)
+	assert.Equal(t, "349672", likes.Items[0].ID)
+	assert.Equal(t, "Valerie", likes.Items[0].FirstName)
+	assert.Equal(t, "K.", likes.Items[0].LastName)
+	assert.Equal(t, "female", likes.Items[0].Gender)
+	assert.Equal(t, "friend", likes.Items[0].Relationship)
+	assert.Equal(t, "https://igx.4sqi.net/img/user/", likes.Items[0].Photo.Prefix)
+	assert.Equal(t, "/349672-EFOECR1MUVSDKTYY.jpg", likes.Items[0].Photo.Suffix)
 	assert.Equal(t, false, likes.Like)
 }
 
@@ -580,7 +583,7 @@ func TestVenueService_SuggestCompletion(t *testing.T) {
 	})
 	assert.Nil(t, err)
 
-	assert.Equal(t, "4ef0e7cf7beb5932d5bdeb4e", venues[0].ID)
+	assert.Equal(t, "5a187743ccad6b307315e6fe", venues[0].ID)
 	assert.Equal(t, "Foursquare HQ", venues[0].Name)
 	assert.Equal(t, false, venues[0].HasPerk)
 }

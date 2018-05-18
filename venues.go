@@ -261,6 +261,7 @@ type Photo struct {
 	Height     int         `json:"height"`
 	User       User        `json:"user"`
 	Visibility string      `json:"visibility"`
+	// Can have a tip or checking associated with it
 }
 
 // PhotoSource is the source on a photo struct.
