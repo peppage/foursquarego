@@ -345,6 +345,8 @@ func TestVenueService_Events(t *testing.T) {
 	assert.Equal(t, "580850f7d67c37ceeeaae676", events.Items[0].ID)
 	assert.Equal(t, "Moonlight", events.Items[0].Name)
 	assert.Equal(t, true, events.Items[0].AllDay)
+	assert.Equal(t, int64(1526675883), events.Items[0].StartAt)
+	assert.Equal(t, int64(1526848682), events.Items[0].EndAt)
 	assert.Equal(t, int64(1477540800), events.Items[0].Date)
 	assert.Equal(t, "America/New_York", events.Items[0].TimeZone)
 	assert.Equal(t, 81, events.Items[0].Stats.CheckinsCount)
