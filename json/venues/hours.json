@@ -1,202 +1,27 @@
 {
-   "meta":{
-      "code":200,
-      "requestId":"58530f744434b949f340630c"
-   },
-   "notifications":[
-      {
-         "type":"notificationTray",
-         "item":{
-            "unreadCount":10
-         }
-      }
-   ],
-   "response":{
-      "hours":{
-         "timeframes":[
-            {
-               "days":[
-                  1,
-                  2,
-                  3,
-                  4,
-                  5
-               ],
-               "includesToday":true,
-               "open":[
-                  {
-                     "start":"0800",
-                     "end":"1600"
-                  },
-                  {
-                     "start":"1800",
-                     "end":"2330"
-                  }
-               ],
-               "segments":[
-
-               ]
-            },
-            {
-               "days":[
-                  6
-               ],
-               "open":[
-                  {
-                     "start":"0900",
-                     "end":"1600"
-                  },
-                  {
-                     "start":"1800",
-                     "end":"2330"
-                  }
-               ],
-               "segments":[
-
-               ]
-            },
-            {
-               "days":[
-                  7
-               ],
-               "open":[
-                  {
-                     "start":"0900",
-                     "end":"1800"
-                  }
-               ],
-               "segments":[
-
-               ]
-            }
-         ]
-      },
-      "popular":{
-         "timeframes":[
-            {
-               "days":[
-                  4
-               ],
-               "includesToday":true,
-               "open":[
-                  {
-                     "start":"0800",
-                     "end":"1400"
-                  },
-                  {
-                     "start":"1800",
-                     "end":"2100"
-                  }
-               ],
-               "segments":[
-
-               ]
-            },
-            {
-               "days":[
-                  5
-               ],
-               "open":[
-                  {
-                     "start":"0800",
-                     "end":"1500"
-                  },
-                  {
-                     "start":"1800",
-                     "end":"2200"
-                  }
-               ],
-               "segments":[
-
-               ]
-            },
-            {
-               "days":[
-                  6
-               ],
-               "open":[
-                  {
-                     "start":"0800",
-                     "end":"1600"
-                  },
-                  {
-                     "start":"1900",
-                     "end":"2200"
-                  }
-               ],
-               "segments":[
-
-               ]
-            },
-            {
-               "days":[
-                  7
-               ],
-               "open":[
-                  {
-                     "start":"0800",
-                     "end":"1700"
-                  }
-               ],
-               "segments":[
-
-               ]
-            },
-            {
-               "days":[
-                  1
-               ],
-               "open":[
-                  {
-                     "start":"0800",
-                     "end":"1500"
-                  },
-                  {
-                     "start":"1800",
-                     "end":"2100"
-                  }
-               ],
-               "segments":[
-
-               ]
-            },
-            {
-               "days":[
-                  2
-               ],
-               "open":[
-                  {
-                     "start":"0800",
-                     "end":"1400"
-                  },
-                  {
-                     "start":"1900",
-                     "end":"2100"
-                  }
-               ],
-               "segments":[
-
-               ]
-            },
-            {
-               "days":[
-                  3
-               ],
-               "open":[
-                  {
-                     "start":"0800",
-                     "end":"1400"
-                  },
-                  {
-                     "start":"1800",
-                     "end":"2100"
-                  }
-               ],
-               "segments":[
-
-               ]
-            }
-         ]
-      }
-   }
+  "meta": { "code": 200, "requestId": "5aff3aa34c1f673d7d90b4bd" },
+  "notifications": [{ "type": "notificationTray", "item": { "unreadCount": 5 } }],
+  "response": {
+    "hours": {
+      "timeframes": [
+        {
+          "days": [1, 2, 3, 4, 5, 6, 7],
+          "includesToday": true,
+          "open": [{ "start": "0800", "end": "+0200" }],
+          "segments": []
+        }
+      ]
+    },
+    "popular": {
+      "timeframes": [
+        { "days": [5], "includesToday": true, "open": [{ "start": "0800", "end": "2100" }], "segments": [] },
+        { "days": [6], "open": [{ "start": "1000", "end": "2300" }], "segments": [] },
+        { "days": [7], "open": [{ "start": "1100", "end": "2000" }], "segments": [] },
+        { "days": [1], "open": [{ "start": "0800", "end": "2000" }], "segments": [] },
+        { "days": [2], "open": [{ "start": "0800", "end": "1900" }], "segments": [] },
+        { "days": [3], "open": [{ "start": "0800", "end": "2000" }], "segments": [] },
+        { "days": [4], "open": [{ "start": "0800", "end": "2100" }], "segments": [] }
+      ]
+    }
+  }
 }

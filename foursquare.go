@@ -10,7 +10,7 @@ import (
 
 const (
 	baseURL             = "https://api.foursquare.com/v2/"
-	version             = "20161213"
+	version             = "20180518"
 	headerRateLimit     = "X-RateLimit-Limit"
 	headerRateRemaining = "x-RateLimit-Remaining"
 	headerRatePath      = "X-RateLimit-Path"

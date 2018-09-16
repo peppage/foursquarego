@@ -58,6 +58,8 @@ type Event struct {
 	Categories []Category `json:"categories"`
 	HereNow    HereNow    `json:"hereNow"`
 	AllDay     bool       `json:"allDay"`
+	StartAt    int64      `json:"startAt"`
+	EndAt      int64      `json:"endAt"`
 	Date       int64      `json:"date"`
 	TimeZone   string     `json:"timeZone"`
 	Stats      Stats      `json:"stats"`

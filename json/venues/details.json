@@ -1,2355 +1,1688 @@
 {
-   "meta":{
-      "code":200,
-      "requestId":"5850712edd579717181ecf37"
-   },
-   "notifications":[
-      {
-         "type":"notificationTray",
-         "item":{
-            "unreadCount":10
-         }
-      }
-   ],
-   "response":{
-      "venue":{
-         "id":"5414d0a6498ea3d31a3c64cf",
-         "name":"Threes Brewing",
-         "contact":{
-            "phone":"7185222110",
-            "formattedPhone":"(718) 522-2110",
-            "twitter":"threesbrewing",
-            "facebook":"1494258594141562"
-         },
-         "location":{
-            "address":"333 Douglass St",
-            "crossStreet":"at 4th Ave",
-            "lat":40.679935578556695,
-            "lng":-73.98211049521852,
-            "labeledLatLngs":[
-               {
-                  "label":"display",
-                  "lat":40.679935578556695,
-                  "lng":-73.98211049521852
-               }
-            ],
-            "postalCode":"11217",
-            "cc":"US",
-            "city":"Brooklyn",
-            "state":"NY",
-            "country":"United States",
-            "formattedAddress":[
-               "333 Douglass St (at 4th Ave)",
-               "Brooklyn, NY 11217"
-            ]
-         },
-         "canonicalUrl":"https:\/\/foursquare.com\/v\/threes-brewing\/5414d0a6498ea3d31a3c64cf",
-         "categories":[
-            {
-               "id":"50327c8591d4c4b30a586d5d",
-               "name":"Brewery",
-               "pluralName":"Breweries",
-               "shortName":"Brewery",
-               "icon":{
-                  "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/brewery_",
-                  "suffix":".png"
-               },
-               "primary":true
-            },
-            {
-               "id":"4bf58dd8d48988d116941735",
-               "name":"Bar",
-               "pluralName":"Bars",
-               "shortName":"Bar",
-               "icon":{
-                  "prefix":"https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_",
-                  "suffix":".png"
-               }
+  "meta": { "code": 200, "requestId": "5aff27a14c1f673d7d09f91e" },
+  "notifications": [{ "type": "notificationTray", "item": { "unreadCount": 5 } }],
+  "response": {
+    "venue": {
+      "id": "5414d0a6498ea3d31a3c64cf",
+      "name": "Threes Brewing",
+      "contact": {
+        "phone": "7185222110",
+        "formattedPhone": "(718) 522-2110",
+        "twitter": "threesbrewing",
+        "instagram": "threesbrewing",
+        "facebook": "1494258594141562"
+      },
+      "location": {
+        "address": "333 Douglass St",
+        "crossStreet": "at 4th Ave",
+        "lat": 40.67979901271337,
+        "lng": -73.98215935484912,
+        "labeledLatLngs": [{ "label": "display", "lat": 40.67979901271337, "lng": -73.98215935484912 }],
+        "postalCode": "11217",
+        "cc": "US",
+        "city": "Brooklyn",
+        "state": "NY",
+        "country": "United States",
+        "formattedAddress": ["333 Douglass St (at 4th Ave)", "Brooklyn, NY 11217"]
+      },
+      "canonicalUrl": "https://foursquare.com/v/threes-brewing/5414d0a6498ea3d31a3c64cf",
+      "categories": [
+        {
+          "id": "50327c8591d4c4b30a586d5d",
+          "name": "Brewery",
+          "pluralName": "Breweries",
+          "shortName": "Brewery",
+          "icon": { "prefix": "https://ss3.4sqi.net/img/categories_v2/food/brewery_", "suffix": ".png" },
+          "primary": true
+        },
+        {
+          "id": "4bf58dd8d48988d116941735",
+          "name": "Bar",
+          "pluralName": "Bars",
+          "shortName": "Bar",
+          "icon": { "prefix": "https://ss3.4sqi.net/img/categories_v2/nightlife/pub_", "suffix": ".png" }
+        }
+      ],
+      "verified": true,
+      "stats": { "tipCount": 165, "usersCount": 12756, "checkinsCount": 15477, "visitsCount": 25836 },
+      "url": "http://www.threesbrewing.com",
+      "price": { "tier": 2, "message": "Moderate", "currency": "$" },
+      "hasMenu": true,
+      "likes": { "count": 1077, "groups": [{ "type": "others", "count": 1077, "items": [] }], "summary": "1077 Likes" },
+      "like": false,
+      "dislike": false,
+      "ok": false,
+      "rating": 9.4,
+      "ratingColor": "00B551",
+      "ratingSignals": 1309,
+      "menu": {
+        "type": "Menu",
+        "label": "Menu",
+        "anchor": "View Menu",
+        "url": "https://foursquare.com/v/vanessas-dumpling-house/49eeaf08f964a52078681fe3/menu",
+        "mobileUrl": "https://foursquare.com/v/49eeaf08f964a52078681fe3/device_menu"
+      },
+      "allowMenuUrlEdit": true,
+      "friendVisits": {
+        "count": 4,
+        "summary": "You and 3 friends have been here",
+        "items": [
+          {
+            "visitedCount": 2,
+            "liked": false,
+            "disliked": false,
+            "oked": false,
+            "user": {
+              "id": "68150",
+              "firstName": "Michael",
+              "lastName": "Peppler",
+              "gender": "male",
+              "relationship": "self",
+              "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/68150-NB43B0NAABATDOBQ" }
             }
-         ],
-         "verified":true,
-         "stats":{
-            "checkinsCount":9988,
-            "usersCount":8301,
-            "tipCount":124,
-            "visitsCount":15919
-         },
-         "url":"http:\/\/www.threesbrewing.com",
-         "price":{
-            "tier":2,
-            "message":"Moderate",
-            "currency":"$"
-         },
-         "hasMenu": true,
-         "likes":{
-            "count":767,
-            "groups":[
-               {
-                  "type":"others",
-                  "count":767,
-                  "items":[
-
-                  ]
-               }
-            ],
-            "summary":"767 Likes"
-         },
-         "like":false,
-         "dislike":false,
-         "ok":false,
-         "rating":9.4,
-         "ratingColor":"00B551",
-         "ratingSignals":943,
-         "menu": {
-            "type": "Menu",
-            "label": "Menu",
-            "anchor": "View Menu",
-            "url": "https:\/\/foursquare.com\/palacediner/menu",
-            "mobileUrl": "https:\/\/foursquare.com\/v\/4ba37630f964a520103f38e3\/device_menu"
-         },
-         "allowMenuUrlEdit":true,
-         "friendVisits":{
-            "count":4,
-            "summary":"You and 3 friends have been here",
-            "items":[
-               {
-                  "visitedCount":2,
-                  "liked":false,
-                  "disliked":false,
-                  "oked":false,
-                  "user":{
-                     "id":"68150",
-                     "firstName":"Michael",
-                     "lastName":"Peppler",
-                     "gender":"male",
-                     "relationship":"self",
-                     "photo":{
-                        "prefix":"https:\/\/irs3.4sqi.net\/img\/user\/",
-                        "suffix":"\/68150-NB43B0NAABATDOBQ"
-                     }
-                  }
-               },
-               {
-                  "visitedCount":2,
-                  "liked":true,
-                  "disliked":false,
-                  "oked":false,
-                  "tips":1,
-                  "user":{
-                     "id":"349672",
-                     "firstName":"Valerie",
-                     "gender":"female",
-                     "relationship":"friend",
-                     "photo":{
-                        "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                        "suffix":"\/349672-EFOECR1MUVSDKTYY.jpg"
-                     }
-                  }
-               },
-               {
-                  "visitedCount":2,
-                  "liked":false,
-                  "disliked":false,
-                  "oked":false,
-                  "user":{
-                     "id":"76096",
-                     "firstName":"Christian",
-                     "gender":"male",
-                     "relationship":"friend",
-                     "photo":{
-                        "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                        "suffix":"\/UJP4XTD4MHZC1AUE.jpg"
-                     }
-                  }
-               },
-               {
-                  "visitedCount":1,
-                  "liked":false,
-                  "disliked":false,
-                  "oked":false,
-                  "user":{
-                     "id":"65548",
-                     "firstName":"Adrienne",
-                     "lastName":"Stortz",
-                     "gender":"female",
-                     "relationship":"friend",
-                     "photo":{
-                        "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                        "suffix":"\/4A1FOUEGNHYRDFPL.jpg"
-                     }
-                  }
-               }
+          },
+          {
+            "visitedCount": 2,
+            "liked": true,
+            "disliked": false,
+            "oked": false,
+            "tips": 1,
+            "user": {
+              "id": "349672",
+              "firstName": "Valerie",
+              "gender": "female",
+              "relationship": "friend",
+              "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/349672-EFOECR1MUVSDKTYY.jpg" }
+            }
+          },
+          {
+            "visitedCount": 2,
+            "liked": false,
+            "disliked": false,
+            "oked": false,
+            "user": {
+              "id": "76096",
+              "firstName": "Christian",
+              "gender": "male",
+              "relationship": "friend",
+              "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/UJP4XTD4MHZC1AUE.jpg" }
+            }
+          },
+          {
+            "visitedCount": 1,
+            "liked": false,
+            "disliked": false,
+            "oked": false,
+            "user": {
+              "id": "65548",
+              "firstName": "Adrienne",
+              "lastName": "Stortz",
+              "gender": "female",
+              "relationship": "friend",
+              "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/4A1FOUEGNHYRDFPL.jpg" }
+            }
+          }
+        ]
+      },
+      "beenHere": {
+        "count": 2,
+        "unconfirmedCount": 0,
+        "marked": true,
+        "lastVisitedAt": 1444526165,
+        "lastCheckinExpiredAt": 1444536965
+      },
+      "specials": { "count": 0, "items": [] },
+      "photos": {
+        "count": 735,
+        "groups": [
+          {
+            "type": "venue",
+            "name": "Venue photos",
+            "count": 735,
+            "items": [
+              {
+                "id": "549ecb0f11d2ed4887ba35ab",
+                "createdAt": 1419692815,
+                "source": { "name": "Foursquare Web", "url": "https://foursquare.com" },
+                "prefix": "https://igx.4sqi.net/img/general/",
+                "suffix": "/95760005_78vNYkB4sZbQ23LykVYIccyi2zSkD98qo3CHkQ-vI5k.jpg",
+                "width": 870,
+                "height": 580,
+                "demoted": false,
+                "user": {
+                  "id": "95760005",
+                  "firstName": "Threes Brewing",
+                  "gender": "none",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/95760005-K35NSGGG10EE5XU2.png" },
+                  "type": "venuePage",
+                  "venue": { "id": "5414d0a6498ea3d31a3c64cf" }
+                },
+                "visibility": "public"
+              },
+              {
+                "id": "549ecb4111d2ed4887ba3e39",
+                "createdAt": 1419692865,
+                "source": { "name": "Foursquare Web", "url": "https://foursquare.com" },
+                "prefix": "https://igx.4sqi.net/img/general/",
+                "suffix": "/95760005_UyZ6PVFIBRiI1BEn2pZazaTHIe2Amd4wnapdyxLcc30.jpg",
+                "width": 870,
+                "height": 580,
+                "demoted": false,
+                "user": {
+                  "id": "95760005",
+                  "firstName": "Threes Brewing",
+                  "gender": "none",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/95760005-K35NSGGG10EE5XU2.png" },
+                  "type": "venuePage",
+                  "venue": { "id": "5414d0a6498ea3d31a3c64cf" }
+                },
+                "visibility": "public"
+              },
+              {
+                "id": "549ecb8811d2ed4887ba49e0",
+                "createdAt": 1419692936,
+                "source": { "name": "Foursquare Web", "url": "https://foursquare.com" },
+                "prefix": "https://igx.4sqi.net/img/general/",
+                "suffix": "/95760005_wtJSS6Ie9foJROFQyQX7VFWXL2z0sEBbM7shBgXe_7A.jpg",
+                "width": 870,
+                "height": 580,
+                "demoted": false,
+                "user": {
+                  "id": "95760005",
+                  "firstName": "Threes Brewing",
+                  "gender": "none",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/95760005-K35NSGGG10EE5XU2.png" },
+                  "type": "venuePage",
+                  "venue": { "id": "5414d0a6498ea3d31a3c64cf" }
+                },
+                "visibility": "public"
+              },
+              {
+                "id": "549ecb6c11d2ed4887ba437d",
+                "createdAt": 1419692908,
+                "source": { "name": "Foursquare Web", "url": "https://foursquare.com" },
+                "prefix": "https://igx.4sqi.net/img/general/",
+                "suffix": "/95760005_9mZGW7A2zBARNjlnxY80c3190ZDXVC-wLL7AoxiQQVs.jpg",
+                "width": 870,
+                "height": 580,
+                "demoted": false,
+                "user": {
+                  "id": "95760005",
+                  "firstName": "Threes Brewing",
+                  "gender": "none",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/95760005-K35NSGGG10EE5XU2.png" },
+                  "type": "venuePage",
+                  "venue": { "id": "5414d0a6498ea3d31a3c64cf" }
+                },
+                "visibility": "public"
+              },
+              {
+                "id": "549ecb8011d2ed4887ba4653",
+                "createdAt": 1419692928,
+                "source": { "name": "Foursquare Web", "url": "https://foursquare.com" },
+                "prefix": "https://igx.4sqi.net/img/general/",
+                "suffix": "/95760005_EkILTGGTQU_hADvbaZ3aZGt3phdM5-I_LFEpxA2y09M.jpg",
+                "width": 870,
+                "height": 580,
+                "demoted": false,
+                "user": {
+                  "id": "95760005",
+                  "firstName": "Threes Brewing",
+                  "gender": "none",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/95760005-K35NSGGG10EE5XU2.png" },
+                  "type": "venuePage",
+                  "venue": { "id": "5414d0a6498ea3d31a3c64cf" }
+                },
+                "visibility": "public"
+              },
+              {
+                "id": "557c5e2f498ef101ad762208",
+                "createdAt": 1434213935,
+                "source": { "name": "4sq for iOS (internal)", "url": "http://developer.foursquare.com" },
+                "prefix": "https://igx.4sqi.net/img/general/",
+                "suffix": "/31666_msN7RnxD2cfdVgxUwtrTw4hwk6ZYFQQVsZOFDWflQ-c.jpg",
+                "width": 1439,
+                "height": 1920,
+                "demoted": false,
+                "user": {
+                  "id": "31666",
+                  "firstName": "Tim",
+                  "lastName": "Julien",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/NNN0TJJR4IQM2MFA.jpg" }
+                },
+                "visibility": "public"
+              }
             ]
-         },
-         "beenHere":{
-            "count":2,
-            "unconfirmedCount":0,
-            "marked":true,
-            "lastVisitedAt":1444526165,
-            "lastCheckinExpiredAt":1444536965
-         },
-         "specials":{
-            "count":0,
-            "items":[
-
+          }
+        ]
+      },
+      "venuePage": { "id": "95760005" },
+      "reasons": {
+        "count": 1,
+        "items": [
+          {
+            "summary": "Valerie left a tip here",
+            "type": "social",
+            "reasonName": "friendTipReason",
+            "message": "Valerie left a tip here",
+            "target": {
+              "type": "navigation",
+              "object": {
+                "id": "5aff27a1603d2a002c81fac1",
+                "type": "venueTips",
+                "target": { "type": "path", "url": "/venues/5414d0a6498ea3d31a3c64cf/tips" },
+                "ignorable": false
+              }
+            },
+            "count": 1
+          }
+        ]
+      },
+      "description": "Brewery, Bar & Event Space located in the Gowanus section of Brooklyn",
+      "storeId": "",
+      "page": {
+        "user": {
+          "id": "95760005",
+          "firstName": "Threes Brewing",
+          "gender": "none",
+          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/95760005-K35NSGGG10EE5XU2.png" },
+          "type": "venuePage",
+          "venue": { "id": "5414d0a6498ea3d31a3c64cf" },
+          "tips": { "count": 4 },
+          "lists": { "groups": [{ "type": "created", "count": 2, "items": [] }] },
+          "homeCity": "Brooklyn, NY",
+          "bio": "",
+          "contact": {}
+        }
+      },
+      "hereNow": {
+        "count": 16,
+        "summary": "16 people are here",
+        "groups": [
+          {
+            "type": "others",
+            "name": "Other people here",
+            "count": 16,
+            "items": []
+          }
+        ]
+      },
+      "createdAt": 1410650278,
+      "tips": {
+        "count": 165,
+        "groups": [
+          { "type": "self", "name": "Tips you\u2019ve left here", "count": 0, "items": [] },
+          {
+            "type": "friends",
+            "name": "Tips from friends",
+            "count": 1,
+            "items": [
+              {
+                "id": "5531c837498e3b4b39679c1a",
+                "createdAt": 1429325879,
+                "text": "Big place and good food. And obviously good beer!",
+                "type": "user",
+                "url": "http://www.newyorker.com/magazine/2015/06/29/bar-tab-threes-brewing",
+                "canonicalUrl": "https://foursquare.com/item/5531c837498e3b4b39679c1a",
+                "flags": [],
+                "likes": { "count": 0, "groups": [] },
+                "like": false,
+                "logView": true,
+                "agreeCount": 0,
+                "disagreeCount": 0,
+                "todo": { "count": 0 },
+                "user": {
+                  "id": "349672",
+                  "firstName": "Valerie",
+                  "gender": "female",
+                  "relationship": "friend",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/349672-EFOECR1MUVSDKTYY.jpg" }
+                },
+                "authorInteractionType": "liked"
+              }
             ]
-         },
-         "photos":{
-            "count":410,
-            "groups":[
-               {
-                  "type":"venue",
-                  "name":"Venue photos",
-                  "count":410,
-                  "items":[
-                     {
-                        "id":"549ecb0f11d2ed4887ba35ab",
-                        "createdAt":1419692815,
-                        "source":{
-                           "name":"Foursquare Web",
-                           "url":"https:\/\/foursquare.com"
-                        },
-                        "prefix":"https:\/\/irs1.4sqi.net\/img\/general\/",
-                        "suffix":"\/95760005_78vNYkB4sZbQ23LykVYIccyi2zSkD98qo3CHkQ-vI5k.jpg",
-                        "width":870,
-                        "height":580,
-                        "demoted":false,
-                        "user":{
-                           "id":"95760005",
-                           "firstName":"Threes Brewing",
-                           "gender":"none",
-                           "photo":{
-                              "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                              "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                           },
-                           "type":"venuePage",
-                           "venue":{
-                              "id":"5414d0a6498ea3d31a3c64cf"
-                           }
-                        },
-                        "visibility":"public"
-                     },
-                     {
-                        "id":"549ecb4111d2ed4887ba3e39",
-                        "createdAt":1419692865,
-                        "source":{
-                           "name":"Foursquare Web",
-                           "url":"https:\/\/foursquare.com"
-                        },
-                        "prefix":"https:\/\/irs1.4sqi.net\/img\/general\/",
-                        "suffix":"\/95760005_UyZ6PVFIBRiI1BEn2pZazaTHIe2Amd4wnapdyxLcc30.jpg",
-                        "width":870,
-                        "height":580,
-                        "demoted":false,
-                        "user":{
-                           "id":"95760005",
-                           "firstName":"Threes Brewing",
-                           "gender":"none",
-                           "photo":{
-                              "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                              "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                           },
-                           "type":"venuePage",
-                           "venue":{
-                              "id":"5414d0a6498ea3d31a3c64cf"
-                           }
-                        },
-                        "visibility":"public"
-                     },
-                     {
-                        "id":"549ecb8811d2ed4887ba49e0",
-                        "createdAt":1419692936,
-                        "source":{
-                           "name":"Foursquare Web",
-                           "url":"https:\/\/foursquare.com"
-                        },
-                        "prefix":"https:\/\/irs1.4sqi.net\/img\/general\/",
-                        "suffix":"\/95760005_wtJSS6Ie9foJROFQyQX7VFWXL2z0sEBbM7shBgXe_7A.jpg",
-                        "width":870,
-                        "height":580,
-                        "demoted":false,
-                        "user":{
-                           "id":"95760005",
-                           "firstName":"Threes Brewing",
-                           "gender":"none",
-                           "photo":{
-                              "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                              "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                           },
-                           "type":"venuePage",
-                           "venue":{
-                              "id":"5414d0a6498ea3d31a3c64cf"
-                           }
-                        },
-                        "visibility":"public"
-                     },
-                     {
-                        "id":"549ecb6c11d2ed4887ba437d",
-                        "createdAt":1419692908,
-                        "source":{
-                           "name":"Foursquare Web",
-                           "url":"https:\/\/foursquare.com"
-                        },
-                        "prefix":"https:\/\/irs0.4sqi.net\/img\/general\/",
-                        "suffix":"\/95760005_9mZGW7A2zBARNjlnxY80c3190ZDXVC-wLL7AoxiQQVs.jpg",
-                        "width":870,
-                        "height":580,
-                        "demoted":false,
-                        "user":{
-                           "id":"95760005",
-                           "firstName":"Threes Brewing",
-                           "gender":"none",
-                           "photo":{
-                              "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                              "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                           },
-                           "type":"venuePage",
-                           "venue":{
-                              "id":"5414d0a6498ea3d31a3c64cf"
-                           }
-                        },
-                        "visibility":"public"
-                     },
-                     {
-                        "id":"549ecb8011d2ed4887ba4653",
-                        "createdAt":1419692928,
-                        "source":{
-                           "name":"Foursquare Web",
-                           "url":"https:\/\/foursquare.com"
-                        },
-                        "prefix":"https:\/\/irs0.4sqi.net\/img\/general\/",
-                        "suffix":"\/95760005_EkILTGGTQU_hADvbaZ3aZGt3phdM5-I_LFEpxA2y09M.jpg",
-                        "width":870,
-                        "height":580,
-                        "demoted":false,
-                        "user":{
-                           "id":"95760005",
-                           "firstName":"Threes Brewing",
-                           "gender":"none",
-                           "photo":{
-                              "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                              "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                           },
-                           "type":"venuePage",
-                           "venue":{
-                              "id":"5414d0a6498ea3d31a3c64cf"
-                           }
-                        },
-                        "visibility":"public"
-                     },
-                     {
-                        "id":"552482df498e0dc94c830009",
-                        "createdAt":1428456159,
-                        "source":{
-                           "name":"Foursquare for iOS",
-                           "url":"https:\/\/foursquare.com\/download\/#\/iphone"
-                        },
-                        "prefix":"https:\/\/irs2.4sqi.net\/img\/general\/",
-                        "suffix":"\/16375_ClgxFLPSfo5V2b8cG4w30Fg3b8zMOM5IxSTTTr0_VoI.jpg",
-                        "width":1081,
-                        "height":1920,
-                        "demoted":false,
-                        "user":{
-                           "id":"16375",
-                           "firstName":"Joshua",
-                           "lastName":"Stylman",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                              "suffix":"\/4a3b996472147.jpg"
-                           }
-                        },
-                        "visibility":"public"
-                     }
-                  ]
-               }
+          },
+          {
+            "type": "following",
+            "name": "Tips from people you follow",
+            "count": 3,
+            "items": [
+              {
+                "id": "59b7f2dd829b0c4692f0b465",
+                "createdAt": 1505227485,
+                "text":
+                  "This Gowanus brewpub offers a lovely patio for enjoying its own crafted beers, local brews, and a full bar. Threes almost always has an exciting food pop-up going on, too.",
+                "type": "user",
+                "url": "https://ny.eater.com/maps/best-outdoor-bars-drinking-nyc",
+                "canonicalUrl": "https://foursquare.com/item/59b7f2dd829b0c4692f0b465",
+                "photo": {
+                  "id": "59b7f2df47f8761788b46145",
+                  "createdAt": 1505227487,
+                  "source": { "name": "Foursquare Web", "url": "https://foursquare.com" },
+                  "prefix": "https://igx.4sqi.net/img/general/",
+                  "suffix": "/3343327_EB3v2PCBunudS9bZjyjCA9aGH6gnk21I9q9Wy7zo_d4.jpg",
+                  "width": 1200,
+                  "height": 900,
+                  "demoted": false,
+                  "visibility": "public"
+                },
+                "photourl":
+                  "https://igx.4sqi.net/img/general/original/3343327_EB3v2PCBunudS9bZjyjCA9aGH6gnk21I9q9Wy7zo_d4.jpg",
+                "flags": [],
+                "likes": {
+                  "count": 1,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 1,
+                      "items": [
+                        {
+                          "id": "95760005",
+                          "firstName": "Threes Brewing",
+                          "gender": "none",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/95760005-K35NSGGG10EE5XU2.png"
+                          },
+                          "type": "venuePage",
+                          "venue": { "id": "5414d0a6498ea3d31a3c64cf" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "1 like"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 3,
+                "disagreeCount": 2,
+                "todo": { "count": 1 },
+                "user": {
+                  "id": "3343327",
+                  "firstName": "Eater",
+                  "gender": "none",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/3343327-YQ1D52V3KK2RQLBU.png" },
+                  "type": "page"
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "559ab235498e42c9d337faab",
+                "createdAt": 1436201525,
+                "text":
+                  "\"Threes combats short attention spans by having different restaurants occupy its kitchen for brief residencies, which, alongside the ever-changing beer menu, keeps things novel.\"",
+                "type": "user",
+                "url": "http://www.newyorker.com/magazine/2015/06/29/bar-tab-threes-brewing",
+                "canonicalUrl": "https://foursquare.com/item/559ab235498e42c9d337faab",
+                "photo": {
+                  "id": "559ab236498eb0398c37c391",
+                  "createdAt": 1436201526,
+                  "source": { "name": "Foursquare Web", "url": "https://foursquare.com" },
+                  "prefix": "https://igx.4sqi.net/img/general/",
+                  "suffix": "/2611536_sjJWUQi-qLNRpDO5s-L306EQALDd9-B9Zev1s5bjE_4.jpg",
+                  "width": 320,
+                  "height": 180,
+                  "demoted": false,
+                  "visibility": "public"
+                },
+                "photourl":
+                  "https://igx.4sqi.net/img/general/original/2611536_sjJWUQi-qLNRpDO5s-L306EQALDd9-B9Zev1s5bjE_4.jpg",
+                "flags": [],
+                "likes": {
+                  "count": 1,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 1,
+                      "items": [
+                        {
+                          "id": "95760005",
+                          "firstName": "Threes Brewing",
+                          "gender": "none",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/95760005-K35NSGGG10EE5XU2.png"
+                          },
+                          "type": "venuePage",
+                          "venue": { "id": "5414d0a6498ea3d31a3c64cf" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "1 like"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 3,
+                "disagreeCount": 0,
+                "todo": { "count": 1 },
+                "user": {
+                  "id": "2611536",
+                  "firstName": "The New Yorker",
+                  "gender": "none",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/2611536-ZWKHMEGCZWBA3QQY.png" },
+                  "type": "page"
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "5531c837498e3b4b39679c1a",
+                "createdAt": 1429325879,
+                "text": "Big place and good food. And obviously good beer!",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/5531c837498e3b4b39679c1a",
+                "flags": [],
+                "likes": { "count": 0, "groups": [] },
+                "like": false,
+                "logView": true,
+                "agreeCount": 0,
+                "disagreeCount": 0,
+                "todo": { "count": 0 },
+                "user": {
+                  "id": "349672",
+                  "firstName": "Valerie",
+                  "gender": "female",
+                  "relationship": "friend",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/349672-EFOECR1MUVSDKTYY.jpg" }
+                },
+                "authorInteractionType": "liked"
+              }
             ]
-         },
-         "venuePage":{
-            "id":"95760005"
-         },
-         "reasons":{
-            "count":1,
-            "items":[
-               {
-                  "summary":"Valerie left a tip here",
-                  "type":"social",
-                  "reasonName":"friendTipReason",
-                  "message":"Valerie left a tip here",
-                  "target":{
-                     "type":"navigation",
-                     "object":{
-                        "id":"5850712ece66aa573a718988",
-                        "type":"venueTips",
-                        "target":{
-                           "type":"path",
-                           "url":"\/venues\/5414d0a6498ea3d31a3c64cf\/tips"
+          },
+          {
+            "type": "others",
+            "name": "All tips",
+            "count": 165,
+            "items": [
+              {
+                "id": "5499f00a498e4a801263f069",
+                "createdAt": 1419374602,
+                "text":
+                  "Worth the trip out towards Gowanus to check out this new brewery. Fantastic selection of rare and unique beers plus their own stock is great.  Try the sour beer with some BBQ!",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/5499f00a498e4a801263f069",
+                "flags": [],
+                "likes": {
+                  "count": 6,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 6,
+                      "items": [
+                        {
+                          "id": "16968506",
+                          "firstName": "Geena",
+                          "gender": "female",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/16968506-A2AVNBV1ZDWUISXU.jpg"
+                          }
                         },
-                        "ignorable":false
-                     }
+                        {
+                          "id": "16388",
+                          "firstName": "Steven",
+                          "lastName": "van Wel",
+                          "gender": "male",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix":
+                              "/16388_L78pTsdK_vwcRVPxLqRLU7NrCVzPNgSIAGSGeNojkEP8IWRzkSqHIziLQN8CbQSioacW4hFK9.jpg"
+                          }
+                        },
+                        {
+                          "id": "1067005",
+                          "firstName": "Peter",
+                          "lastName": "Scordo",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/X40HPBFE40UDYV3N.jpg" }
+                        },
+                        {
+                          "id": "95760005",
+                          "firstName": "Threes Brewing",
+                          "gender": "none",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/95760005-K35NSGGG10EE5XU2.png"
+                          },
+                          "type": "venuePage",
+                          "venue": { "id": "5414d0a6498ea3d31a3c64cf" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "6 likes"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 6,
+                "disagreeCount": 0,
+                "todo": { "count": 2 },
+                "user": {
+                  "id": "1027147",
+                  "firstName": "Mike",
+                  "lastName": "McBryan",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/1027147-XOGBA3IN1JCZR1EG.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "56522005498ef66c730dace9",
+                "createdAt": 1448222725,
+                "text":
+                  "Amazing brewery with a rotating kitchen, if you're lucky to be there when Tortilleria Nixtamal is leading the kitchen, you can enjoy some delicious Bistek, Al Pastor, Camaron, Chorizo, & Pollo Tacos.",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/56522005498ef66c730dace9",
+                "photo": {
+                  "id": "56522006498ed4c7c64c222e",
+                  "createdAt": 1448222726,
+                  "source": { "name": "Foursquare for Android", "url": "https://foursquare.com/download/#/android" },
+                  "prefix": "https://igx.4sqi.net/img/general/",
+                  "suffix": "/1939871_KG-rRb_977CquwgK_aY2nPL-IRk-fxQo8ufxKLh-1Bc.jpg",
+                  "width": 960,
+                  "height": 960,
+                  "demoted": false,
+                  "visibility": "public"
+                },
+                "photourl":
+                  "https://igx.4sqi.net/img/general/original/1939871_KG-rRb_977CquwgK_aY2nPL-IRk-fxQo8ufxKLh-1Bc.jpg",
+                "flags": [],
+                "likes": {
+                  "count": 5,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 5,
+                      "items": [
+                        {
+                          "id": "2903254",
+                          "firstName": "Scott",
+                          "lastName": "Pestronk",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/PZTDEX2M4INF5ALO.jpg" }
+                        },
+                        {
+                          "id": "59975176",
+                          "firstName": "Christina",
+                          "lastName": "Cipriano",
+                          "gender": "female",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/59975176-I534RSCYN01VP2YB.jpg"
+                          }
+                        },
+                        {
+                          "id": "16375",
+                          "firstName": "Joshua",
+                          "lastName": "Stylman",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/4a3b996472147.jpg" }
+                        },
+                        {
+                          "id": "24538930",
+                          "firstName": "Zeebamehrin",
+                          "lastName": "Manavi",
+                          "gender": "female",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/2ZDTZVMJ34BRD2OM.jpg" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "5 likes"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 6,
+                "disagreeCount": 0,
+                "todo": { "count": 1 },
+                "user": {
+                  "id": "1939871",
+                  "firstName": "DC Dining Adventures",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/1939871-GKWGAJJUHEOK35WS.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "5587055e498efdcb2fcce9d4",
+                "createdAt": 1434912094,
+                "text":
+                  "This place is great. Truly delicious house beers and excellent selection of guest taps. Rotating kitchen of good Brooklyn faire.",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/5587055e498efdcb2fcce9d4",
+                "flags": [],
+                "likes": {
+                  "count": 4,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 4,
+                      "items": [
+                        {
+                          "id": "59975176",
+                          "firstName": "Christina",
+                          "lastName": "Cipriano",
+                          "gender": "female",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/59975176-I534RSCYN01VP2YB.jpg"
+                          }
+                        },
+                        {
+                          "id": "95760005",
+                          "firstName": "Threes Brewing",
+                          "gender": "none",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/95760005-K35NSGGG10EE5XU2.png"
+                          },
+                          "type": "venuePage",
+                          "venue": { "id": "5414d0a6498ea3d31a3c64cf" }
+                        },
+                        {
+                          "id": "43825313",
+                          "firstName": "Marlynn",
+                          "lastName": "West",
+                          "gender": "female",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/43825313-ID0IPEKIA5B4013Y.jpg"
+                          }
+                        },
+                        {
+                          "id": "7778",
+                          "firstName": "Ryan",
+                          "lastName": "K",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/-0KC5YUYMZYV4KBYT.jpg" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "4 likes"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 4,
+                "disagreeCount": 0,
+                "todo": { "count": 32 },
+                "user": {
+                  "id": "8239957",
+                  "firstName": "Carmen",
+                  "lastName": "N",
+                  "gender": "female",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/XBDCFU55S1CV4RY1.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "54b9b02f498e28bde6e5c3dd",
+                "createdAt": 1421455407,
+                "text": "Now serving Roberta's pizza. #glory",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/54b9b02f498e28bde6e5c3dd",
+                "flags": [],
+                "likes": {
+                  "count": 3,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 3,
+                      "items": [
+                        {
+                          "id": "349347",
+                          "firstName": "laura",
+                          "lastName": "horak",
+                          "gender": "female",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/IJYKJLEYQIXAZERF.jpg" }
+                        },
+                        {
+                          "id": "95760005",
+                          "firstName": "Threes Brewing",
+                          "gender": "none",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/95760005-K35NSGGG10EE5XU2.png"
+                          },
+                          "type": "venuePage",
+                          "venue": { "id": "5414d0a6498ea3d31a3c64cf" }
+                        },
+                        {
+                          "id": "84866",
+                          "firstName": "Jud",
+                          "lastName": "Valeski",
+                          "gender": "male",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/84866-R31EI4IDRZL3CM42.jpg"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "3 likes"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 3,
+                "disagreeCount": 0,
+                "todo": { "count": 2 },
+                "user": {
+                  "id": "29733",
+                  "firstName": "Shawn",
+                  "lastName": "Cheng",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/4P5KU31XA43DFF4E.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "558597de498e13b73e9ca05c",
+                "createdAt": 1434818526,
+                "text":
+                  "Beautiful backyard patio. So many drink options: fun cocktails, good wine and both house brewed beer and local beer on draft.",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/558597de498e13b73e9ca05c",
+                "flags": [],
+                "likes": {
+                  "count": 2,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 2,
+                      "items": [
+                        {
+                          "id": "95760005",
+                          "firstName": "Threes Brewing",
+                          "gender": "none",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/95760005-K35NSGGG10EE5XU2.png"
+                          },
+                          "type": "venuePage",
+                          "venue": { "id": "5414d0a6498ea3d31a3c64cf" }
+                        },
+                        {
+                          "id": "116295",
+                          "firstName": "T",
+                          "lastName": "Kiel",
+                          "gender": "male",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/116295-UALAPMRXPDGGYVIA.jpg"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "2 likes"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 2,
+                "disagreeCount": 0,
+                "todo": { "count": 0 },
+                "user": {
+                  "id": "3012579",
+                  "firstName": "Sabrina",
+                  "gender": "female",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/3012579-UF20VI5C5TOTZ0ML.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "557c5e1b498ee9d1985ca74d",
+                "createdAt": 1434213915,
+                "text":
+                  "Epic, airy vibe both inside and out. Huge bar area, outdoor patio, and sneaky ninth street espresso bk outpost tucked inside",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/557c5e1b498ee9d1985ca74d",
+                "photo": {
+                  "id": "557c5e2f498ef101ad762208",
+                  "createdAt": 1434213935,
+                  "source": { "name": "4sq for iOS (internal)", "url": "http://developer.foursquare.com" },
+                  "prefix": "https://igx.4sqi.net/img/general/",
+                  "suffix": "/31666_msN7RnxD2cfdVgxUwtrTw4hwk6ZYFQQVsZOFDWflQ-c.jpg",
+                  "width": 1439,
+                  "height": 1920,
+                  "demoted": false,
+                  "visibility": "public"
+                },
+                "photourl":
+                  "https://igx.4sqi.net/img/general/original/31666_msN7RnxD2cfdVgxUwtrTw4hwk6ZYFQQVsZOFDWflQ-c.jpg",
+                "flags": [],
+                "likes": {
+                  "count": 2,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 2,
+                      "items": [
+                        {
+                          "id": "29689102",
+                          "firstName": "Kyle",
+                          "lastName": "Bye",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/NGLQ5LUNL3DUJQXK.jpg" }
+                        },
+                        {
+                          "id": "242662",
+                          "firstName": "Vineet",
+                          "lastName": "Shah",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/QKJ4W3CB3GHLUACL.jpg" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "2 likes"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 4,
+                "disagreeCount": 0,
+                "todo": { "count": 2 },
+                "user": {
+                  "id": "31666",
+                  "firstName": "Tim",
+                  "lastName": "Julien",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/NNN0TJJR4IQM2MFA.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "550c6787498ef1eca78fc479",
+                "createdAt": 1426876295,
+                "text":
+                  "Tons of amazing house beers on tap. Every one that I've tried has blown me away. Just had the Threes Hereyago Pale ale and as a lover of IPAs I was blown away. Vibrant, crisp with a hoppy apricot vibe",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/550c6787498ef1eca78fc479",
+                "flags": [],
+                "likes": {
+                  "count": 2,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 2,
+                      "items": [
+                        {
+                          "id": "7778",
+                          "firstName": "Ryan",
+                          "lastName": "K",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/-0KC5YUYMZYV4KBYT.jpg" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "2 likes"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 2,
+                "disagreeCount": 0,
+                "todo": { "count": 0 },
+                "user": {
+                  "id": "49740825",
+                  "firstName": "Mike",
+                  "lastName": "McVicar",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/AIDE4MY2RXP2VGC4.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "54ab5803498ef6cba6877832",
+                "createdAt": 1420515331,
+                "text": "9th st espresso has a coffee shop inside",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/54ab5803498ef6cba6877832",
+                "photo": {
+                  "id": "54ab5805498ea502f48d54ab",
+                  "createdAt": 1420515333,
+                  "source": { "name": "Foursquare for iOS", "url": "https://foursquare.com/download/#/iphone" },
+                  "prefix": "https://igx.4sqi.net/img/general/",
+                  "suffix": "/16375_E8A5grTZ1Wb5GGoawSJ5cnO7Ru4HUNR3ilyfLcwKE3U.jpg",
+                  "width": 1440,
+                  "height": 1440,
+                  "demoted": false,
+                  "visibility": "public"
+                },
+                "photourl":
+                  "https://igx.4sqi.net/img/general/original/16375_E8A5grTZ1Wb5GGoawSJ5cnO7Ru4HUNR3ilyfLcwKE3U.jpg",
+                "flags": [],
+                "likes": {
+                  "count": 2,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 2,
+                      "items": [
+                        {
+                          "id": "8761601",
+                          "firstName": "peter",
+                          "lastName": "kafka",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/OAUDSICRFASGPOUE.jpg" }
+                        },
+                        {
+                          "id": "95760005",
+                          "firstName": "Threes Brewing",
+                          "gender": "none",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/95760005-K35NSGGG10EE5XU2.png"
+                          },
+                          "type": "venuePage",
+                          "venue": { "id": "5414d0a6498ea3d31a3c64cf" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "2 likes"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 2,
+                "disagreeCount": 0,
+                "todo": { "count": 1 },
+                "user": {
+                  "id": "16375",
+                  "firstName": "Joshua",
+                  "lastName": "Stylman",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/4a3b996472147.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "574c866e498ec5e41e343e9d",
+                "createdAt": 1464632942,
+                "text":
+                  "They don't do tasting flights, which is a shame. Great selection though, including beers that aren't brewed by Threes. The Atomic Swerve is perfect for summer.",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/574c866e498ec5e41e343e9d",
+                "flags": [],
+                "likes": {
+                  "count": 1,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 1,
+                      "items": [
+                        {
+                          "id": "88018",
+                          "firstName": "Petri",
+                          "lastName": "Partio",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/BW4G2L2UVAHCNVG4.jpg" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "1 like"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 1,
+                "disagreeCount": 0,
+                "todo": { "count": 0 },
+                "user": {
+                  "id": "139597870",
+                  "firstName": "Cameron",
+                  "lastName": "Gidari",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/139597870-0HFUCYQXA45MWL4C.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "5692caa3498efc71821e8c54",
+                "createdAt": 1452460707,
+                "text":
+                  "Awesome brewery with a cozy industrial feel and tons of beer to choose from. They have a selection of about a half dozen of their own beers on tap plus a selection of \u201cfriend\u201d breweries they also have",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/5692caa3498efc71821e8c54",
+                "photo": {
+                  "id": "5692caad498ee1363877840f",
+                  "createdAt": 1452460717,
+                  "source": { "name": "Foursquare for iOS", "url": "https://foursquare.com/download/#/iphone" },
+                  "prefix": "https://igx.4sqi.net/img/general/",
+                  "suffix": "/262277_TUV2WYi8Ffa9v-NMq1veqnxh2ozGO1psr-FcEHX-Bj4.jpg",
+                  "width": 1440,
+                  "height": 1920,
+                  "demoted": false,
+                  "visibility": "public"
+                },
+                "photourl":
+                  "https://igx.4sqi.net/img/general/original/262277_TUV2WYi8Ffa9v-NMq1veqnxh2ozGO1psr-FcEHX-Bj4.jpg",
+                "flags": [],
+                "likes": {
+                  "count": 1,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 1,
+                      "items": [
+                        {
+                          "id": "54004261",
+                          "firstName": "Jason",
+                          "lastName": "Basalyga",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/C4LRXKA5SSYOSFAA.jpg" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "1 like"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 1,
+                "disagreeCount": 0,
+                "todo": { "count": 6 },
+                "user": {
+                  "id": "262277",
+                  "firstName": "Tyler",
+                  "lastName": "Lund",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/VLMCB5I5TBBDUBCN.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "5678d8d438fa6ec4acb849f9",
+                "createdAt": 1450760404,
+                "text":
+                  "Everything! One of the must try breweries in NY. They have an outstanding craft selection, mixed drinks as well as rotating chefs from restaurants all over the Tristate area. Great outside seating!",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/5678d8d438fa6ec4acb849f9",
+                "photo": {
+                  "id": "5678d8d5498e995daee6965a",
+                  "createdAt": 1450760405,
+                  "source": { "name": "Foursquare for iOS", "url": "https://foursquare.com/download/#/iphone" },
+                  "prefix": "https://igx.4sqi.net/img/general/",
+                  "suffix": "/148552067_dQp-CUXUNaVVnTMnAbRpvevAei62Umhd1lBMyEz788c.jpg",
+                  "width": 1440,
+                  "height": 1920,
+                  "demoted": false,
+                  "visibility": "public"
+                },
+                "photourl":
+                  "https://igx.4sqi.net/img/general/original/148552067_dQp-CUXUNaVVnTMnAbRpvevAei62Umhd1lBMyEz788c.jpg",
+                "flags": [],
+                "likes": {
+                  "count": 1,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 1,
+                      "items": [
+                        {
+                          "id": "16375",
+                          "firstName": "Joshua",
+                          "lastName": "Stylman",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/4a3b996472147.jpg" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "1 like"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 1,
+                "disagreeCount": 0,
+                "todo": { "count": 0 },
+                "user": {
+                  "id": "148552067",
+                  "firstName": "Danny",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/148552067-5EM4KVFNRPRRLX3P.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "566cb424498e296e80e6acc1",
+                "createdAt": 1449964580,
+                "text": "WiFi pass is BrewThree",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/566cb424498e296e80e6acc1",
+                "flags": [],
+                "likes": {
+                  "count": 1,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 1,
+                      "items": [
+                        {
+                          "id": "1222",
+                          "firstName": "Eliot",
+                          "lastName": "Shepard",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/1222_1237414427.jpg" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "1 like"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 1,
+                "disagreeCount": 0,
+                "todo": { "count": 0 },
+                "user": {
+                  "id": "7940426",
+                  "firstName": "Ross",
+                  "lastName": "Berger",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/7940426-SK0XQVC2C3DC5XPM.jpg" }
+                }
+              },
+              {
+                "id": "56699e3f498ed5dd1b5ccdbb",
+                "createdAt": 1449762367,
+                "text":
+                  "The change in who is doing the kitchen keeps this place interesting. Their beers are amazing, and they bring in their friends as well. It's also a perfect venue for a small party.",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/56699e3f498ed5dd1b5ccdbb",
+                "flags": [],
+                "likes": {
+                  "count": 1,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 1,
+                      "items": [
+                        {
+                          "id": "16375",
+                          "firstName": "Joshua",
+                          "lastName": "Stylman",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/4a3b996472147.jpg" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "1 like"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 1,
+                "disagreeCount": 0,
+                "todo": { "count": 0 },
+                "user": {
+                  "id": "760367",
+                  "firstName": "Robbie",
+                  "lastName": "Siron",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/760367-GUJGBEG0JFOOUBAD.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "564a9c98498e01a9d0c7fb28",
+                "createdAt": 1447730328,
+                "text": "Pretty cool, but can be really packed. Protip: the bathroom doors slide open.",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/564a9c98498e01a9d0c7fb28",
+                "flags": [],
+                "likes": {
+                  "count": 1,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 1,
+                      "items": [
+                        {
+                          "id": "16375",
+                          "firstName": "Joshua",
+                          "lastName": "Stylman",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/4a3b996472147.jpg" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "1 like"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 1,
+                "disagreeCount": 0,
+                "todo": { "count": 0 },
+                "user": {
+                  "id": "41528975",
+                  "firstName": "Campbell",
+                  "lastName": "Bird",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/I0XPAQJBBPZJ0U0F.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "561d3046498e80fb321f5dd6",
+                "createdAt": 1444753478,
+                "text":
+                  "Check their website beforehand to see who's in the rotating kitchen spot this week. They bring different restaurants from all over the city in to do guest shifts.",
+                "type": "user",
+                "url": "http://www.threesbrewing.com/",
+                "canonicalUrl": "https://foursquare.com/item/561d3046498e80fb321f5dd6",
+                "flags": [],
+                "likes": {
+                  "count": 1,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 1,
+                      "items": [
+                        {
+                          "id": "29689102",
+                          "firstName": "Kyle",
+                          "lastName": "Bye",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/NGLQ5LUNL3DUJQXK.jpg" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "1 like"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 2,
+                "disagreeCount": 0,
+                "todo": { "count": 1 },
+                "user": {
+                  "id": "46926",
+                  "firstName": "Zack",
+                  "lastName": "Sheppard",
+                  "gender": "male",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/46926-XY23IKEYBTHMA05U.jpg" }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "560cacfc498e59e51434ea76",
+                "createdAt": 1443671292,
+                "text": "Try \"I Hate Myself\" if you're looking to drink an IPA 😎",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/560cacfc498e59e51434ea76",
+                "photo": {
+                  "id": "560cacfe498e9570733abbb3",
+                  "createdAt": 1443671294,
+                  "source": { "name": "Foursquare for iOS", "url": "https://foursquare.com/download/#/iphone" },
+                  "prefix": "https://igx.4sqi.net/img/general/",
+                  "suffix": "/31472_Dj-Zw0-A2-hlHiAhXPRW1YhcLm9EaaCpSievR-de6kw.jpg",
+                  "width": 1439,
+                  "height": 1920,
+                  "demoted": false,
+                  "visibility": "public"
+                },
+                "photourl":
+                  "https://igx.4sqi.net/img/general/original/31472_Dj-Zw0-A2-hlHiAhXPRW1YhcLm9EaaCpSievR-de6kw.jpg",
+                "flags": [],
+                "likes": {
+                  "count": 1,
+                  "groups": [
+                    {
+                      "type": "others",
+                      "count": 1,
+                      "items": [
+                        {
+                          "id": "16375",
+                          "firstName": "Joshua",
+                          "lastName": "Stylman",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/4a3b996472147.jpg" }
+                        }
+                      ]
+                    }
+                  ],
+                  "summary": "1 like"
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 1,
+                "disagreeCount": 0,
+                "todo": { "count": 0 },
+                "user": {
+                  "id": "31472",
+                  "firstName": "Emily",
+                  "lastName": "Wilson",
+                  "gender": "female",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/31472-J3VPBIQ1WXYG1UB0.jpg" }
+                },
+                "authorInteractionType": "liked"
+              }
+            ]
+          }
+        ]
+      },
+      "shortUrl": "http://4sq.com/1qxRLL3",
+      "timeZone": "America/New_York",
+      "listed": {
+        "count": 1091,
+        "groups": [
+          {
+            "type": "others",
+            "name": "Lists from other people",
+            "count": 1091,
+            "items": [
+              {
+                "id": "57757f23498e8e90405a5cd9",
+                "name": "20 Great Spots for a Summer Beer in NYC",
+                "description":
+                  "Summer heat got you strugglin'? A cold, flavorful brew goes a long way. Make your way to one of these 20 NYC bars, breweries, and pubs for some high quality refreshment.",
+                "type": "others",
+                "user": {
+                  "id": "23438729",
+                  "firstName": "Foursquare City Guide",
+                  "gender": "none",
+                  "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/23438729-TODURDIUDUMY4JF5.png" },
+                  "type": "page"
+                },
+                "editable": false,
+                "public": true,
+                "collaborative": false,
+                "url": "/foursquare/list/20-great-spots-for-a-summer-beer-in-nyc",
+                "canonicalUrl": "https://foursquare.com/foursquare/list/20-great-spots-for-a-summer-beer-in-nyc",
+                "createdAt": 1467318051,
+                "updatedAt": 1467401782,
+                "photo": {
+                  "id": "50f8cf84e4b03d59633b0e58",
+                  "createdAt": 1358483332,
+                  "prefix": "https://igx.4sqi.net/img/general/",
+                  "suffix": "/38623014_tEqBPImUZNkxXxmTqNpfQVgCWEJ3tIM-Ednee3PS-8o.jpg",
+                  "width": 717,
+                  "height": 959,
+                  "demoted": false,
+                  "user": {
+                    "id": "38623014",
+                    "firstName": "Deborah",
+                    "lastName": "Navarra",
+                    "gender": "female",
+                    "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/N34C4M2HBGVPPKO5.jpg" }
                   },
-                  "count":1
-               }
-            ]
-         },
-         "description":"Brewery, Bar & Event Space located in the Gowanus section of Brooklyn",
-         "storeId":"",
-         "page":{
-            "user":{
-               "id":"95760005",
-               "firstName":"Threes Brewing",
-               "gender":"none",
-               "photo":{
-                  "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                  "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-               },
-               "type":"venuePage",
-               "venue":{
-                  "id":"5414d0a6498ea3d31a3c64cf"
-               },
-               "tips":{
-                  "count":4
-               },
-               "lists":{
-                  "groups":[
-                     {
-                        "type":"created",
-                        "count":2,
-                        "items":[
-
-                        ]
-                     }
-                  ]
-               },
-               "homeCity":"Brooklyn, NY",
-               "bio":"",
-               "contact":{
-
-               }
-            }
-         },
-         "hereNow":{
-            "count":1,
-            "summary":"One other person is here",
-            "groups":[
-               {
-                  "type":"others",
-                  "name":"Other people here",
-                  "count":1,
-                  "items":[
-
-                  ]
-               }
-            ]
-         },
-         "createdAt":1410650278,
-         "tips":{
-            "count":124,
-            "groups":[
-               {
-                  "type":"self",
-                  "name":"Tips you\u2019ve left here",
-                  "count":1,
-                  "items":[
-                     {
-                        "id":"523e7cb811d2c579d576a7d7",
-                        "createdAt":1379826872,
-                        "text":"Fried pork sandwich is one of the best lunch options in the area. Extremely tasty and spicy if you're into that sort of thing",
-                        "type":"user",
-                        "url":"http:\/\/www.newyorker.com\/magazine\/2015\/06\/29\/bar-tab-threes-brewing",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/523e7cb811d2c579d576a7d7",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":1,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":1,
-                                 "items":[
-                                    {
-                                       "id":"95760005",
-                                       "firstName":"Threes Brewing",
-                                       "gender":"none",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                          "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                                       },
-                                       "type":"venuePage",
-                                       "venue":{
-                                          "id":"5414d0a6498ea3d31a3c64cf"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"1 like"
+                  "visibility": "public"
+                },
+                "logView": true,
+                "guideType": "bestOf",
+                "guide": true,
+                "followers": { "count": 98 },
+                "listItems": {
+                  "count": 20,
+                  "items": [
+                    {
+                      "id": "t5692caa3498efc71821e8c54",
+                      "createdAt": 1467319289,
+                      "tip": {
+                        "id": "5692caa3498efc71821e8c54",
+                        "createdAt": 1452460707,
+                        "text":
+                          "Awesome brewery with a cozy industrial feel and tons of beer to choose from. They have a selection of about a half dozen of their own beers on tap plus a selection of \u201cfriend\u201d breweries they also have",
+                        "type": "user",
+                        "canonicalUrl": "https://foursquare.com/item/5692caa3498efc71821e8c54",
+                        "flags": [],
+                        "likes": {
+                          "count": 1,
+                          "groups": [
+                            {
+                              "type": "others",
+                              "count": 1,
+                              "items": [
+                                {
+                                  "id": "54004261",
+                                  "firstName": "Jason",
+                                  "lastName": "Basalyga",
+                                  "gender": "male",
+                                  "photo": {
+                                    "prefix": "https://igx.4sqi.net/img/user/",
+                                    "suffix": "/C4LRXKA5SSYOSFAA.jpg"
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "summary": "1 like"
                         },
-                        "like":false,
-                        "logView":true,
-                        "viewCount":619,
-                        "listed":{
-                           "groups":[
-                              {
-                                 "type":"created",
-                                 "count":1,
-                                 "items":[
-
-                                 ]
-                              }
-                           ]
-                        },
-                        "agreeCount":0,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":0
-                        },
-                        "user":{
-                           "id":"68150",
-                           "firstName":"Michael",
-                           "lastName":"Peppler",
-                           "gender":"male",
-                           "relationship":"self",
-                           "photo":{
-                              "prefix":"https:\/\/irs3.4sqi.net\/img\/user\/",
-                              "suffix":"\/68150-NB43B0NAABATDOBQ"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     }
-                  ]
-               },
-               {
-                  "type":"friends",
-                  "name":"Tips from friends",
-                  "count":1,
-                  "items":[
-                     {
-                        "id":"5531c837498e3b4b39679c1a",
-                        "createdAt":1429325879,
-                        "text":"Big place and good food. And obviously good beer!",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/5531c837498e3b4b39679c1a",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":0,
-                           "groups":[
-
-                           ]
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":0,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":0
-                        },
-                        "user":{
-                           "id":"349672",
-                           "firstName":"Valerie",
-                           "gender":"female",
-                           "relationship":"friend",
-                           "photo":{
-                              "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                              "suffix":"\/349672-EFOECR1MUVSDKTYY.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     }
-                  ]
-               },
-               {
-                  "type":"following",
-                  "name":"Tips from people you follow",
-                  "count":2,
-                  "items":[
-                     {
-                        "id":"559ab235498e42c9d337faab",
-                        "createdAt":1436201525,
-                        "text":"\"Threes combats short attention spans by having different restaurants occupy its kitchen for brief residencies, which, alongside the ever-changing beer menu, keeps things novel.\"",
-                        "type":"user",
-                        "url":"http:\/\/www.newyorker.com\/magazine\/2015\/06\/29\/bar-tab-threes-brewing",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/559ab235498e42c9d337faab",
-                        "photo":{
-                           "id":"559ab236498eb0398c37c391",
-                           "createdAt":1436201526,
-                           "source":{
-                              "name":"Foursquare Web",
-                              "url":"https:\/\/foursquare.com"
-                           },
-                           "prefix":"https:\/\/irs0.4sqi.net\/img\/general\/",
-                           "suffix":"\/2611536_sjJWUQi-qLNRpDO5s-L306EQALDd9-B9Zev1s5bjE_4.jpg",
-                           "width":320,
-                           "height":180,
-                           "demoted":false,
-                           "visibility":"public"
-                        },
-                        "photourl":"https:\/\/irs0.4sqi.net\/img\/general\/original\/2611536_sjJWUQi-qLNRpDO5s-L306EQALDd9-B9Zev1s5bjE_4.jpg",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":1,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":1,
-                                 "items":[
-                                    {
-                                       "id":"95760005",
-                                       "firstName":"Threes Brewing",
-                                       "gender":"none",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                          "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                                       },
-                                       "type":"venuePage",
-                                       "venue":{
-                                          "id":"5414d0a6498ea3d31a3c64cf"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"1 like"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":2,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":1
-                        },
-                        "user":{
-                           "id":"2611536",
-                           "firstName":"The New Yorker",
-                           "gender":"none",
-                           "photo":{
-                              "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                              "suffix":"\/2611536-ZWKHMEGCZWBA3QQY.png"
-                           },
-                           "type":"page"
+                        "like": false,
+                        "logView": true,
+                        "agreeCount": 1,
+                        "disagreeCount": 0,
+                        "todo": { "count": 6 },
+                        "saves": {},
+                        "user": {
+                          "id": "262277",
+                          "firstName": "Tyler",
+                          "lastName": "Lund",
+                          "gender": "male",
+                          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/VLMCB5I5TBBDUBCN.jpg" }
                         }
-                     },
-                     {
-                        "id":"5531c837498e3b4b39679c1a",
-                        "createdAt":1429325879,
-                        "text":"Big place and good food. And obviously good beer!",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/5531c837498e3b4b39679c1a",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":0,
-                           "groups":[
-
-                           ]
+                      },
+                      "photo": {
+                        "id": "549ecb4111d2ed4887ba3e39",
+                        "createdAt": 1419692865,
+                        "prefix": "https://igx.4sqi.net/img/general/",
+                        "suffix": "/95760005_UyZ6PVFIBRiI1BEn2pZazaTHIe2Amd4wnapdyxLcc30.jpg",
+                        "width": 870,
+                        "height": 580,
+                        "demoted": false,
+                        "user": {
+                          "id": "95760005",
+                          "firstName": "Threes Brewing",
+                          "gender": "none",
+                          "photo": {
+                            "prefix": "https://igx.4sqi.net/img/user/",
+                            "suffix": "/95760005-K35NSGGG10EE5XU2.png"
+                          },
+                          "type": "venuePage",
+                          "venue": { "id": "5414d0a6498ea3d31a3c64cf" }
                         },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":0,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":0
-                        },
-                        "user":{
-                           "id":"349672",
-                           "firstName":"Valerie",
-                           "gender":"female",
-                           "relationship":"friend",
-                           "photo":{
-                              "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                              "suffix":"\/349672-EFOECR1MUVSDKTYY.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     }
+                        "visibility": "public"
+                      }
+                    }
                   ]
-               },
-               {
-                  "type":"others",
-                  "name":"All tips",
-                  "count":124,
-                  "items":[
-                     {
-                        "id":"5499f00a498e4a801263f069",
-                        "createdAt":1419374602,
-                        "text":"Worth the trip out towards Gowanus to check out this new brewery. Fantastic selection of rare and unique beers plus their own stock is great.  Try the sour beer with some BBQ!",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/5499f00a498e4a801263f069",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":6,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":6,
-                                 "items":[
-                                    {
-                                       "id":"16968506",
-                                       "firstName":"Geena",
-                                       "gender":"female",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                          "suffix":"\/16968506-A2AVNBV1ZDWUISXU.jpg"
-                                       }
-                                    },
-                                    {
-                                       "id":"16388",
-                                       "firstName":"Steven",
-                                       "lastName":"van Wel",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                          "suffix":"\/16388-5UBP33YIVQZOQ0TP.jpg"
-                                       }
-                                    },
-                                    {
-                                       "id":"1067005",
-                                       "firstName":"Peter",
-                                       "lastName":"Scordo",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                          "suffix":"\/X40HPBFE40UDYV3N.jpg"
-                                       }
-                                    },
-                                    {
-                                       "id":"95760005",
-                                       "firstName":"Threes Brewing",
-                                       "gender":"none",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                          "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                                       },
-                                       "type":"venuePage",
-                                       "venue":{
-                                          "id":"5414d0a6498ea3d31a3c64cf"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"6 likes"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":6,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":2
-                        },
-                        "user":{
-                           "id":"1027147",
-                           "firstName":"Mike",
-                           "lastName":"McBryan",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                              "suffix":"\/1027147-XOGBA3IN1JCZR1EG.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"56522005498ef66c730dace9",
-                        "createdAt":1448222725,
-                        "text":"Amazing brewery with a rotating kitchen, if you're lucky to be there when Tortilleria Nixtamal is leading the kitchen, you can enjoy some delicious Bistek, Al Pastor, Camaron, Chorizo, & Pollo Tacos.",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/56522005498ef66c730dace9",
-                        "photo":{
-                           "id":"56522006498ed4c7c64c222e",
-                           "createdAt":1448222726,
-                           "source":{
-                              "name":"Foursquare for Android",
-                              "url":"https:\/\/foursquare.com\/download\/#\/android"
-                           },
-                           "prefix":"https:\/\/irs3.4sqi.net\/img\/general\/",
-                           "suffix":"\/1939871_KG-rRb_977CquwgK_aY2nPL-IRk-fxQo8ufxKLh-1Bc.jpg",
-                           "width":960,
-                           "height":960,
-                           "demoted":false,
-                           "visibility":"public"
-                        },
-                        "photourl":"https:\/\/irs3.4sqi.net\/img\/general\/original\/1939871_KG-rRb_977CquwgK_aY2nPL-IRk-fxQo8ufxKLh-1Bc.jpg",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":5,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":5,
-                                 "items":[
-                                    {
-                                       "id":"2903254",
-                                       "firstName":"Scott",
-                                       "lastName":"Pestronk",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                          "suffix":"\/PZTDEX2M4INF5ALO.jpg"
-                                       }
-                                    },
-                                    {
-                                       "id":"59975176",
-                                       "firstName":"Christina",
-                                       "lastName":"Cipriano",
-                                       "gender":"female",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                          "suffix":"\/59975176-I534RSCYN01VP2YB.jpg"
-                                       }
-                                    },
-                                    {
-                                       "id":"16375",
-                                       "firstName":"Joshua",
-                                       "lastName":"Stylman",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                                          "suffix":"\/4a3b996472147.jpg"
-                                       }
-                                    },
-                                    {
-                                       "id":"24538930",
-                                       "firstName":"Zeebamehrin",
-                                       "lastName":"Manavi",
-                                       "gender":"female",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                          "suffix":"\/2ZDTZVMJ34BRD2OM.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"5 likes"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":6,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":1
-                        },
-                        "user":{
-                           "id":"1939871",
-                           "firstName":"DC Dining Adventures",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs3.4sqi.net\/img\/user\/",
-                              "suffix":"\/1939871-GKWGAJJUHEOK35WS.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"5587055e498efdcb2fcce9d4",
-                        "createdAt":1434912094,
-                        "text":"This place is great. Truly delicious house beers and excellent selection of guest taps. Rotating kitchen of good Brooklyn faire.",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/5587055e498efdcb2fcce9d4",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":4,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":4,
-                                 "items":[
-                                    {
-                                       "id":"59975176",
-                                       "firstName":"Christina",
-                                       "lastName":"Cipriano",
-                                       "gender":"female",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                          "suffix":"\/59975176-I534RSCYN01VP2YB.jpg"
-                                       }
-                                    },
-                                    {
-                                       "id":"95760005",
-                                       "firstName":"Threes Brewing",
-                                       "gender":"none",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                          "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                                       },
-                                       "type":"venuePage",
-                                       "venue":{
-                                          "id":"5414d0a6498ea3d31a3c64cf"
-                                       }
-                                    },
-                                    {
-                                       "id":"43825313",
-                                       "firstName":"Marlynn",
-                                       "lastName":"West",
-                                       "gender":"female",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs3.4sqi.net\/img\/user\/",
-                                          "suffix":"\/43825313-ID0IPEKIA5B4013Y.jpg"
-                                       }
-                                    },
-                                    {
-                                       "id":"7778",
-                                       "firstName":"Ryan",
-                                       "lastName":"K",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                          "suffix":"\/-0KC5YUYMZYV4KBYT.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"4 likes"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":4,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":33
-                        },
-                        "user":{
-                           "id":"8239957",
-                           "firstName":"Carmen",
-                           "lastName":"N",
-                           "gender":"female",
-                           "photo":{
-                              "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                              "suffix":"\/XBDCFU55S1CV4RY1.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"54b9b02f498e28bde6e5c3dd",
-                        "createdAt":1421455407,
-                        "text":"Now serving Roberta's pizza. #glory",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/54b9b02f498e28bde6e5c3dd",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":3,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":3,
-                                 "items":[
-                                    {
-                                       "id":"349347",
-                                       "firstName":"laura",
-                                       "lastName":"horak",
-                                       "gender":"female",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                          "suffix":"\/IJYKJLEYQIXAZERF.jpg"
-                                       }
-                                    },
-                                    {
-                                       "id":"95760005",
-                                       "firstName":"Threes Brewing",
-                                       "gender":"none",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                          "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                                       },
-                                       "type":"venuePage",
-                                       "venue":{
-                                          "id":"5414d0a6498ea3d31a3c64cf"
-                                       }
-                                    },
-                                    {
-                                       "id":"84866",
-                                       "firstName":"Jud",
-                                       "lastName":"Valeski",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                                          "suffix":"\/84866-R31EI4IDRZL3CM42.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"3 likes"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":3,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":2
-                        },
-                        "user":{
-                           "id":"29733",
-                           "firstName":"Shawn",
-                           "lastName":"Cheng",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs3.4sqi.net\/img\/user\/",
-                              "suffix":"\/4P5KU31XA43DFF4E.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"558597de498e13b73e9ca05c",
-                        "createdAt":1434818526,
-                        "text":"Beautiful backyard patio. So many drink options: fun cocktails, good wine and both house brewed beer and local beer on draft.",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/558597de498e13b73e9ca05c",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":2,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":2,
-                                 "items":[
-                                    {
-                                       "id":"95760005",
-                                       "firstName":"Threes Brewing",
-                                       "gender":"none",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                          "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                                       },
-                                       "type":"venuePage",
-                                       "venue":{
-                                          "id":"5414d0a6498ea3d31a3c64cf"
-                                       }
-                                    },
-                                    {
-                                       "id":"116295",
-                                       "firstName":"T",
-                                       "lastName":"Kiel",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                          "suffix":"\/116295-UALAPMRXPDGGYVIA.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"2 likes"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":2,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":0
-                        },
-                        "user":{
-                           "id":"3012579",
-                           "firstName":"Sabrina",
-                           "lastName":"Ryan",
-                           "gender":"female",
-                           "photo":{
-                              "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                              "suffix":"\/3012579-UF20VI5C5TOTZ0ML.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"557c5e1b498ee9d1985ca74d",
-                        "createdAt":1434213915,
-                        "text":"Epic, airy vibe both inside and out. Huge bar area, outdoor patio, and sneaky ninth street espresso bk outpost tucked inside",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/557c5e1b498ee9d1985ca74d",
-                        "photo":{
-                           "id":"557c5e2f498ef101ad762208",
-                           "createdAt":1434213935,
-                           "source":{
-                              "name":"Foursquare for iOS",
-                              "url":"http:\/\/developer.foursquare.com"
-                           },
-                           "prefix":"https:\/\/irs3.4sqi.net\/img\/general\/",
-                           "suffix":"\/31666_msN7RnxD2cfdVgxUwtrTw4hwk6ZYFQQVsZOFDWflQ-c.jpg",
-                           "width":1439,
-                           "height":1920,
-                           "demoted":false,
-                           "visibility":"public"
-                        },
-                        "photourl":"https:\/\/irs3.4sqi.net\/img\/general\/original\/31666_msN7RnxD2cfdVgxUwtrTw4hwk6ZYFQQVsZOFDWflQ-c.jpg",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":2,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":2,
-                                 "items":[
-                                    {
-                                       "id":"29689102",
-                                       "firstName":"Kyle",
-                                       "lastName":"Bye",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                          "suffix":"\/NGLQ5LUNL3DUJQXK.jpg"
-                                       }
-                                    },
-                                    {
-                                       "id":"242662",
-                                       "firstName":"Vineet",
-                                       "lastName":"Shah",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                          "suffix":"\/QKJ4W3CB3GHLUACL.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"2 likes"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":3,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":2
-                        },
-                        "user":{
-                           "id":"31666",
-                           "firstName":"Tim",
-                           "lastName":"Julien",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                              "suffix":"\/NNN0TJJR4IQM2MFA.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"550c6787498ef1eca78fc479",
-                        "createdAt":1426876295,
-                        "text":"Tons of amazing house beers on tap. Every one that I've tried has blown me away. Just had the Threes Hereyago Pale ale and as a lover of IPAs I was blown away. Vibrant, crisp with a hoppy apricot vibe",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/550c6787498ef1eca78fc479",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":2,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":2,
-                                 "items":[
-                                    {
-                                       "id":"7778",
-                                       "firstName":"Ryan",
-                                       "lastName":"K",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                          "suffix":"\/-0KC5YUYMZYV4KBYT.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"2 likes"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":2,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":0
-                        },
-                        "user":{
-                           "id":"49740825",
-                           "firstName":"Mike",
-                           "lastName":"McVicar",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                              "suffix":"\/AIDE4MY2RXP2VGC4.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"54ab5803498ef6cba6877832",
-                        "createdAt":1420515331,
-                        "text":"9th st espresso has a coffee shop inside",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/54ab5803498ef6cba6877832",
-                        "photo":{
-                           "id":"54ab5805498ea502f48d54ab",
-                           "createdAt":1420515333,
-                           "source":{
-                              "name":"Foursquare for iOS",
-                              "url":"https:\/\/foursquare.com\/download\/#\/iphone"
-                           },
-                           "prefix":"https:\/\/irs2.4sqi.net\/img\/general\/",
-                           "suffix":"\/16375_E8A5grTZ1Wb5GGoawSJ5cnO7Ru4HUNR3ilyfLcwKE3U.jpg",
-                           "width":1440,
-                           "height":1440,
-                           "demoted":false,
-                           "visibility":"public"
-                        },
-                        "photourl":"https:\/\/irs2.4sqi.net\/img\/general\/original\/16375_E8A5grTZ1Wb5GGoawSJ5cnO7Ru4HUNR3ilyfLcwKE3U.jpg",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":2,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":2,
-                                 "items":[
-                                    {
-                                       "id":"8761601",
-                                       "firstName":"peter",
-                                       "lastName":"kafka",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs3.4sqi.net\/img\/user\/",
-                                          "suffix":"\/OAUDSICRFASGPOUE.jpg"
-                                       }
-                                    },
-                                    {
-                                       "id":"95760005",
-                                       "firstName":"Threes Brewing",
-                                       "gender":"none",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                          "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                                       },
-                                       "type":"venuePage",
-                                       "venue":{
-                                          "id":"5414d0a6498ea3d31a3c64cf"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"2 likes"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":2,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":1
-                        },
-                        "user":{
-                           "id":"16375",
-                           "firstName":"Joshua",
-                           "lastName":"Stylman",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                              "suffix":"\/4a3b996472147.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"574c866e498ec5e41e343e9d",
-                        "createdAt":1464632942,
-                        "text":"They don't do tasting flights, which is a shame. Great selection though, including beers that aren't brewed by Threes. The Atomic Swerve is perfect for summer.",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/574c866e498ec5e41e343e9d",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":1,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":1,
-                                 "items":[
-                                    {
-                                       "id":"88018",
-                                       "firstName":"Petri",
-                                       "lastName":"Partio",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                          "suffix":"\/BW4G2L2UVAHCNVG4.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"1 like"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":1,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":0
-                        },
-                        "user":{
-                           "id":"139597870",
-                           "firstName":"Cameron",
-                           "lastName":"Gidari",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                              "suffix":"\/139597870-0HFUCYQXA45MWL4C.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"5692caa3498efc71821e8c54",
-                        "createdAt":1452460707,
-                        "text":"Awesome brewery with a cozy industrial feel and tons of beer to choose from. They have a selection of about a half dozen of their own beers on tap plus a selection of \u201cfriend\u201d breweries they also have",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/5692caa3498efc71821e8c54",
-                        "photo":{
-                           "id":"5692caad498ee1363877840f",
-                           "createdAt":1452460717,
-                           "source":{
-                              "name":"Foursquare for iOS",
-                              "url":"https:\/\/foursquare.com\/download\/#\/iphone"
-                           },
-                           "prefix":"https:\/\/irs1.4sqi.net\/img\/general\/",
-                           "suffix":"\/262277_TUV2WYi8Ffa9v-NMq1veqnxh2ozGO1psr-FcEHX-Bj4.jpg",
-                           "width":1440,
-                           "height":1920,
-                           "demoted":false,
-                           "visibility":"public"
-                        },
-                        "photourl":"https:\/\/irs1.4sqi.net\/img\/general\/original\/262277_TUV2WYi8Ffa9v-NMq1veqnxh2ozGO1psr-FcEHX-Bj4.jpg",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":1,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":1,
-                                 "items":[
-                                    {
-                                       "id":"54004261",
-                                       "firstName":"Jason",
-                                       "lastName":"Basalyga",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                                          "suffix":"\/C4LRXKA5SSYOSFAA.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"1 like"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":1,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":6
-                        },
-                        "user":{
-                           "id":"262277",
-                           "firstName":"Tyler",
-                           "lastName":"Lund",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                              "suffix":"\/VLMCB5I5TBBDUBCN.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"5678d8d438fa6ec4acb849f9",
-                        "createdAt":1450760404,
-                        "text":"Everything! One of the must try breweries in NY. They have an outstanding craft selection, mixed drinks as well as rotating chefs from restaurants all over the Tristate area. Great outside seating!",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/5678d8d438fa6ec4acb849f9",
-                        "photo":{
-                           "id":"5678d8d5498e995daee6965a",
-                           "createdAt":1450760405,
-                           "source":{
-                              "name":"Foursquare for iOS",
-                              "url":"https:\/\/foursquare.com\/download\/#\/iphone"
-                           },
-                           "prefix":"https:\/\/irs0.4sqi.net\/img\/general\/",
-                           "suffix":"\/148552067_dQp-CUXUNaVVnTMnAbRpvevAei62Umhd1lBMyEz788c.jpg",
-                           "width":1440,
-                           "height":1920,
-                           "demoted":false,
-                           "visibility":"public"
-                        },
-                        "photourl":"https:\/\/irs0.4sqi.net\/img\/general\/original\/148552067_dQp-CUXUNaVVnTMnAbRpvevAei62Umhd1lBMyEz788c.jpg",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":1,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":1,
-                                 "items":[
-                                    {
-                                       "id":"16375",
-                                       "firstName":"Joshua",
-                                       "lastName":"Stylman",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                                          "suffix":"\/4a3b996472147.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"1 like"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":1,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":0
-                        },
-                        "user":{
-                           "id":"148552067",
-                           "firstName":"Danny",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs3.4sqi.net\/img\/user\/",
-                              "suffix":"\/148552067-5EM4KVFNRPRRLX3P.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"566cb424498e296e80e6acc1",
-                        "createdAt":1449964580,
-                        "text":"WiFi pass is BrewThree",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/566cb424498e296e80e6acc1",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":1,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":1,
-                                 "items":[
-                                    {
-                                       "id":"1222",
-                                       "firstName":"Eliot",
-                                       "lastName":"Shepard",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                          "suffix":"\/1222_1237414427.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"1 like"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":1,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":0
-                        },
-                        "user":{
-                           "id":"7940426",
-                           "firstName":"Ross",
-                           "lastName":"Berger",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs3.4sqi.net\/img\/user\/",
-                              "suffix":"\/7940426-SK0XQVC2C3DC5XPM.jpg"
-                           }
-                        }
-                     },
-                     {
-                        "id":"56699e3f498ed5dd1b5ccdbb",
-                        "createdAt":1449762367,
-                        "text":"The change in who is doing the kitchen keeps this place interesting. Their beers are amazing, and they bring in their friends as well. It's also a perfect venue for a small party.",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/56699e3f498ed5dd1b5ccdbb",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":1,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":1,
-                                 "items":[
-                                    {
-                                       "id":"16375",
-                                       "firstName":"Joshua",
-                                       "lastName":"Stylman",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                                          "suffix":"\/4a3b996472147.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"1 like"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":1,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":0
-                        },
-                        "user":{
-                           "id":"760367",
-                           "firstName":"Robbie",
-                           "lastName":"Siron",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                              "suffix":"\/760367-GUJGBEG0JFOOUBAD.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"564a9c98498e01a9d0c7fb28",
-                        "createdAt":1447730328,
-                        "text":"Pretty cool, but can be really packed. Protip: the bathroom doors slide open.",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/564a9c98498e01a9d0c7fb28",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":1,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":1,
-                                 "items":[
-                                    {
-                                       "id":"16375",
-                                       "firstName":"Joshua",
-                                       "lastName":"Stylman",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                                          "suffix":"\/4a3b996472147.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"1 like"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":1,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":0
-                        },
-                        "user":{
-                           "id":"41528975",
-                           "firstName":"Campbell",
-                           "lastName":"Bird",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                              "suffix":"\/I0XPAQJBBPZJ0U0F.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"561d3046498e80fb321f5dd6",
-                        "createdAt":1444753478,
-                        "text":"Check their website beforehand to see who's in the rotating kitchen spot this week. They bring different restaurants from all over the city in to do guest shifts.",
-                        "type":"user",
-                        "url":"http:\/\/www.threesbrewing.com\/",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/561d3046498e80fb321f5dd6",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":1,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":1,
-                                 "items":[
-                                    {
-                                       "id":"29689102",
-                                       "firstName":"Kyle",
-                                       "lastName":"Bye",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                          "suffix":"\/NGLQ5LUNL3DUJQXK.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"1 like"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":2,
-                        "disagreeCount":0,
-                        "lastVoteText":"Upvoted Sep 20",
-                        "lastUpvoteTimestamp":1474415009,
-                        "todo":{
-                           "count":1
-                        },
-                        "user":{
-                           "id":"46926",
-                           "firstName":"Zack",
-                           "lastName":"Sheppard",
-                           "gender":"male",
-                           "photo":{
-                              "prefix":"https:\/\/irs3.4sqi.net\/img\/user\/",
-                              "suffix":"\/46926-XY23IKEYBTHMA05U.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"560cacfc498e59e51434ea76",
-                        "createdAt":1443671292,
-                        "text":"Try \"I Hate Myself\" if you're looking to drink an IPA 😎",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/560cacfc498e59e51434ea76",
-                        "photo":{
-                           "id":"560cacfe498e9570733abbb3",
-                           "createdAt":1443671294,
-                           "source":{
-                              "name":"Foursquare for iOS",
-                              "url":"https:\/\/foursquare.com\/download\/#\/iphone"
-                           },
-                           "prefix":"https:\/\/irs1.4sqi.net\/img\/general\/",
-                           "suffix":"\/31472_Dj-Zw0-A2-hlHiAhXPRW1YhcLm9EaaCpSievR-de6kw.jpg",
-                           "width":1439,
-                           "height":1920,
-                           "demoted":false,
-                           "visibility":"public"
-                        },
-                        "photourl":"https:\/\/irs1.4sqi.net\/img\/general\/original\/31472_Dj-Zw0-A2-hlHiAhXPRW1YhcLm9EaaCpSievR-de6kw.jpg",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":1,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":1,
-                                 "items":[
-                                    {
-                                       "id":"16375",
-                                       "firstName":"Joshua",
-                                       "lastName":"Stylman",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                                          "suffix":"\/4a3b996472147.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"1 like"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":1,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":0
-                        },
-                        "user":{
-                           "id":"31472",
-                           "firstName":"Emily",
-                           "lastName":"Wilson",
-                           "gender":"female",
-                           "photo":{
-                              "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                              "suffix":"\/31472-J3VPBIQ1WXYG1UB0.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     },
-                     {
-                        "id":"55cc77df498ec10548a6bbb6",
-                        "createdAt":1439463391,
-                        "text":"Deserving of any and all hype. Huge beer list, including many not brewed in house, so even your most picky friends would be happy here.",
-                        "type":"user",
-                        "canonicalUrl":"https:\/\/foursquare.com\/item\/55cc77df498ec10548a6bbb6",
-                        "flags":[
-
-                        ],
-                        "likes":{
-                           "count":1,
-                           "groups":[
-                              {
-                                 "type":"others",
-                                 "count":1,
-                                 "items":[
-                                    {
-                                       "id":"29689102",
-                                       "firstName":"Kyle",
-                                       "lastName":"Bye",
-                                       "gender":"male",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                          "suffix":"\/NGLQ5LUNL3DUJQXK.jpg"
-                                       }
-                                    }
-                                 ]
-                              }
-                           ],
-                           "summary":"1 like"
-                        },
-                        "like":false,
-                        "logView":true,
-                        "agreeCount":1,
-                        "disagreeCount":0,
-                        "todo":{
-                           "count":0
-                        },
-                        "user":{
-                           "id":"11589116",
-                           "firstName":"Emily",
-                           "lastName":"Kane",
-                           "gender":"female",
-                           "photo":{
-                              "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                              "suffix":"\/11589116-N445X4HPAQ3TG3SE.jpg"
-                           }
-                        },
-                        "authorInteractionType":"liked"
-                     }
-                  ]
-               }
+                }
+              },
+              {
+                "id": "516470abe4b07472e250461c",
+                "name": "Bars with Outdoor Space",
+                "description": "",
+                "type": "others",
+                "user": {
+                  "id": "10407371",
+                  "firstName": "Adela",
+                  "lastName": "Mou",
+                  "gender": "female",
+                  "photo": {
+                    "prefix": "https://igx.4sqi.net/img/user/",
+                    "suffix": "/10407371_nd6JYk8C_8u4MChdkXlT0GK0tRubSBqGLDX3DQxxPYFsKzxMCxeBKcy2MHLjLv_fxrzgdsxYl.jpg"
+                  }
+                },
+                "editable": false,
+                "public": true,
+                "collaborative": false,
+                "url": "/user/10407371/list/bars-with-outdoor-space",
+                "canonicalUrl": "https://foursquare.com/user/10407371/list/bars-with-outdoor-space",
+                "createdAt": 1365536939,
+                "updatedAt": 1526478338,
+                "photo": {
+                  "id": "4e50104bb61cf637a4fe59e7",
+                  "createdAt": 1313869899,
+                  "prefix": "https://igx.4sqi.net/img/general/",
+                  "suffix": "/H4YUQKZ3FUMSLSMTXB3Q3X2SN3LOPXRYAAEXHBLK551SOF2E.jpg",
+                  "width": 720,
+                  "height": 431,
+                  "demoted": false,
+                  "user": {
+                    "id": "130212",
+                    "firstName": "Ogun",
+                    "lastName": "Holder",
+                    "gender": "male",
+                    "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/ZKCFOLO3QGVK1DF2.jpg" }
+                  },
+                  "visibility": "public"
+                },
+                "followers": { "count": 124 },
+                "listItems": { "count": 144, "items": [{ "id": "v5414d0a6498ea3d31a3c64cf", "createdAt": 1463686723 }] }
+              }
             ]
-         },
-         "tags":[
-            "beef",
-            "chicken",
-            "cuban",
-            "plantains",
-            "pork",
-            "stew"
-         ],
-         "shortUrl":"http:\/\/4sq.com\/1qxRLL3",
-         "timeZone":"America\/New_York",
-         "listed":{
-            "count":659,
-            "groups":[
-               {
-                  "type":"others",
-                  "name":"Lists from other people",
-                  "count":659,
-                  "items":[
-                     {
-                        "id":"561ffa6a498ed502d2869fa5",
-                        "name":"Reasons to Love Gowanus, Brooklyn",
-                        "description":"Fancy yourself an explorer? Gowanus, Brooklyn is an emerging neighborhood with plenty to offer. Filled with cozy restaurants, bars, & fun places to go out with friends, it's an area not to miss.",
-                        "type":"others",
-                        "user":{
-                           "id":"23438729",
-                           "firstName":"Foursquare City Guide",
-                           "gender":"none",
-                           "photo":{
-                              "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                              "suffix":"\/23438729-TODURDIUDUMY4JF5.png"
-                           },
-                           "type":"chain"
-                        },
-                        "editable":false,
-                        "public":true,
-                        "collaborative":false,
-                        "url":"\/foursquare\/list\/reasons-to-love-gowanus-brooklyn",
-                        "canonicalUrl":"https:\/\/foursquare.com\/foursquare\/list\/reasons-to-love-gowanus-brooklyn",
-                        "createdAt":1444936298,
-                        "updatedAt":1444941265,
-                        "photo":{
-                           "id":"55726997498eca81d1ddde9d",
-                           "createdAt":1433561495,
-                           "prefix":"https:\/\/irs3.4sqi.net\/img\/general\/",
-                           "suffix":"\/47321_E0E6tZvA7Bbi92G2hIUhrTNAdesO3UOJ-nrZAyUt6eE.jpg",
-                           "width":1440,
-                           "height":1920,
-                           "demoted":false,
-                           "user":{
-                              "id":"47321",
-                              "firstName":"Nate",
-                              "lastName":"Folkert",
-                              "gender":"male",
-                              "photo":{
-                                 "prefix":"https:\/\/irs3.4sqi.net\/img\/user\/",
-                                 "suffix":"\/0FQGVWKEVEK20I0V.jpg"
-                              }
-                           },
-                           "visibility":"public"
-                        },
-                        "logView":true,
-                        "guideType":"neighborhood",
-                        "guide":true,
-                        "followers":{
-                           "count":68
-                        },
-                        "listItems":{
-                           "count":22,
-                           "items":[
-                              {
-                                 "id":"t5587055e498efdcb2fcce9d4",
-                                 "createdAt":1444940304,
-                                 "tip":{
-                                    "id":"5587055e498efdcb2fcce9d4",
-                                    "createdAt":1434912094,
-                                    "text":"This place is great. Truly delicious house beers and excellent selection of guest taps. Rotating kitchen of good Brooklyn faire.",
-                                    "type":"user",
-                                    "canonicalUrl":"https:\/\/foursquare.com\/item\/5587055e498efdcb2fcce9d4",
-                                    "flags":[
-
-                                    ],
-                                    "likes":{
-                                       "count":4,
-                                       "groups":[
-                                          {
-                                             "type":"others",
-                                             "count":4,
-                                             "items":[
-                                                {
-                                                   "id":"59975176",
-                                                   "firstName":"Christina",
-                                                   "lastName":"Cipriano",
-                                                   "gender":"female",
-                                                   "photo":{
-                                                      "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                                                      "suffix":"\/59975176-I534RSCYN01VP2YB.jpg"
-                                                   }
-                                                },
-                                                {
-                                                   "id":"95760005",
-                                                   "firstName":"Threes Brewing",
-                                                   "gender":"none",
-                                                   "photo":{
-                                                      "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                                      "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                                                   },
-                                                   "type":"venuePage",
-                                                   "venue":{
-                                                      "id":"5414d0a6498ea3d31a3c64cf"
-                                                   }
-                                                },
-                                                {
-                                                   "id":"43825313",
-                                                   "firstName":"Marlynn",
-                                                   "lastName":"West",
-                                                   "gender":"female",
-                                                   "photo":{
-                                                      "prefix":"https:\/\/irs3.4sqi.net\/img\/user\/",
-                                                      "suffix":"\/43825313-ID0IPEKIA5B4013Y.jpg"
-                                                   }
-                                                },
-                                                {
-                                                   "id":"7778",
-                                                   "firstName":"Ryan",
-                                                   "lastName":"K",
-                                                   "gender":"male",
-                                                   "photo":{
-                                                      "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                                      "suffix":"\/-0KC5YUYMZYV4KBYT.jpg"
-                                                   }
-                                                }
-                                             ]
-                                          }
-                                       ],
-                                       "summary":"4 likes"
-                                    },
-                                    "like":false,
-                                    "logView":true,
-                                    "agreeCount":4,
-                                    "disagreeCount":0,
-                                    "todo":{
-                                       "count":33
-                                    },
-                                    "saves":{
-
-                                    },
-                                    "user":{
-                                       "id":"8239957",
-                                       "firstName":"Carmen",
-                                       "lastName":"N",
-                                       "gender":"female",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                                          "suffix":"\/XBDCFU55S1CV4RY1.jpg"
-                                       }
-                                    }
-                                 },
-                                 "photo":{
-                                    "id":"549ecb4111d2ed4887ba3e39",
-                                    "createdAt":1419692865,
-                                    "prefix":"https:\/\/irs1.4sqi.net\/img\/general\/",
-                                    "suffix":"\/95760005_UyZ6PVFIBRiI1BEn2pZazaTHIe2Amd4wnapdyxLcc30.jpg",
-                                    "width":870,
-                                    "height":580,
-                                    "demoted":false,
-                                    "user":{
-                                       "id":"95760005",
-                                       "firstName":"Threes Brewing",
-                                       "gender":"none",
-                                       "photo":{
-                                          "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                                          "suffix":"\/95760005-K35NSGGG10EE5XU2.png"
-                                       },
-                                       "type":"venuePage",
-                                       "venue":{
-                                          "id":"5414d0a6498ea3d31a3c64cf"
-                                       }
-                                    },
-                                    "visibility":"public"
-                                 }
-                              }
-                           ]
-                        }
-                     },
-                     {
-                        "id":"516470abe4b07472e250461c",
-                        "name":"Bars with Outdoor Space",
-                        "description":"",
-                        "type":"others",
-                        "user":{
-                           "id":"10407371",
-                           "firstName":"Adela",
-                           "lastName":"Mou",
-                           "gender":"female",
-                           "photo":{
-                              "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                              "suffix":"\/10407371-5N2E1LPN4T1140FG.jpg"
-                           }
-                        },
-                        "editable":false,
-                        "public":true,
-                        "collaborative":false,
-                        "url":"\/user\/10407371\/list\/bars-with-outdoor-space",
-                        "canonicalUrl":"https:\/\/foursquare.com\/user\/10407371\/list\/bars-with-outdoor-space",
-                        "createdAt":1365536939,
-                        "updatedAt":1476597049,
-                        "photo":{
-                           "id":"4e50104bb61cf637a4fe59e7",
-                           "createdAt":1313869899,
-                           "prefix":"https:\/\/irs2.4sqi.net\/img\/general\/",
-                           "suffix":"\/H4YUQKZ3FUMSLSMTXB3Q3X2SN3LOPXRYAAEXHBLK551SOF2E.jpg",
-                           "width":720,
-                           "height":431,
-                           "demoted":false,
-                           "user":{
-                              "id":"130212",
-                              "firstName":"Ogun",
-                              "lastName":"Holder",
-                              "gender":"male",
-                              "photo":{
-                                 "prefix":"https:\/\/irs2.4sqi.net\/img\/user\/",
-                                 "suffix":"\/ZKCFOLO3QGVK1DF2.jpg"
-                              }
-                           },
-                           "visibility":"public"
-                        },
-                        "followers":{
-                           "count":125
-                        },
-                        "listItems":{
-                           "count":129,
-                           "items":[
-                              {
-                                 "id":"v5414d0a6498ea3d31a3c64cf",
-                                 "createdAt":1463686723
-                              }
-                           ]
-                        }
-                     }
-                  ]
-               }
+          }
+        ]
+      },
+      "phrases": [
+        {
+          "phrase": "rotating kitchen",
+          "sample": {
+            "entities": [{ "indices": [18, 34], "type": "keyPhrase" }],
+            "text": "... and the food. Rotating kitchen; often great. Outdoor seating is..."
+          },
+          "count": 6
+        },
+        {
+          "phrase": "saison",
+          "sample": {
+            "entities": [{ "indices": [26, 32], "type": "keyPhrase" }],
+            "text": "... beer selection. Their saison is probably my new favorite saison."
+          },
+          "count": 9
+        },
+        {
+          "phrase": "backyard",
+          "sample": {
+            "entities": [{ "indices": [27, 35], "type": "keyPhrase" }],
+            "text": "... food lineup, beautiful backyard space with tons of seating, and lots of..."
+          },
+          "count": 14
+        }
+      ],
+      "hours": {
+        "status": "Open until 2:00 AM",
+        "richStatus": { "entities": [], "text": "Open until 2:00 AM" },
+        "isOpen": true,
+        "isLocalHoliday": false,
+        "dayData": [],
+        "timeframes": [
+          {
+            "days": "Mon\u2013Tue",
+            "includesToday": true,
+            "open": [{ "renderedTime": "5:00 PM\u2013Midnight" }],
+            "segments": []
+          },
+          { "days": "Wed\u2013Thu", "open": [{ "renderedTime": "5:00 PM\u20132:00 AM" }], "segments": [] },
+          {
+            "days": "Fri",
+            "includesToday": true,
+            "open": [{ "renderedTime": "3:00 PM\u20132:00 AM" }],
+            "segments": []
+          },
+          { "days": "Sat", "open": [{ "renderedTime": "Noon\u20132:00 AM" }], "segments": [] },
+          { "days": "Sun", "open": [{ "renderedTime": "Noon\u2013Midnight" }], "segments": [] }
+        ]
+      },
+      "popular": {
+        "isOpen": false,
+        "isLocalHoliday": false,
+        "timeframes": [
+          {
+            "days": "Today",
+            "includesToday": true,
+            "open": [{ "renderedTime": "5:00 PM\u2013Midnight" }],
+            "segments": []
+          },
+          { "days": "Sat", "open": [{ "renderedTime": "Noon\u20131:00 AM" }], "segments": [] },
+          { "days": "Sun", "open": [{ "renderedTime": "Noon\u20139:00 PM" }], "segments": [] },
+          { "days": "Mon", "open": [{ "renderedTime": "6:00 PM\u20139:00 PM" }], "segments": [] },
+          { "days": "Tue\u2013Wed", "open": [{ "renderedTime": "6:00 PM\u201310:00 PM" }], "segments": [] },
+          { "days": "Thu", "open": [{ "renderedTime": "6:00 PM\u201311:00 PM" }], "segments": [] }
+        ]
+      },
+      "pageUpdates": { "count": 4, "items": [] },
+      "inbox": { "count": 0, "items": [] },
+      "venueChains": [],
+      "attributes": {
+        "groups": [
+          {
+            "type": "price",
+            "name": "Price",
+            "summary": "$$",
+            "count": 1,
+            "items": [{ "displayName": "Price", "displayValue": "$$", "priceTier": 2 }]
+          },
+          {
+            "type": "payments",
+            "name": "Credit Cards",
+            "summary": "Credit Cards",
+            "count": 7,
+            "items": [{ "displayName": "Credit Cards", "displayValue": "Yes (incl. American Express & MasterCard)" }]
+          },
+          {
+            "type": "outdoorSeating",
+            "name": "Outdoor Seating",
+            "summary": "Outdoor Seating",
+            "count": 1,
+            "items": [{ "displayName": "Outdoor Seating", "displayValue": "Yes" }]
+          },
+          {
+            "type": "music",
+            "name": "Music",
+            "summary": "Live Music",
+            "count": 3,
+            "items": [{ "displayName": "Live Music", "displayValue": "Live Music" }]
+          },
+          {
+            "type": "wifi",
+            "name": "Wi-Fi",
+            "summary": "Free Wi-Fi",
+            "count": 1,
+            "items": [{ "displayName": "Wi-Fi", "displayValue": "Free" }]
+          },
+          {
+            "type": "serves",
+            "name": "Menus",
+            "summary": "Happy Hour, Dinner & more",
+            "count": 8,
+            "items": [
+              { "displayName": "Brunch", "displayValue": "Brunch" },
+              { "displayName": "Dinner", "displayValue": "Dinner" },
+              { "displayName": "Happy Hour", "displayValue": "Happy Hour" }
             ]
-         },
-         "phrases":[
-            {
-               "phrase":"rotating kitchen",
-               "sample":{
-                  "entities":[
-                     {
-                        "indices":[
-                           19,
-                           35
-                        ],
-                        "type":"keyPhrase"
-                     }
-                  ],
-                  "text":"... of guest taps. Rotating kitchen of good Brooklyn faire."
-               },
-               "count":6
-            },
-            {
-               "phrase":"rotating chefs",
-               "sample":{
-                  "entities":[
-                     {
-                        "indices":[
-                           26,
-                           40
-                        ],
-                        "type":"keyPhrase"
-                     }
-                  ],
-                  "text":"... beer, great food from rotating chefs. Big space. Lots of fun."
-               },
-               "count":5
-            },
-            {
-               "phrase":"saison",
-               "sample":{
-                  "entities":[
-                     {
-                        "indices":[
-                           20,
-                           26
-                        ],
-                        "type":"keyPhrase"
-                     }
-                  ],
-                  "text":"... with the Threes saison were a great match!"
-               },
-               "count":7
-            }
-         ],
-         "hours":{
-            "status":"Open until Midnight",
-            "isOpen":true,
-            "isLocalHoliday":false,
-            "timeframes":[
-               {
-                  "days":"Mon\u2013Tue",
-                  "includesToday":true,
-                  "open":[
-                     {
-                        "renderedTime":"5:00 PM\u2013Midnight"
-                     }
-                  ],
-                  "segments":[
-
-                  ]
-               },
-               {
-                  "days":"Wed\u2013Thu",
-                  "open":[
-                     {
-                        "renderedTime":"5:00 PM\u20132:00 AM"
-                     }
-                  ],
-                  "segments":[
-
-                  ]
-               },
-               {
-                  "days":"Fri",
-                  "open":[
-                     {
-                        "renderedTime":"3:00 PM\u20132:00 AM"
-                     }
-                  ],
-                  "segments":[
-
-                  ]
-               },
-               {
-                  "days":"Sat",
-                  "open":[
-                     {
-                        "renderedTime":"Noon\u20132:00 AM"
-                     }
-                  ],
-                  "segments":[
-
-                  ]
-               },
-               {
-                  "days":"Sun",
-                  "open":[
-                     {
-                        "renderedTime":"Noon\u2013Midnight"
-                     }
-                  ],
-                  "segments":[
-
-                  ]
-               }
+          },
+          {
+            "type": "drinks",
+            "name": "Drinks",
+            "summary": "Beer, Wine, Full Bar & Cocktails",
+            "count": 5,
+            "items": [
+              { "displayName": "Beer", "displayValue": "Beer" },
+              { "displayName": "Wine", "displayValue": "Wine" },
+              { "displayName": "Full Bar", "displayValue": "Full Bar" },
+              { "displayName": "Cocktails", "displayValue": "Cocktails" }
             ]
-         },
-         "popular":{
-            "isOpen":false,
-            "isLocalHoliday":false,
-            "timeframes":[
-               {
-                  "days":"Today",
-                  "includesToday":true,
-                  "open":[
-                     {
-                        "renderedTime":"6:00 PM\u201310:00 PM"
-                     }
-                  ],
-                  "segments":[
-
-                  ]
-               },
-               {
-                  "days":"Wed",
-                  "open":[
-                     {
-                        "renderedTime":"6:00 PM\u201310:00 PM"
-                     }
-                  ],
-                  "segments":[
-
-                  ]
-               },
-               {
-                  "days":"Thu",
-                  "open":[
-                     {
-                        "renderedTime":"6:00 PM\u201311:00 PM"
-                     }
-                  ],
-                  "segments":[
-
-                  ]
-               },
-               {
-                  "days":"Fri",
-                  "open":[
-                     {
-                        "renderedTime":"5:00 PM\u2013Midnight"
-                     }
-                  ],
-                  "segments":[
-
-                  ]
-               },
-               {
-                  "days":"Sat",
-                  "open":[
-                     {
-                        "renderedTime":"Noon\u20131:00 AM"
-                     }
-                  ],
-                  "segments":[
-
-                  ]
-               },
-               {
-                  "days":"Sun",
-                  "open":[
-                     {
-                        "renderedTime":"Noon\u20139:00 PM"
-                     }
-                  ],
-                  "segments":[
-
-                  ]
-               },
-               {
-                  "days":"Mon",
-                  "open":[
-                     {
-                        "renderedTime":"6:00 PM\u20139:00 PM"
-                     }
-                  ],
-                  "segments":[
-
-                  ]
-               }
-            ]
-         },
-         "pageUpdates":{
-            "count":4,
-            "items":[
-
-            ]
-         },
-         "inbox":{
-            "count":0,
-            "items":[
-
-            ]
-         },
-         "venueChains":[
-
-         ],
-         "attributes":{
-            "groups":[
-               {
-                  "type":"price",
-                  "name":"Price",
-                  "summary":"$$",
-                  "count":1,
-                  "items":[
-                     {
-                        "displayName":"Price",
-                        "displayValue":"$$",
-                        "priceTier":2
-                     }
-                  ]
-               },
-               {
-                  "type":"payments",
-                  "name":"Credit Cards",
-                  "summary":"Credit Cards",
-                  "count":7,
-                  "items":[
-                     {
-                        "displayName":"Credit Cards",
-                        "displayValue":"Yes (incl. American Express & MasterCard)"
-                     }
-                  ]
-               },
-               {
-                  "type":"outdoorSeating",
-                  "name":"Outdoor Seating",
-                  "summary":"Outdoor Seating",
-                  "count":1,
-                  "items":[
-                     {
-                        "displayName":"Outdoor Seating",
-                        "displayValue":"Yes"
-                     }
-                  ]
-               },
-               {
-                  "type":"music",
-                  "name":"Music",
-                  "summary":"Live Music",
-                  "count":3,
-                  "items":[
-                     {
-                        "displayName":"Live Music",
-                        "displayValue":"Live Music"
-                     }
-                  ]
-               },
-               {
-                  "type":"wifi",
-                  "name":"Wi-Fi",
-                  "summary":"Free Wi-Fi",
-                  "count":1,
-                  "items":[
-                     {
-                        "displayName":"Wi-Fi",
-                        "displayValue":"Free"
-                     }
-                  ]
-               },
-               {
-                  "type":"serves",
-                  "name":"Menus",
-                  "summary":"Happy Hour, Dinner & more",
-                  "count":8,
-                  "items":[
-                     {
-                        "displayName":"Brunch",
-                        "displayValue":"Brunch"
-                     },
-                     {
-                        "displayName":"Dinner",
-                        "displayValue":"Dinner"
-                     },
-                     {
-                        "displayName":"Happy Hour",
-                        "displayValue":"Happy Hour"
-                     }
-                  ]
-               },
-               {
-                  "type":"drinks",
-                  "name":"Drinks",
-                  "summary":"Beer, Wine, Full Bar & Cocktails",
-                  "count":5,
-                  "items":[
-                     {
-                        "displayName":"Beer",
-                        "displayValue":"Beer"
-                     },
-                     {
-                        "displayName":"Wine",
-                        "displayValue":"Wine"
-                     },
-                     {
-                        "displayName":"Full Bar",
-                        "displayValue":"Full Bar"
-                     },
-                     {
-                        "displayName":"Cocktails",
-                        "displayValue":"Cocktails"
-                     }
-                  ]
-               }
-            ]
-         },
-         "bestPhoto":{
-            "id":"549ecb0f11d2ed4887ba35ab",
-            "createdAt":1419692815,
-            "source":{
-               "name":"Foursquare Web",
-               "url":"https:\/\/foursquare.com"
-            },
-            "prefix":"https:\/\/irs1.4sqi.net\/img\/general\/",
-            "suffix":"\/95760005_78vNYkB4sZbQ23LykVYIccyi2zSkD98qo3CHkQ-vI5k.jpg",
-            "width":870,
-            "height":580,
-            "visibility":"public"
-         }
+          }
+        ]
+      },
+      "bestPhoto": {
+        "id": "549ecb0f11d2ed4887ba35ab",
+        "createdAt": 1419692815,
+        "source": { "name": "Foursquare Web", "url": "https://foursquare.com" },
+        "prefix": "https://igx.4sqi.net/img/general/",
+        "suffix": "/95760005_78vNYkB4sZbQ23LykVYIccyi2zSkD98qo3CHkQ-vI5k.jpg",
+        "width": 870,
+        "height": 580,
+        "visibility": "public"
+      },
+      "colors": {
+        "highlightColor": { "photoId": "549ecb0f11d2ed4887ba35ab", "value": -14673896 },
+        "highlightTextColor": { "photoId": "549ecb0f11d2ed4887ba35ab", "value": -1 },
+        "algoVersion": 3
       }
-   }
+    }
+  }
 }

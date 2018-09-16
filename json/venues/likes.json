@@ -1,53 +1,48 @@
 {
-   "meta":{
-      "code":200,
-      "requestId":"5853274adb04f571fa308de6"
-   },
-   "notifications":[
-      {
-         "type":"notificationTray",
-         "item":{
-            "unreadCount":10
-         }
-      }
-   ],
-   "response":{
-      "likes":{
-         "count":1261,
-         "summary":"1261 Likes",
-         "items":[
-            {
-               "id":"203153",
-               "firstName":"Emiliano",
-               "lastName":"Viscarra",
-               "gender":"male",
-               "photo":{
-                  "prefix":"https:\/\/irs1.4sqi.net\/img\/user\/",
-                  "suffix":"\/203153-0BI5LE1Y2ITI4XUU.jpg"
-               }
-            },
-            {
-               "id":"1426458",
-               "firstName":"Taj",
-               "lastName":"Bailey",
-               "gender":"male",
-               "photo":{
-                  "prefix":"https:\/\/irs0.4sqi.net\/img\/user\/",
-                  "suffix":"\/AJ4ZYOG3YQL4YV1L.jpg"
-               }
-            },
-            {
-               "id":"8106197",
-               "firstName":"Victoria",
-               "lastName":"Wooster",
-               "gender":"female",
-               "photo":{
-                  "prefix":"https:\/\/irs3.4sqi.net\/img\/user\/",
-                  "suffix":"\/8106197-DV3OBVUU4XSV55SC.jpg"
-               }
-            }
-         ]
-      },
-      "like":false
-   }
+  "meta": { "code": 200, "requestId": "5aff3b641ed2192af8a3829e" },
+  "notifications": [{ "type": "notificationTray", "item": { "unreadCount": 5 } }],
+  "response": {
+    "likes": {
+      "count": 1077,
+      "summary": "1077 Likes",
+      "items": [
+        {
+          "id": "349672",
+          "firstName": "Valerie",
+          "lastName": "K.",
+          "gender": "female",
+          "relationship": "friend",
+          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/349672-EFOECR1MUVSDKTYY.jpg" }
+        },
+        {
+          "id": "2693821",
+          "firstName": "Brigette",
+          "lastName": "K.",
+          "gender": "female",
+          "photo": {
+            "prefix": "https://igx.4sqi.net/img/user/",
+            "suffix": "/2693821_U9uSozAK_mSQfkFQb6ALq0ay-GZlsAqP-Ro9Ah9nKgPxIPqah79V5kbEasLlj7ZSm1qXVZobO.jpg"
+          }
+        },
+        {
+          "id": "17998406",
+          "firstName": "Samantha",
+          "lastName": "MacKenzie",
+          "gender": "female",
+          "photo": {
+            "prefix": "https://igx.4sqi.net/img/user/",
+            "suffix": "/17998406_tzCXZUNL_LLDFNv1TzxIV-pVuJhp-XC7Ui4DANdaAGzmd3GuFIPfluM7XDeG7r7oBBX-_Yylv.jpg"
+          }
+        },
+        {
+          "id": "4930004",
+          "firstName": "Julie",
+          "lastName": "R.",
+          "gender": "female",
+          "photo": { "prefix": "https://igx.4sqi.net/img/user/", "suffix": "/4930004-0RHKH1MLAB4DIYDZ.jpg" }
+        }
+      ]
+    },
+    "like": false
+  }
 }
