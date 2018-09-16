@@ -97,10 +97,12 @@ type Venue struct {
 
 // Contact are details to contact this venue. Can contain all or none.
 type Contact struct {
-	Phone          string `json:"phone"`
-	FormattedPhone string `json:"formattedPhone"`
-	Twitter        string `json:"twitter"`
-	Facebook       string `json:"facebook"`
+	Phone            string `json:"phone"`
+	FormattedPhone   string `json:"formattedPhone"`
+	Twitter          string `json:"twitter"`
+	Facebook         string `json:"facebook"`
+	FacebookUsername string `json:"facebookUsername"`
+	Instagram        string `json:"instagram"`
 }
 
 // Location is a location for the venue. Can contain all or none and
@@ -113,6 +115,7 @@ type Location struct {
 	LabeledLatLngs   []LabeledLatLngs `json:"labeledLatLngs"`
 	PostalCode       string           `json:"postalCode"`
 	Cc               string           `json:"cc"`
+	Neighborhood     string           `json:"neighborhood"`
 	City             string           `json:"city"`
 	State            string           `json:"state"`
 	Country          string           `json:"country"`
