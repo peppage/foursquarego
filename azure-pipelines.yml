@@ -69,4 +69,4 @@ steps:
   inputs:
     codeCoverageTool: 'cobertura'
     summaryFileLocation: '$(modulePath)/reports/coverage.xml'
-reportDirectory: '$(modulePath)/reports/'
+    reportDirectory: '$(modulePath)/reports/'
