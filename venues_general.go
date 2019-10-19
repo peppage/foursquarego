@@ -192,6 +192,7 @@ type VenueExploreParams struct {
 	Radius           int            `url:"radius,omitempty"`
 	Section          ExploreSection `url:"section,omitempty"`
 	Query            string         `url:"query,omitempty"`
+	CategoryID       []string       `url:"categoryId,omitempty"`
 	Limit            int            `url:"limit,omitempty"`
 	Offset           int            `url:"offset,omitempty"`
 	Novelty          Novelty        `url:"novelty,omitempty"`
